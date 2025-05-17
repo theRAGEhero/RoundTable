@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Democracy Innovators</title>
+    <title>Democracy Routes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/nav.css">
     <style>
         body {
             font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             background-color: #f8f9fa;
             margin: 0;
             padding: 0;
+            color: #212529;
+        }
+        
+        .main-content {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            color: #212529;
+            min-height: calc(100vh - 70px);
+            padding: 2rem;
         }
         
         .container {
@@ -121,16 +127,35 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
-    <div class="container" id="container">
-        <div class="loading" id="loadingIndicator">
-            <div class="loading-spinner"></div>
-            <p>Loading available round tables...</p>
+    <!-- Common header will be loaded here -->
+    
+    <div class="main-content">
+        <div class="container" id="container">
+            <div class="loading" id="loadingIndicator">
+                <div class="loading-spinner"></div>
+                <p>Loading available round tables...</p>
+            </div>
         </div>
     </div>
     
+    <footer>
+        &copy; 2025 Democracy Routes. All rights reserved.
+    </footer>
+    
+    <script src="assets/header-loader.js"></script>
+    <script src="assets/navigation.js"></script>
     <script src="assets/homepage.js"></script>
 </body>
 </html>
