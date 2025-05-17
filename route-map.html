@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Democracy Routes - Route Map</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/nav.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #212529;
+        }
+        
+        .main-content {
+            max-width: 100%;
+            padding: 2rem;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #3a86ff;
+        }
+        
+        .route-map-container {
+            width: 100%;
+            height: 80vh;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+        
+        .controls button {
+            background-color: #3a86ff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            margin: 0 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .controls button:hover {
+            background-color: #2970d6;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            max-width: 300px;
+            z-index: 200;
+        }
+        
+        .tooltip h3 {
+            margin-top: 0;
+            color: #3a86ff;
+        }
+        
+        .tooltip p {
+            margin-bottom: 8px;
+        }
+        
+        .tooltip .btn {
+            background-color: #3a86ff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 8px;
+        }
+        
+        circle.node {
+            cursor: pointer;
+            stroke: #fff;
+            stroke-width: 2px;
+        }
+        
+        circle.node:hover {
+            stroke: #3a86ff;
+            stroke-width: 3px;
+        }
+        
+        .link {
+            stroke: #aaa;
+            stroke-width: 2px;
+            stroke-opacity: 0.6;
+            fill: none;
+            marker-end: url(#arrowhead);
+        }
+        
+        .route-circle {
+            fill: none;
+            stroke: #ddd;
+            stroke-width: 1px;
+            stroke-dasharray: 5, 5;
+        }
+        
+        .depth-label {
+            fill: #888;
+            font-size: 12px;
+            font-weight: 500;
+            text-anchor: middle;
+        }
+        
+        .help-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            z-index: 100;
+        }
+        
+        .help-toggle {
+            background-color: #3a86ff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 101;
+        }
+        
+        .detail-panel {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 100;
+            display: none;
+        }
+        
+        .detail-panel h3 {
+            margin-top: 0;
+            color: #3a86ff;
+        }
+        
+        .detail-panel .participants {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .detail-panel .participant {
+            display: flex;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        
+        .detail-panel .participant img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .detail-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #555;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4a5568;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: opacity 0.5s;
+        }
+        
+        /* Route Map Styling */
+        /* Legend */
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(58, 134, 255, 0.2);
+            border-radius: 50%;
+            border-top-color: #3a86ff;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Common header will be loaded here -->
+    
+    <div class="main-content">
+        <h1 class="page-title">Democracy Routes Map</h1>
+        
+        <div class="route-map-container">
+            <div class="loading-overlay" id="loadingOverlay">
+                <div class="loading-spinner"></div>
+            </div>
+            
+            <button class="help-toggle" id="helpToggle">
+                <i class="fas fa-info-circle"></i> Help
+            </button>
+            
+            <div class="help-panel" id="helpPanel" style="display: none;">
+                <h3>How to use this map</h3>
+                <p>This interactive map shows the Democracy Routes round tables with Round Table 0 at the center.</p>
+                <ul>
+                    <li>Click on any round table to view details</li>
+                    <li>Hover over round tables to see basic info and lineage for forks</li>
+                    <li>Use the zoom buttons to zoom in/out</li>
+                    <li>Click and drag to pan the view</li>
+                </ul>
+                <p>Round tables are arranged radially from the center. Main tables (RT1, RT2, etc.) follow the primary sequence, while fork tables (RT1.1, RT1.1.1) branch off from their parent tables.</p>
+                <p><strong>Numbering system:</strong> Fork round tables use decimal notation (e.g., RT1.1 is a fork of RT1, and RT1.1.2 is a fork of RT1.1).</p>
+            </div>
+            
+            <div class="controls">
+                <button id="zoomIn"><i class="fas fa-plus"></i></button>
+                <button id="zoomOut"><i class="fas fa-minus"></i></button>
+                <button id="resetView"><i class="fas fa-home"></i></button>
+                <button id="refreshView" title="Refresh to detect new round tables"><i class="fas fa-sync"></i></button>
+            </div>
+            
+            <div class="legend">
+                <h4>Legend</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #3a86ff;"></div>
+                    <span>Main Round Tables</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #4dabf7;"></div>
+                    <span>Fork Round Tables</span>
+                </div>
+            </div>
+            
+            <div class="tooltip" id="tooltip"></div>
+            <svg id="routeMap" width="100%" height="100%"></svg>
+            
+            <div class="detail-panel" id="detailPanel">
+                <button class="detail-close" id="detailClose">&times;</button>
+                <h3 id="detailTitle">Round Table Title</h3>
+                <p id="detailDescription">Loading description...</p>
+                <p><strong>Date:</strong> <span id="detailDate">Loading...</span></p>
+                <p><strong>Duration:</strong> <span id="detailDuration">Loading...</span></p>
+                <div class="participants" id="detailParticipants">
+                    <!-- Participants will be loaded here -->
+                </div>
+                <a href="#" class="btn" id="detailLink">View Round Table</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2025 Democracy Routes. All rights reserved.
+    </footer>
+    
+    <script src="assets/header-loader.js"></script>
+    <script src="assets/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const svg = d3.select('#routeMap');
+            const tooltip = d3.select('#tooltip');
+            const detailPanel = document.getElementById('detailPanel');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            
+            // Toggle help panel
+            document.getElementById('helpToggle').addEventListener('click', function() {
+                const helpPanel = document.getElementById('helpPanel');
+                helpPanel.style.display = helpPanel.style.display === 'none' ? 'block' : 'none';
+            });
+            
+            // Close detail panel
+            document.getElementById('detailClose').addEventListener('click', function() {
+                detailPanel.style.display = 'none';
+            });
+            
+            // Function to load JSON data
+            async function loadJSON(path) {
+                try {
+                    const response = await fetch(path);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return await response.json();
+                } catch (error) {
+                    console.error(`Could not load JSON data from ${path}:`, error);
+                    return null;
+                }
+            }
+            
+            // Find all available round tables
+            async function findAllRoundTables() {
+                const roundTables = [];
+                const filePatterns = [
+                    // Standard integer-numbered round tables
+                    ...Array.from({length: 11}, (_, i) => `roundtable${i}.json`),
+                    
+                    // Known fork tables (explicitly list known ones)
+                    'roundtable1.1.json',
+                    
+                    // Add patterns for potential future forks
+                    // These will fail silently if files don't exist
+                    'roundtable2.1.json', 'roundtable3.1.json',
+                    'roundtable1.2.json', 'roundtable2.2.json',
+                    'roundtable1.1.1.json', 'roundtable1.1.2.json'
+                ];
+                
+                // Try loading each possible file pattern
+                for (const pattern of filePatterns) {
+                    const data = await loadJSON(`data/${pattern}`);
+                    if (data) {
+                        // Extract the round table number from the filename
+                        const filenameNumber = pattern.replace('roundtable', '').replace('.json', '');
+                        console.log(`Found round table ${filenameNumber}`);
+                        
+                        // If the RT number isn't explicitly in the data, use the filename number
+                        const rtNumber = data.roundTableInfo.roundTableNumber || parseFloat(filenameNumber);
+                        
+                        roundTables.push({
+                            number: rtNumber,
+                            id: data.roundTableInfo.id,
+                            title: data.roundTableInfo.roundTableTitle,
+                            date: data.roundTableInfo.date,
+                            duration: data.roundTableInfo.duration,
+                            guests: data.roundTableInfo.guests,
+                            summary: data.discussionSummary?.keySummary,
+                            previousRoundTable: data.roundTableInfo.previousRoundTable,
+                            nextRoundTable: data.roundTableInfo.nextRoundTable,
+                            dataFile: pattern,
+                            routeInfo: data.routeInfo
+                        });
+                    }
+                }
+                
+                // Sort round tables by number (works for both integer and decimal numbers)
+                return roundTables.sort((a, b) => {
+                    // Proper comparison for decimal numbers like 1.1
+                    return parseFloat(a.number) - parseFloat(b.number);
+                });
+            }
+            
+            // Function to create graph data
+            function createGraphData(roundTables) {
+                // Create nodes for all round tables
+                const nodes = roundTables.map(rt => ({
+                    id: `rt-${rt.number}`,
+                    label: `RT ${rt.number}`,
+                    type: 'roundtable',
+                    data: rt,
+                    depth: calculateDepth(rt.number),
+                    route: determineRoute(rt.number)
+                }));
+                
+                // Routes - these are just connections, not visible nodes
+                const routes = [
+                    { id: 'route-a', label: 'Route A', nodes: [0, 1, 2] },
+                    { id: 'route-b', label: 'Route B', nodes: [0, 3, 4] },
+                    { id: 'route-c', label: 'Route C', nodes: [0, 5, 6] },
+                    { id: 'route-d', label: 'Route D', nodes: [0, 1, 3] },
+                    { id: 'route-e', label: 'Route E', nodes: [0, 2, 5] }
+                ];
+                
+                // Create links based on roundtable relationships
+                let links = [];
+                
+                // Only connect round tables in sequence and RT0 to main round tables
+                for (let i = 0; i < roundTables.length; i++) {
+                    const rt = roundTables[i];
+                    
+                    // If it's RT0, connect only to RT1 (not to all main round tables)
+                    if (rt.number === 0) {
+                        const rt1 = roundTables.find(t => t.number === 1);
+                        if (rt1) {
+                            links.push({
+                                source: `rt-${rt.number}`,
+                                target: `rt-${rt1.number}`,
+                                type: 'main'
+                            });
+                        }
+                    }
+                    
+                    // Connect to previous/next round table if it exists (for main sequence)
+                    if (!String(rt.number).includes('.') && rt.number > 0) { // Main round tables only
+                        // Connect to next main round table in sequence
+                        const nextMainRT = roundTables.find(next => 
+                            !String(next.number).includes('.') && // Not a fork
+                            next.number === rt.number + 1 // Next in sequence
+                        );
+                        
+                        if (nextMainRT) {
+                            links.push({
+                                source: `rt-${rt.number}`,
+                                target: `rt-${nextMainRT.number}`,
+                                type: 'sequence'
+                            });
+                        }
+                    }
+                    
+                    // Handle fork connections
+                    if (String(rt.number).includes('.')) {
+                        const parts = String(rt.number).split('.');
+                        
+                        // If it's a first-level fork (e.g., RT1.1), connect to its parent (RT1)
+                        if (parts.length === 2) {
+                            const parentNumber = parseInt(parts[0]);
+                            const parentRT = roundTables.find(p => p.number === parentNumber);
+                            
+                            if (parentRT) {
+                                links.push({
+                                    source: `rt-${parentRT.number}`,
+                                    target: `rt-${rt.number}`,
+                                    type: 'fork'
+                                });
+                            }
+                        } 
+                        // If it's a deeper fork (e.g., RT1.1.2), connect to its immediate parent (RT1.1)
+                        else if (parts.length > 2) {
+                            const parentNumber = parts.slice(0, parts.length - 1).join('.');
+                            const parentRT = roundTables.find(p => String(p.number) === parentNumber);
+                            
+                            if (parentRT) {
+                                links.push({
+                                    source: `rt-${parentRT.number}`,
+                                    target: `rt-${rt.number}`,
+                                    type: 'deepFork'
+                                });
+                            }
+                        }
+                    }
+                }
+                
+                return { nodes, links };
+            }
+            
+            // Helper function to calculate node depth based on round table number
+            function calculateDepth(number) {
+                // Special case for RT0 (center)
+                if (number === 0) return 0;
+                
+                // For fork round tables (with decimal)
+                if (String(number).includes('.')) {
+                    const parts = String(number).split('.');
+                    const mainNumber = parseInt(parts[0], 10);
+                    
+                    // Use the main number as depth
+                    // RT1.1 should be at depth 1, RT2.1 at depth 2, etc.
+                    return mainNumber;
+                }
+                
+                // For main round tables, depth = number
+                // RT1 at depth 1, RT2 at depth 2, RT3 at depth 3, etc.
+                return number;
+            }
+            
+            // Helper function to determine route
+            function determineRoute(number) {
+                // This is a simplified version - in a real implementation, 
+                // this would be based on actual route data
+                const routes = ['A', 'B', 'C', 'D', 'E'];
+                return routes[number % routes.length];
+            }
+            
+            try {
+                // Load all round tables
+                const roundTables = await findAllRoundTables();
+                
+                if (roundTables.length === 0) {
+                    throw new Error('No round tables found');
+                }
+                
+                // Create graph data
+                const graphData = createGraphData(roundTables);
+                
+                // Hide loading overlay
+                loadingOverlay.style.display = 'none';
+                
+                // Get SVG dimensions
+                const width = svg.node().getBoundingClientRect().width;
+                const height = svg.node().getBoundingClientRect().height;
+                const center = { x: width / 2, y: height / 2 };
+                
+                // Define depth radiuses - horizontal distances from center
+                const depthRadiuses = [];
+                const maxDepth = 7;  // Adjusted for RT7
+                
+                // Create horizontal distance for each depth level
+                const baseSpacing = width / (maxDepth * 2); // Dividing by maxDepth*2 to fit within screen
+                for (let i = 0; i <= maxDepth; i++) {
+                    depthRadiuses[i] = i === 0 ? 0 : baseSpacing * i;
+                }
+                
+                // Create zoom behavior
+                const zoom = d3.zoom()
+                    .scaleExtent([0.3, 4])
+                    .on('zoom', (event) => {
+                        g.attr('transform', event.transform);
+                    });
+                
+                svg.call(zoom);
+                
+                // Create SVG group for zoom
+                const g = svg.append('g');
+                
+                // Add arrow marker for directed edges
+                svg.append('defs').append('marker')
+                    .attr('id', 'arrowhead')
+                    .attr('viewBox', '-0 -5 10 10')
+                    .attr('refX', 18)
+                    .attr('refY', 0)
+                    .attr('orient', 'auto')
+                    .attr('markerWidth', 6)
+                    .attr('markerHeight', 6)
+                    .attr('xoverflow', 'visible')
+                    .append('svg:path')
+                    .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
+                    .attr('fill', '#aaa')
+                    .style('stroke', 'none');
+                
+                // Initialize the visualization
+                function initializeVisualization(graphData) {
+                    // Clear any existing visualization elements
+                    g.selectAll('*').remove();
+                    
+                    // Draw depth markers as vertical lines
+                    for (let i = 1; i <= maxDepth; i++) {
+                        // Draw a vertical line at each depth
+                        g.append('line')
+                            .attr('class', 'depth-line')
+                            .attr('x1', center.x + depthRadiuses[i])
+                            .attr('y1', center.y - 100) // Extend above
+                            .attr('x2', center.x + depthRadiuses[i])
+                            .attr('y2', center.y + 100) // Extend below
+                            .attr('stroke', '#ddd')
+                            .attr('stroke-width', 1)
+                            .attr('stroke-dasharray', '5,5');
+                        
+                        // Add depth label
+                        g.append('text')
+                            .attr('class', 'depth-label')
+                            .attr('x', center.x + depthRadiuses[i])
+                            .attr('y', center.y - 110)
+                            .attr('text-anchor', 'middle')
+                            .text(`Depth ${i}`);
+                    }
+                    
+                    // Position nodes in a linear horizontal layout
+                    graphData.nodes.forEach(node => {
+                        if (node.depth === 0) {
+                            // Place RT 0 at center
+                            node.x = center.x;
+                            node.y = center.y;
+                        } else if (node.x === undefined) {
+                            // Get node number and determine if it's a main table or fork
+                            let nodeNumber = node.data.number;
+                            let isFork = String(nodeNumber).includes('.');
+                            
+                            // For fork round tables (decimal numbering)
+                            if (isFork) {
+                                const parts = String(nodeNumber).split('.');
+                                const mainNumber = parseInt(parts[0], 10);
+                                const forkNumber = parseInt(parts[parts.length - 1], 10);
+                                
+                                // Position forks based on their parent's position
+                                // X position: Same as their parent table's depth
+                                const xDistance = depthRadiuses[mainNumber]; // Use parent's depth
+                                
+                                // Y position: Above or below parent based on fork number
+                                // Alternate fork positions above/below the X-axis
+                                const yOffset = forkNumber % 2 === 0 ? 50 * forkNumber/2 : -50 * Math.ceil(forkNumber/2);
+                                
+                                node.x = center.x + xDistance;
+                                node.y = center.y + yOffset;
+                            } else {
+                                // Main round tables - place them on the X-axis at their depth
+                                const distance = depthRadiuses[node.depth];
+                                node.x = center.x + distance; // Linear distance from center
+                                node.y = center.y; // All main tables on same Y-coordinate
+                            }
+                        }
+                    });
+                    
+                    // Draw links
+                    const link = g.selectAll('.link')
+                        .data(graphData.links)
+                        .enter()
+                        .append('path')
+                        .attr('class', 'link')
+                        .attr('d', d => {
+                            const source = graphData.nodes.find(n => n.id === d.source);
+                            const target = graphData.nodes.find(n => n.id === d.target);
+                            if (!source || !target) return '';
+                            
+                            // Different line styles based on connection type and orientation
+                            switch (d.type) {
+                                case 'main':
+                                    // Straight horizontal line from RT0 to RT1
+                                    return `M${source.x},${source.y}L${target.x},${target.y}`;
+                                    
+                                case 'sequence':
+                                    // Straight horizontal line for main sequence connections
+                                    return `M${source.x},${source.y}L${target.x},${target.y}`;
+                                    
+                                case 'fork':
+                                case 'deepFork':
+                                    // Curved line for fork connections
+                                    // Determine if fork is above or below the main axis
+                                    const isAbove = target.y < center.y;
+                                    const controlPointY = isAbove ? 
+                                        Math.min(source.y, target.y) - 30 : // Control point above both nodes
+                                        Math.max(source.y, target.y) + 30; // Control point below both nodes
+                                    
+                                    return `M${source.x},${source.y} Q${source.x + (target.x - source.x)/2},${controlPointY} ${target.x},${target.y}`;
+                                    
+                                default:
+                                    // Fallback - straight line
+                                    return `M${source.x},${source.y}L${target.x},${target.y}`;
+                            }
+                        })
+                        .attr('stroke', d => {
+                            // Get source and target nodes
+                            const source = graphData.nodes.find(n => n.id === d.source);
+                            const target = graphData.nodes.find(n => n.id === d.target);
+                            if (!source || !target) return '#aaa';
+                            
+                            // Different connection types
+                            switch (d.type) {
+                                case 'main': return '#3a86ff';  // Connections from RT0
+                                case 'sequence': return '#4a5568'; // Main sequence connections
+                                case 'fork': return '#4dabf7';  // First level fork connections
+                                case 'deepFork': return '#90cdf4'; // Deeper fork connections
+                                default: return '#aaa';
+                            }
+                        })
+                        .attr('stroke-width', d => {
+                            // Different widths for different connection types
+                            switch (d.type) {
+                                case 'main': return 2.5;      // From RT0 to main RTs
+                                case 'sequence': return 2;   // Between sequential RTs
+                                case 'fork': return 1.5;     // To first level forks
+                                case 'deepFork': return 1;   // To deeper forks
+                                default: return 1.5;
+                            }
+                        })
+                        .attr('stroke-dasharray', d => {
+                            // Dashed lines for deep forks only
+                            return d.type === 'deepFork' ? '3,3' : '0';
+                        });
+                    
+                    // Draw nodes
+                    const node = g.selectAll('.node')
+                        .data(graphData.nodes)
+                        .enter()
+                        .append('g')
+                        .attr('class', 'node-group')
+                        .attr('transform', d => `translate(${d.x},${d.y})`)
+                        .on('click', function(event, d) {
+                            event.stopPropagation();
+                            showNodeDetails(d);
+                        })
+                        .on('mouseover', function(event, d) {
+                            showTooltip(event, d);
+                        })
+                        .on('mousemove', function(event) {
+                            // Update tooltip position
+                            tooltip
+                                .style('left', (event.pageX + 15) + 'px')
+                                .style('top', (event.pageY - 30) + 'px');
+                        })
+                        .on('mouseout', function() {
+                            hideTooltip();
+                        });
+                    
+                    // Add node circles
+                    node.append('circle')
+                        .attr('class', 'node')
+                        .attr('r', d => {
+                            // Make RT0 largest, make forks slightly smaller than main tables
+                            if (d.data.number === 0) return 30;
+                            const isFork = String(d.data.number).includes('.');
+                            return isFork ? 18 : 22;  // Smaller for forks, larger for main tables
+                        })
+                        .attr('fill', d => {
+                            // Special coloring for RT0, different colors for main tables vs forks
+                            if (d.data.number === 0) return '#3a86ff';
+                            const isFork = String(d.data.number).includes('.');
+                            return isFork ? '#4dabf7' : '#3a86ff';  // Lighter blue for forks
+                        })
+                        .attr('stroke-width', d => {
+                            // Thicker border for main tables
+                            const isFork = String(d.data.number).includes('.');
+                            return isFork ? 1.5 : 2.5;  // Thinner for forks
+                        });
+                    
+                    // Add text labels
+                    node.append('text')
+                        .attr('dy', -45) // Increased the vertical distance from -35 to -45
+                        .attr('text-anchor', 'middle')
+                        .attr('fill', '#333')
+                        .attr('font-weight', d => {
+                            // Bold for RT0 and main roundtables, normal for forks
+                            if (d.data.number === 0) return 'bold';
+                            return String(d.data.number).includes('.') ? 'normal' : 'semi-bold';
+                        })
+                        .attr('font-size', d => {
+                            // Larger font for RT0, smaller for deep forks
+                            if (d.data.number === 0) return '20px';
+                            if (String(d.data.number).includes('.')) {
+                                const forkLevel = String(d.data.number).split('.').length - 1;
+                                return forkLevel > 1 ? '14px' : '16px';
+                            }
+                            return '18px';
+                        })
+                        .attr('background', 'white')
+                        .attr('paint-order', 'stroke')
+                        .attr('stroke', 'white')
+                        .attr('stroke-width', '4px')
+                        .attr('stroke-linecap', 'butt')
+                        .attr('stroke-linejoin', 'miter')
+                        .text(d => {
+                            // Show the full round table number
+                            return `RT ${d.data.number}`;
+                        });
+                }
+                
+                // Initial visualization
+                initializeVisualization(graphData);
+                
+                // Set up zoom control buttons
+                document.getElementById('zoomIn').addEventListener('click', () => {
+                    svg.transition().call(zoom.scaleBy, 1.3);
+                });
+                
+                document.getElementById('zoomOut').addEventListener('click', () => {
+                    svg.transition().call(zoom.scaleBy, 0.7);
+                });
+                
+                document.getElementById('resetView').addEventListener('click', () => {
+                    svg.transition().call(zoom.transform, d3.zoomIdentity.translate(0, 0).scale(1));
+                });
+                
+                // Add a refresh button to detect new files
+                document.getElementById('refreshView').addEventListener('click', async () => {
+                    loadingOverlay.style.display = 'block';
+                    try {
+                        // Re-fetch all round tables
+                        const updatedRoundTables = await findAllRoundTables();
+                        
+                        // Rebuild the visualization with updated data
+                        const updatedGraphData = createGraphData(updatedRoundTables);
+                        initializeVisualization(updatedGraphData);
+                        
+                        // Show notification
+                        const notification = document.createElement('div');
+                        notification.className = 'notification';
+                        notification.innerHTML = `<p>Updated! Found ${updatedRoundTables.length} round tables.</p>`;
+                        document.body.appendChild(notification);
+                        
+                        // Remove notification after 3 seconds
+                        setTimeout(() => {
+                            notification.style.opacity = '0';
+                            setTimeout(() => notification.remove(), 500);
+                        }, 3000);
+                    } catch (error) {
+                        console.error('Error refreshing data:', error);
+                    } finally {
+                        loadingOverlay.style.display = 'none';
+                    }
+                });
+                
+                // Show tooltip
+                function showTooltip(event, d) {
+                    let html = `<h3>${d.label}</h3>`;
+                    
+                    if (d.data) {
+                        html += `<p>${d.data.title}</p>`;
+                        
+                        // Add lineage information for fork round tables
+                        if (String(d.data.number).includes('.')) {
+                            const parts = String(d.data.number).split('.');
+                            if (parts.length > 1) {
+                                let lineage = "Lineage: ";
+                                let parentNumber = parts[0];
+                                lineage += `RT${parentNumber}`;
+                                
+                                for (let i = 1; i < parts.length - 1; i++) {
+                                    parentNumber += '.' + parts[i];
+                                    lineage += ` → RT${parentNumber}`;
+                                }
+                                
+                                html += `<p><em>${lineage}</em></p>`;
+                            }
+                        }
+                        
+                        if (d.data.summary) {
+                            html += `<p>${d.data.summary.substring(0, 100)}...</p>`;
+                        }
+                    }
+                    
+                    tooltip.html(html)
+                        .style('left', (event.pageX + 15) + 'px')
+                        .style('top', (event.pageY - 30) + 'px')
+                        .style('opacity', 1);
+                }
+                
+                // Hide tooltip
+                function hideTooltip() {
+                    tooltip.style('opacity', 0);
+                }
+                
+                // Show node details in panel
+                function showNodeDetails(d) {
+                    // Show details for round tables
+                    if (!d.data) {
+                        return;
+                    }
+                    
+                    const panel = document.getElementById('detailPanel');
+                    const title = document.getElementById('detailTitle');
+                    const description = document.getElementById('detailDescription');
+                    const date = document.getElementById('detailDate');
+                    const duration = document.getElementById('detailDuration');
+                    const participants = document.getElementById('detailParticipants');
+                    const link = document.getElementById('detailLink');
+                    
+                    title.textContent = `Round Table ${d.data.number}: ${d.data.title}`;
+                    description.textContent = d.data.summary || 'No description available';
+                    date.textContent = d.data.date || 'Unknown';
+                    duration.textContent = d.data.duration || 'Unknown';
+                    
+                    // Clear previous participants
+                    participants.innerHTML = '';
+                    
+                    // Add participants
+                    if (d.data.guests && d.data.guests.length > 0) {
+                        d.data.guests.forEach(guest => {
+                            const div = document.createElement('div');
+                            div.className = 'participant';
+                            div.innerHTML = `
+                                <img src="${guest.avatar}" alt="${guest.name}">
+                                <span>${guest.name} (${guest.role})</span>
+                            `;
+                            participants.appendChild(div);
+                        });
+                    } else {
+                        participants.innerHTML = '<p>No participants information available</p>';
+                    }
+                    
+                    // Set link
+                    link.href = `roundtable.html?roundTable=${d.data.number}`;
+                    
+                    // Show panel
+                    panel.style.display = 'block';
+                }
+                
+                // Set up zoom control buttons
+                document.getElementById('zoomIn').addEventListener('click', () => {
+                    svg.transition().call(zoom.scaleBy, 1.3);
+                });
+                
+                document.getElementById('zoomOut').addEventListener('click', () => {
+                    svg.transition().call(zoom.scaleBy, 0.7);
+                });
+                
+                document.getElementById('resetView').addEventListener('click', () => {
+                    svg.transition().call(zoom.transform, d3.zoomIdentity.translate(0, 0).scale(1));
+                });
+                
+                // Initialize visualization
+                initializeVisualization(graphData);
+                
+                // Add a refresh button to detect new files
+                
+            } catch (error) {
+                console.error('Error setting up the route map:', error);
+                loadingOverlay.style.display = 'none';
+                
+                // Show error message
+                svg.append('text')
+                    .attr('x', svg.node().getBoundingClientRect().width / 2)
+                    .attr('y', svg.node().getBoundingClientRect().height / 2)
+                    .attr('text-anchor', 'middle')
+                    .attr('fill', '#d32f2f')
+                    .text('Error loading route map. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html>
