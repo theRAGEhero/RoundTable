@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Round Table Viewer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column;
+        }
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3a86ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hidden {
+            display: none;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        h1, h2, h3 {
+            color: #3a86ff;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .btn {
+            padding: 8px 15px;
+            background-color: #3a86ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #2667cc;
+        }
+    </style>
+</head>
+<body>
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Loading round table data...</p>
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <h1 id="title">Simple Round Table Viewer</h1>
+            <h2 id="roundTableTitle">Loading...</h2>
+            
+            <div id="content">
+                <p>Loading content...</p>
+            </div>
+            
+            <a href="index.html" class="btn">Back to List</a>
+        </div>
+    </div>
+    
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded');
+            
+            // Get round table from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const roundTable = urlParams.get('roundTable') || '6';
+            
+            console.log('Loading round table:', roundTable);
+            
+            // Load the data
+            fetch(`data/roundtable${roundTable}.json`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Data loaded:', data);
+                    
+                    // Update the page
+                    document.getElementById('title').textContent = data.routeInfo.routeTitle;
+                    document.getElementById('roundTableTitle').textContent = 
+                        `Round Table ${data.roundTableInfo.roundTableNumber}: ${data.roundTableInfo.roundTableTitle}`;
+                    
+                    // Show some content
+                    const contentDiv = document.getElementById('content');
+                    contentDiv.innerHTML = `
+                        <h3>Summary</h3>
+                        <p>${data.discussionSummary.keySummary}</p>
+                        
+                        <h3>Participants</h3>
+                        <ul>
+                            ${data.roundTableInfo.guests.map(g => `<li>${g.name} - ${g.role}</li>`).join('')}
+                        </ul>
+                        
+                        <h3>Data Preview</h3>
+                        <pre>${JSON.stringify(data, null, 2).substring(0, 500)}...</pre>
+                    `;
+                    
+                    // Hide loading overlay
+                    document.getElementById('loadingOverlay').classList.add('hidden');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    
+                    // Show error in the content area
+                    document.getElementById('content').innerHTML = `
+                        <h3>Error Loading Data</h3>
+                        <p>There was a problem loading the round table data:</p>
+                        <pre>${error.message}</pre>
+                        <p>Please check your console for more details.</p>
+                    `;
+                    
+                    // Hide loading overlay
+                    document.getElementById('loadingOverlay').classList.add('hidden');
+                });
+        });
+    </script>
+</body>
+</html>

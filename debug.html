@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Round Table</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .card {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            margin-top: 0;
+            color: #3a86ff;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .btn {
+            padding: 10px 15px;
+            background-color: #3a86ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .btn:hover {
+            background-color: #2667cc;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        #loader {
+            display: none;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3a86ff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Round Table Debugger</h2>
+        <p>This tool helps test and debug the Round Table application.</p>
+        
+        <div>
+            <button class="btn" onclick="testDataFiles()">Check Data Files</button>
+            <button class="btn" onclick="testTranscriptFiles()">Check Transcript Files</button>
+            <button class="btn" onclick="testRoundtableHtml()">Check Roundtable HTML</button>
+        </div>
+        
+        <div id="loader">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+        
+        <div id="results">
+            <p>Click a button above to start testing.</p>
+        </div>
+    </div>
+    
+    <script>
+        async function testDataFiles() {
+            showLoader();
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<h3>Checking Data Files</h3>';
+            
+            const files = ['roundtable5.json', 'roundtable6.json', 'roundtable7.json'];
+            
+            for (const file of files) {
+                try {
+                    const response = await fetch(`data/${file}`);
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        resultsDiv.innerHTML += `<p class="success">✓ ${file} - Found and valid JSON</p>`;
+                        
+                        // Display some key info
+                        resultsDiv.innerHTML += `<pre>${JSON.stringify({
+                            route: data.routeInfo.routeTitle,
+                            roundTableNumber: data.roundTableInfo.roundTableNumber,
+                            roundTableTitle: data.roundTableInfo.roundTableTitle,
+                            guests: data.roundTableInfo.guests.map(g => g.name)
+                        }, null, 2)}</pre>`;
+                    } else {
+                        resultsDiv.innerHTML += `<p class="error">✗ ${file} - HTTP error: ${response.status}</p>`;
+                    }
+                } catch (error) {
+                    resultsDiv.innerHTML += `<p class="error">✗ ${file} - Error: ${error.message}</p>`;
+                }
+            }
+            
+            hideLoader();
+        }
+        
+        async function testTranscriptFiles() {
+            showLoader();
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<h3>Checking Transcript Files</h3>';
+            
+            const files = [
+                'transcripts/Josef.Lentsch.full.transcription.txt',
+                'transcripts/Lukas.Salecker.full.transcription.txt',
+                'transcripts/placeholder.txt'
+            ];
+            
+            for (const file of files) {
+                try {
+                    const response = await fetch(file);
+                    
+                    if (response.ok) {
+                        const text = await response.text();
+                        const preview = text.substring(0, 100) + '...';
+                        resultsDiv.innerHTML += `<p class="success">✓ ${file} - Found</p>`;
+                        resultsDiv.innerHTML += `<pre>${preview}</pre>`;
+                    } else {
+                        resultsDiv.innerHTML += `<p class="error">✗ ${file} - HTTP error: ${response.status}</p>`;
+                    }
+                } catch (error) {
+                    resultsDiv.innerHTML += `<p class="error">✗ ${file} - Error: ${error.message}</p>`;
+                }
+            }
+            
+            hideLoader();
+        }
+        
+        async function testRoundtableHtml() {
+            showLoader();
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<h3>Checking Roundtable HTML</h3>';
+            
+            try {
+                const response = await fetch('roundtable.html');
+                
+                if (response.ok) {
+                    const html = await response.text();
+                    resultsDiv.innerHTML += `<p class="success">✓ roundtable.html found</p>`;
+                    
+                    // Check for key elements
+                    const checks = [
+                        {
+                            name: 'Loading Overlay',
+                            regex: /id=['"]loadingOverlay['"]/
+                        },
+                        {
+                            name: 'Script Reference',
+                            regex: /src=['"]assets\/script.js['"]/
+                        },
+                        {
+                            name: 'CSS Reference',
+                            regex: /href=['"]assets\/styles.css['"]/
+                        }
+                    ];
+                    
+                    for (const check of checks) {
+                        if (check.regex.test(html)) {
+                            resultsDiv.innerHTML += `<p class="success">✓ ${check.name} found</p>`;
+                        } else {
+                            resultsDiv.innerHTML += `<p class="error">✗ ${check.name} not found</p>`;
+                        }
+                    }
+                    
+                    // Add direct link to test
+                    resultsDiv.innerHTML += `<p>Test links:</p>`;
+                    resultsDiv.innerHTML += `<a href="roundtable.html?roundTable=5" target="_blank" class="btn">Test Round Table 5</a>`;
+                    resultsDiv.innerHTML += `<a href="roundtable.html?roundTable=6" target="_blank" class="btn">Test Round Table 6</a>`;
+                    resultsDiv.innerHTML += `<a href="roundtable.html?roundTable=7" target="_blank" class="btn">Test Round Table 7</a>`;
+                } else {
+                    resultsDiv.innerHTML += `<p class="error">✗ roundtable.html - HTTP error: ${response.status}</p>`;
+                }
+            } catch (error) {
+                resultsDiv.innerHTML += `<p class="error">✗ roundtable.html - Error: ${error.message}</p>`;
+            }
+            
+            hideLoader();
+        }
+        
+        function showLoader() {
+            document.getElementById('loader').style.display = 'block';
+        }
+        
+        function hideLoader() {
+            document.getElementById('loader').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
