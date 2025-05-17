@@ -170,8 +170,7 @@ function displayRoundTable(data) {
     // Display highlights
     displayHighlights(data.discussionSummary.highlights);
     
-    // Display resources
-    displayResources(data.relatedResources);
+    // Resources section removed as requested
     
     // Set up navigation
     setupNavigation(data.roundTableInfo.previousRoundTable, data.roundTableInfo.nextRoundTable);
@@ -206,7 +205,7 @@ function updateVideo(videoUrl) {
                 width="100%" 
                 height="315" 
                 src="${videoUrl}" 
-                title="Democracy Innovators Round Table" 
+                title="Democracy Routes Round Table" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -272,33 +271,10 @@ function displayHighlights(highlights) {
     }
 }
 
-// Display resources
+// Display resources function removed as requested
 function displayResources(resources) {
-    const resourcesList = document.getElementById('resourcesList');
-    if (resourcesList) {
-        resourcesList.innerHTML = '';
-        resources.forEach(resource => {
-            let icon = 'fas fa-link';
-            if (resource.type === 'website') icon = 'fas fa-globe';
-            if (resource.type === 'organization') icon = 'fas fa-building';
-            if (resource.type === 'research') icon = 'fas fa-file-alt';
-            if (resource.type === 'platform') icon = 'fas fa-desktop';
-            if (resource.type === 'event') icon = 'fas fa-calendar-alt';
-            if (resource.type === 'book') icon = 'fas fa-book';
-            if (resource.type === 'resource') icon = 'fas fa-book-open';
-            if (resource.type === 'education') icon = 'fas fa-graduation-cap';
-            
-            const element = document.createElement('li');
-            element.innerHTML = `
-                <a href="${resource.url}" target="_blank">
-                    <i class="${icon}"></i>
-                    ${resource.title}
-                    <span class="resource-type">${resource.type}</span>
-                </a>
-            `;
-            resourcesList.appendChild(element);
-        });
-    }
+    // Function intentionally left empty as related resources have been removed
+    return;
 }
 
 // Set up navigation
@@ -540,7 +516,7 @@ function generateResponse(message, data) {
     }
     
     if (host && (message.includes(host.name.toLowerCase()) || message.includes('host'))) {
-        return `${host.name} is the host of the Democracy Innovators series. In this Round Table, he explores key themes in democratic innovation and digital civic engagement.`;
+        return `${host.name} is the host of the Democracy Routes series. In this Round Table, he explores key themes in democratic innovation and digital civic engagement.`;
     }
     
     if (guest && (message.includes(guest.name.toLowerCase()))) {
@@ -552,7 +528,7 @@ function generateResponse(message, data) {
     }
     
     if (message.includes('hello') || message.includes('hi ') || message === 'hi') {
-        return `Hello! I'm the Democracy Innovators AI assistant. How can I help you explore Round Table ${data.roundTableInfo.roundTableNumber}?`;
+        return `Hello! I'm the Democracy Routes AI assistant. How can I help you explore Round Table ${data.roundTableInfo.roundTableNumber}?`;
     }
     
     // Default response

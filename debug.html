@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoundTable Debug</title>
+    <title>Democracy Routes - Debug</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/nav.css">
     <style>
         body {
             font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
@@ -11,6 +13,10 @@
             max-width: 1200px;
             margin: 0 auto;
             line-height: 1.6;
+        }
+        .main-content {
+            padding: 20px;
+            margin-top: 20px;
         }
         h1 {
             color: #3a86ff;
@@ -94,27 +100,45 @@
         .btn:hover {
             background-color: #2970d6;
         }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            border-top: 1px solid #e9ecef;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
-    <h1>RoundTable Project Debug</h1>
+    <!-- Common header will be loaded here -->
     
-    <div id="loading" class="loading">
-        <div class="spinner"></div>
-        <span>Loading round table data...</span>
+    <div class="main-content">
+        <h1>Democracy Routes - Debug</h1>
+        
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <span>Loading round table data...</span>
+        </div>
+        
+        <div id="content" style="display: none;">
+            <h2>Found Round Tables</h2>
+            <div id="roundTables"></div>
+            
+            <h2>Navigation Test</h2>
+            <div id="navigation"></div>
+            
+            <h2>Transcript Files</h2>
+            <div id="transcripts"></div>
+        </div>
     </div>
     
-    <div id="content" style="display: none;">
-        <h2>Found Round Tables</h2>
-        <div id="roundTables"></div>
-        
-        <h2>Navigation Test</h2>
-        <div id="navigation"></div>
-        
-        <h2>Transcript Files</h2>
-        <div id="transcripts"></div>
-    </div>
+    <footer>
+        &copy; 2025 Democracy Routes. All rights reserved.
+    </footer>
     
+    <script src="assets/header-loader.js"></script>
+    <script src="assets/navigation.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', async function() {
             try {

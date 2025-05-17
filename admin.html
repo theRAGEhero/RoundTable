@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Round Table</title>
+    <title>Admin - Democracy Routes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/nav.css">
     <style>
         :root {
             --primary-color: #3a86ff;
@@ -41,12 +42,11 @@
             line-height: 1.6;
             color: var(--gray-800);
             background-color: var(--gray-100);
-            padding: 20px;
         }
 
-        .container {
+        .admin-container {
             max-width: 1000px;
-            margin: 0 auto;
+            margin: 2rem auto;
             background-color: white;
             padding: 30px;
             border-radius: var(--border-radius);
@@ -277,10 +277,21 @@
         .submit-button:hover {
             background-color: #2d9000;
         }
+        
+        footer {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            border-top: 1px solid #e9ecef;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- Common header will be loaded here -->
+    
+    <div class="admin-container">
         <h1>Add New Round Table</h1>
         
         <div class="success-message" id="successMessage">
@@ -300,7 +311,7 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="routeTitle">Route Title</label>
-                            <input type="text" id="routeTitle" name="routeTitle" value="Democracy Innovators" required>
+                            <input type="text" id="routeTitle" name="routeTitle" value="Democracy Routes" required>
                         </div>
                         <div class="form-group">
                             <label for="totalRoundTables">Total Round Tables in Route</label>
@@ -464,40 +475,6 @@
                 </div>
                 
                 <div class="form-section">
-                    <h2>Related Resources</h2>
-                    <div class="dynamic-list" id="resourcesList">
-                        <div class="dynamic-item resource-item">
-                            <button type="button" class="remove-item"><i class="fas fa-times"></i></button>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label>Title</label>
-                                    <input type="text" name="resourceTitle" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Type</label>
-                                    <select name="resourceType">
-                                        <option value="website">Website</option>
-                                        <option value="organization">Organization</option>
-                                        <option value="research">Research</option>
-                                        <option value="platform">Platform</option>
-                                        <option value="event">Event</option>
-                                        <option value="book">Book</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>URL</label>
-                                <input type="url" name="resourceUrl" required>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <button type="button" class="add-item" id="addResource">
-                        <i class="fas fa-plus"></i> Add Resource
-                    </button>
-                </div>
-                
-                <div class="form-section">
                     <h2>Blockchain Verification</h2>
                     <div class="form-row">
                         <div class="form-group">
@@ -568,6 +545,12 @@
         </div>
     </div>
     
+    <footer>
+        &copy; 2025 Democracy Routes. All rights reserved.
+    </footer>
+    
+    <script src="assets/header-loader.js"></script>
+    <script src="assets/navigation.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize date inputs with current date
@@ -634,25 +617,6 @@
                 }
                 
                 highlightsList.appendChild(newHighlight);
-            });
-            
-            // Add resource
-            document.getElementById('addResource').addEventListener('click', function() {
-                const resourcesList = document.getElementById('resourcesList');
-                const newResource = resourcesList.querySelector('.resource-item:last-child').cloneNode(true);
-                
-                // Clear values
-                newResource.querySelectorAll('input').forEach(input => input.value = '');
-                
-                // Set up remove button
-                const removeBtn = newResource.querySelector('.remove-item');
-                if (removeBtn) {
-                    removeBtn.addEventListener('click', function() {
-                        resourcesList.removeChild(newResource);
-                    });
-                }
-                
-                resourcesList.appendChild(newResource);
             });
             
             // Init remove buttons
@@ -744,7 +708,7 @@
                         <iframe 
                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
                             src="${data.mediaInfo.videoUrl}" 
-                            title="Democracy Innovators Round Table" 
+                            title="Democracy Routes Round Table" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -780,7 +744,7 @@
                 
                 // Route info
                 const routeInfo = {
-                    routeId: "democracy-innovators",
+                    routeId: "democracy-routes",
                     routeTitle: document.getElementById('routeTitle').value,
                     totalRoundTables: parseInt(document.getElementById('totalRoundTables').value),
                     description: document.getElementById('routeDescription').value
@@ -857,23 +821,6 @@
                     }
                 });
                 
-                // Related resources
-                const relatedResources = [];
-                const resourceItems = document.querySelectorAll('.resource-item');
-                resourceItems.forEach(item => {
-                    const title = item.querySelector('[name="resourceTitle"]').value;
-                    const type = item.querySelector('[name="resourceType"]').value;
-                    const url = item.querySelector('[name="resourceUrl"]').value;
-                    
-                    if (title && url) {
-                        relatedResources.push({
-                            title,
-                            url,
-                            type
-                        });
-                    }
-                });
-                
                 // Media info
                 const mediaInfo = {
                     videoUrl: document.getElementById('videoUrl').value,
@@ -891,7 +838,6 @@
                     routeInfo,
                     roundTableInfo,
                     discussionSummary,
-                    relatedResources,
                     mediaInfo,
                     blockchainRecord
                 };

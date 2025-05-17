@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         if (roundTables.length === 0) {
             container.innerHTML = `
-                <h1>Democracy Innovators</h1>
+                <h1>Democracy Routes</h1>
                 <p>No round tables found. Please check that the data files exist in the data folder.</p>
             `;
             return;
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     } catch (error) {
         console.error('Error loading round tables:', error);
         container.innerHTML = `
-            <h1>Democracy Innovators</h1>
+            <h1>Democracy Routes</h1>
             <p>An error occurred while loading round tables. Please try again later.</p>
             <p>Error: ${error.message}</p>
         `;
