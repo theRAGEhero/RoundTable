@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Round Table</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3a86ff;
+            --primary-dark: #2667cc;
+            --secondary-color: #ff006e;
+            --accent-color: #8338ec;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #adb5bd;
+            --gray-600: #6c757d;
+            --gray-700: #495057;
+            --gray-800: #343a40;
+            --gray-900: #212529;
+            --success-color: #38b000;
+            --warning-color: #ffbe0b;
+            --error-color: #d90429;
+            --border-radius: 8px;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: var(--gray-100);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--gray-200);
+            padding-bottom: 20px;
+        }
+
+        .form-section h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .form-row {
+            display: flex;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--gray-300);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        textarea.transcript {
+            min-height: 300px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color var(--transition-speed);
+        }
+
+        button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .dynamic-list {
+            margin-bottom: 15px;
+        }
+
+        .dynamic-item {
+            background-color: var(--gray-100);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: var(--border-radius);
+            position: relative;
+        }
+
+        .remove-item {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--error-color);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .add-item {
+            background-color: var(--success-color);
+            margin-bottom: 20px;
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            display: none;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--gray-300);
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-right: 10px;
+        }
+
+        .tab.active {
+            border-bottom: 3px solid var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .preview-container {
+            background-color: var(--gray-100);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+        }
+
+        .preview-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .preview-title {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .preview-subtitle {
+            color: var(--gray-600);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .preview-content {
+            margin-bottom: 15px;
+        }
+
+        .participants-preview {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .participant-card {
+            background-color: var(--gray-100);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            width: 220px;
+        }
+
+        .participant-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .preview-json {
+            background-color: var(--gray-100);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-family: monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .secondary-button {
+            background-color: var(--gray-500);
+        }
+
+        .secondary-button:hover {
+            background-color: var(--gray-600);
+        }
+
+        .submit-button {
+            background-color: var(--success-color);
+        }
+
+        .submit-button:hover {
+            background-color: #2d9000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Round Table</h1>
+        
+        <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i> Round Table content saved successfully! Check the TEMP folder for the generated files.
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="form">Input Form</div>
+            <div class="tab" data-tab="preview">Preview</div>
+            <div class="tab" data-tab="json">JSON</div>
+        </div>
+        
+        <div class="tab-content active" id="formTab">
+            <form id="roundTableForm">
+                <div class="form-section">
+                    <h2>Route Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="routeTitle">Route Title</label>
+                            <input type="text" id="routeTitle" name="routeTitle" value="Democracy Innovators" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="totalRoundTables">Total Round Tables in Route</label>
+                            <input type="number" id="totalRoundTables" name="totalRoundTables" value="10" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="routeDescription">Route Description</label>
+                        <textarea id="routeDescription" name="routeDescription">Exploring innovative approaches to strengthen democracy in the digital age.</textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Round Table Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="roundTableNumber">Round Table Number</label>
+                            <input type="number" id="roundTableNumber" name="roundTableNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="roundTableTitle">Round Table Title</label>
+                            <input type="text" id="roundTableTitle" name="roundTableTitle" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="roundTableDate">Date</label>
+                            <input type="date" id="roundTableDate" name="roundTableDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="roundTableDuration">Duration (MM:SS)</label>
+                            <input type="text" id="roundTableDuration" name="roundTableDuration" placeholder="46:53" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Participants</h2>
+                    <div class="dynamic-list" id="participantsList">
+                        <!-- Host -->
+                        <div class="dynamic-item participant-item">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" name="participantName" value="Alessandro Oppo" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Role</label>
+                                    <input type="text" name="participantRole" value="Host" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Wallet ID</label>
+                                    <input type="text" name="participantWalletId" value="0x7a58c0d3e5F8af12eB234cBbC4">
+                                </div>
+                                <div class="form-group">
+                                    <label>Avatar URL</label>
+                                    <input type="text" name="participantAvatar" value="https://randomuser.me/api/portraits/men/32.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Guest (will be duplicated by the Add Participant button) -->
+                        <div class="dynamic-item participant-item">
+                            <button type="button" class="remove-item"><i class="fas fa-times"></i></button>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" name="participantName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Role</label>
+                                    <input type="text" name="participantRole" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Wallet ID</label>
+                                    <input type="text" name="participantWalletId" placeholder="0x...">
+                                </div>
+                                <div class="form-group">
+                                    <label>Avatar URL</label>
+                                    <input type="text" name="participantAvatar" placeholder="https://example.com/avatar.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="add-item" id="addParticipant">
+                        <i class="fas fa-plus"></i> Add Participant
+                    </button>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Media & Transcript</h2>
+                    <div class="form-group">
+                        <label for="videoUrl">YouTube Video URL</label>
+                        <input type="text" id="videoUrl" name="videoUrl" placeholder="https://www.youtube.com/embed/..." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="transcript">Full Transcript</label>
+                        <textarea id="transcript" name="transcript" class="transcript" placeholder="Paste the full transcript here..." required></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Navigation</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prevRoundTableNumber">Previous Round Table Number</label>
+                            <input type="number" id="prevRoundTableNumber" name="prevRoundTableNumber">
+                        </div>
+                        <div class="form-group">
+                            <label for="prevRoundTableTitle">Previous Round Table Title</label>
+                            <input type="text" id="prevRoundTableTitle" name="prevRoundTableTitle">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nextRoundTableNumber">Next Round Table Number</label>
+                            <input type="number" id="nextRoundTableNumber" name="nextRoundTableNumber">
+                        </div>
+                        <div class="form-group">
+                            <label for="nextRoundTableTitle">Next Round Table Title</label>
+                            <input type="text" id="nextRoundTableTitle" name="nextRoundTableTitle">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Discussion Summary</h2>
+                    <div class="form-group">
+                        <label for="previousSummary">Previous Discussion Summary</label>
+                        <textarea id="previousSummary" name="previousSummary" placeholder="Summary of the previous round table..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="keySummary">Key Insights</label>
+                        <textarea id="keySummary" name="keySummary" placeholder="Key insights from this round table..."></textarea>
+                    </div>
+                    
+                    <h3>Discussion Highlights</h3>
+                    <div class="dynamic-list" id="highlightsList">
+                        <div class="dynamic-item highlight-item">
+                            <button type="button" class="remove-item"><i class="fas fa-times"></i></button>
+                            <div class="form-group">
+                                <label>Topic</label>
+                                <input type="text" name="highlightTopic" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Content</label>
+                                <textarea name="highlightContent" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="add-item" id="addHighlight">
+                        <i class="fas fa-plus"></i> Add Highlight
+                    </button>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Related Resources</h2>
+                    <div class="dynamic-list" id="resourcesList">
+                        <div class="dynamic-item resource-item">
+                            <button type="button" class="remove-item"><i class="fas fa-times"></i></button>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" name="resourceTitle" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Type</label>
+                                    <select name="resourceType">
+                                        <option value="website">Website</option>
+                                        <option value="organization">Organization</option>
+                                        <option value="research">Research</option>
+                                        <option value="platform">Platform</option>
+                                        <option value="event">Event</option>
+                                        <option value="book">Book</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>URL</label>
+                                <input type="url" name="resourceUrl" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="add-item" id="addResource">
+                        <i class="fas fa-plus"></i> Add Resource
+                    </button>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Blockchain Verification</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="blockchainHash">Transaction Hash</label>
+                            <input type="text" id="blockchainHash" name="blockchainHash" value="0x7f2e3d4c5b6a7890abcdef1234567890abcdef12">
+                        </div>
+                        <div class="form-group">
+                            <label for="blockchainTimestamp">Timestamp</label>
+                            <input type="datetime-local" id="blockchainTimestamp" name="blockchainTimestamp">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="verificationUrl">Verification URL</label>
+                        <input type="url" id="verificationUrl" name="verificationUrl" value="https://etherscan.io/tx/0x7f2e3d4c5b6a7890abcdef1234567890abcdef12">
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <button type="button" class="secondary-button" id="previewButton">Preview</button>
+                    <button type="submit" class="submit-button">Save Round Table</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="tab-content" id="previewTab">
+            <div class="preview-container">
+                <div class="preview-card">
+                    <h2 class="preview-title" id="previewTitle">Round Table Title</h2>
+                    <div class="preview-subtitle" id="previewSubtitle">Round Table #</div>
+                    
+                    <div class="preview-content">
+                        <h3>Summary</h3>
+                        <p id="previewSummary">Loading summary...</p>
+                    </div>
+                    
+                    <div class="preview-content">
+                        <h3>Participants</h3>
+                        <div class="participants-preview" id="previewParticipants"></div>
+                    </div>
+                    
+                    <div class="preview-content">
+                        <h3>Video</h3>
+                        <div id="previewVideo"></div>
+                    </div>
+                    
+                    <div class="preview-content">
+                        <h3>Highlights</h3>
+                        <div id="previewHighlights"></div>
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <button type="button" class="secondary-button" id="backToFormButton">Back to Form</button>
+                    <button type="button" class="submit-button" id="saveFromPreviewButton">Save Round Table</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="jsonTab">
+            <div class="preview-container">
+                <pre class="preview-json" id="jsonPreview">Loading...</pre>
+                
+                <div class="buttons">
+                    <button type="button" class="secondary-button" id="backToFormFromJsonButton">Back to Form</button>
+                    <button type="button" class="submit-button" id="saveFromJsonButton">Save Round Table</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize date inputs with current date
+            const today = new Date();
+            document.getElementById('roundTableDate').value = today.toISOString().substring(0, 10);
+            document.getElementById('blockchainTimestamp').value = today.toISOString().substring(0, 16);
+            
+            // Tab switching
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    
+                    // If switching to preview or JSON, generate content
+                    if (tabId === 'preview') {
+                        generatePreview();
+                    } else if (tabId === 'json') {
+                        generateJsonPreview();
+                    }
+                    
+                    // Update active tab
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Show selected tab content
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    document.getElementById(tabId + 'Tab').classList.add('active');
+                });
+            });
+            
+            // Add participant
+            document.getElementById('addParticipant').addEventListener('click', function() {
+                const participantsList = document.getElementById('participantsList');
+                const newParticipant = participantsList.querySelector('.participant-item:last-child').cloneNode(true);
+                
+                // Clear values
+                newParticipant.querySelectorAll('input').forEach(input => input.value = '');
+                
+                // Set up remove button
+                const removeBtn = newParticipant.querySelector('.remove-item');
+                if (removeBtn) {
+                    removeBtn.addEventListener('click', function() {
+                        participantsList.removeChild(newParticipant);
+                    });
+                }
+                
+                participantsList.appendChild(newParticipant);
+            });
+            
+            // Add highlight
+            document.getElementById('addHighlight').addEventListener('click', function() {
+                const highlightsList = document.getElementById('highlightsList');
+                const newHighlight = highlightsList.querySelector('.highlight-item:last-child').cloneNode(true);
+                
+                // Clear values
+                newHighlight.querySelectorAll('input, textarea').forEach(input => input.value = '');
+                
+                // Set up remove button
+                const removeBtn = newHighlight.querySelector('.remove-item');
+                if (removeBtn) {
+                    removeBtn.addEventListener('click', function() {
+                        highlightsList.removeChild(newHighlight);
+                    });
+                }
+                
+                highlightsList.appendChild(newHighlight);
+            });
+            
+            // Add resource
+            document.getElementById('addResource').addEventListener('click', function() {
+                const resourcesList = document.getElementById('resourcesList');
+                const newResource = resourcesList.querySelector('.resource-item:last-child').cloneNode(true);
+                
+                // Clear values
+                newResource.querySelectorAll('input').forEach(input => input.value = '');
+                
+                // Set up remove button
+                const removeBtn = newResource.querySelector('.remove-item');
+                if (removeBtn) {
+                    removeBtn.addEventListener('click', function() {
+                        resourcesList.removeChild(newResource);
+                    });
+                }
+                
+                resourcesList.appendChild(newResource);
+            });
+            
+            // Init remove buttons
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function() {
+                    const item = button.closest('.dynamic-item');
+                    const list = item.parentNode;
+                    
+                    // Make sure we have at least one item
+                    if (list.querySelectorAll('.dynamic-item').length > 1) {
+                        list.removeChild(item);
+                    }
+                });
+            });
+            
+            // Preview button
+            document.getElementById('previewButton').addEventListener('click', function() {
+                generatePreview();
+                
+                // Switch to preview tab
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelector('.tab[data-tab="preview"]').classList.add('active');
+                
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                document.getElementById('previewTab').classList.add('active');
+            });
+            
+            // Back buttons
+            document.getElementById('backToFormButton').addEventListener('click', function() {
+                // Switch to form tab
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelector('.tab[data-tab="form"]').classList.add('active');
+                
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                document.getElementById('formTab').classList.add('active');
+            });
+            
+            document.getElementById('backToFormFromJsonButton').addEventListener('click', function() {
+                // Switch to form tab
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelector('.tab[data-tab="form"]').classList.add('active');
+                
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                document.getElementById('formTab').classList.add('active');
+            });
+            
+            // Form submission
+            document.getElementById('roundTableForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                saveRoundTable();
+            });
+            
+            // Save from preview or JSON
+            document.getElementById('saveFromPreviewButton').addEventListener('click', function() {
+                saveRoundTable();
+            });
+            
+            document.getElementById('saveFromJsonButton').addEventListener('click', function() {
+                saveRoundTable();
+            });
+            
+            // Generate preview
+            function generatePreview() {
+                const data = collectFormData();
+                
+                // Update preview
+                document.getElementById('previewTitle').textContent = data.roundTableInfo.roundTableTitle;
+                document.getElementById('previewSubtitle').textContent = `Round Table ${data.roundTableInfo.roundTableNumber}`;
+                document.getElementById('previewSummary').textContent = data.discussionSummary.keySummary;
+                
+                // Participants
+                const participantsContainer = document.getElementById('previewParticipants');
+                participantsContainer.innerHTML = '';
+                
+                data.roundTableInfo.guests.forEach(guest => {
+                    const participantElement = document.createElement('div');
+                    participantElement.className = 'participant-card';
+                    participantElement.innerHTML = `
+                        <div class="participant-name">${guest.name}</div>
+                        <div class="participant-role">${guest.role}</div>
+                    `;
+                    participantsContainer.appendChild(participantElement);
+                });
+                
+                // Video preview
+                const videoContainer = document.getElementById('previewVideo');
+                videoContainer.innerHTML = `
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px;">
+                        <iframe 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                            src="${data.mediaInfo.videoUrl}" 
+                            title="Democracy Innovators Round Table" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                `;
+                
+                // Highlights
+                const highlightsContainer = document.getElementById('previewHighlights');
+                highlightsContainer.innerHTML = '';
+                
+                data.discussionSummary.highlights.forEach(highlight => {
+                    const highlightElement = document.createElement('div');
+                    highlightElement.className = 'preview-card';
+                    highlightElement.style.marginBottom = '10px';
+                    highlightElement.innerHTML = `
+                        <h4 style="color: var(--primary-color);">${highlight.topic}</h4>
+                        <p>${highlight.content}</p>
+                    `;
+                    highlightsContainer.appendChild(highlightElement);
+                });
+            }
+            
+            // Generate JSON preview
+            function generateJsonPreview() {
+                const data = collectFormData();
+                document.getElementById('jsonPreview').textContent = JSON.stringify(data, null, 2);
+            }
+            
+            // Collect form data
+            function collectFormData() {
+                const roundTableNumber = parseInt(document.getElementById('roundTableNumber').value);
+                
+                // Route info
+                const routeInfo = {
+                    routeId: "democracy-innovators",
+                    routeTitle: document.getElementById('routeTitle').value,
+                    totalRoundTables: parseInt(document.getElementById('totalRoundTables').value),
+                    description: document.getElementById('routeDescription').value
+                };
+                
+                // Round table info
+                const roundTableInfo = {
+                    id: `rt${roundTableNumber}-${slugify(document.getElementById('roundTableTitle').value)}`,
+                    roundTableNumber: roundTableNumber,
+                    roundTableTitle: document.getElementById('roundTableTitle').value,
+                    date: document.getElementById('roundTableDate').value,
+                    duration: document.getElementById('roundTableDuration').value,
+                    guests: []
+                };
+                
+                // Previous round table
+                if (document.getElementById('prevRoundTableNumber').value) {
+                    const prevNumber = parseInt(document.getElementById('prevRoundTableNumber').value);
+                    roundTableInfo.previousRoundTable = {
+                        id: `rt${prevNumber}-${slugify(document.getElementById('prevRoundTableTitle').value)}`,
+                        number: prevNumber,
+                        title: document.getElementById('prevRoundTableTitle').value,
+                        dataFile: `roundtable${prevNumber}.json`
+                    };
+                }
+                
+                // Next round table
+                if (document.getElementById('nextRoundTableNumber').value) {
+                    const nextNumber = parseInt(document.getElementById('nextRoundTableNumber').value);
+                    roundTableInfo.nextRoundTable = {
+                        id: `rt${nextNumber}-${slugify(document.getElementById('nextRoundTableTitle').value)}`,
+                        number: nextNumber,
+                        title: document.getElementById('nextRoundTableTitle').value,
+                        dataFile: `roundtable${nextNumber}.json`
+                    };
+                }
+                
+                // Participants
+                const participantItems = document.querySelectorAll('.participant-item');
+                participantItems.forEach(item => {
+                    const name = item.querySelector('[name="participantName"]').value;
+                    const role = item.querySelector('[name="participantRole"]').value;
+                    const walletId = item.querySelector('[name="participantWalletId"]').value;
+                    const avatar = item.querySelector('[name="participantAvatar"]').value;
+                    
+                    if (name && role) {
+                        roundTableInfo.guests.push({
+                            name,
+                            role,
+                            walletId,
+                            avatar: avatar || `https://randomuser.me/api/portraits/${role.toLowerCase() === 'host' ? 'men' : 'women'}/${Math.floor(Math.random() * 100)}.jpg`
+                        });
+                    }
+                });
+                
+                // Discussion summary
+                const discussionSummary = {
+                    previousSummary: document.getElementById('previousSummary').value,
+                    keySummary: document.getElementById('keySummary').value,
+                    highlights: []
+                };
+                
+                // Highlights
+                const highlightItems = document.querySelectorAll('.highlight-item');
+                highlightItems.forEach(item => {
+                    const topic = item.querySelector('[name="highlightTopic"]').value;
+                    const content = item.querySelector('[name="highlightContent"]').value;
+                    
+                    if (topic && content) {
+                        discussionSummary.highlights.push({
+                            topic,
+                            content
+                        });
+                    }
+                });
+                
+                // Related resources
+                const relatedResources = [];
+                const resourceItems = document.querySelectorAll('.resource-item');
+                resourceItems.forEach(item => {
+                    const title = item.querySelector('[name="resourceTitle"]').value;
+                    const type = item.querySelector('[name="resourceType"]').value;
+                    const url = item.querySelector('[name="resourceUrl"]').value;
+                    
+                    if (title && url) {
+                        relatedResources.push({
+                            title,
+                            url,
+                            type
+                        });
+                    }
+                });
+                
+                // Media info
+                const mediaInfo = {
+                    videoUrl: document.getElementById('videoUrl').value,
+                    transcriptFile: `transcripts/roundtable${roundTableNumber}.txt`
+                };
+                
+                // Blockchain record
+                const blockchainRecord = {
+                    hash: document.getElementById('blockchainHash').value,
+                    timestamp: new Date(document.getElementById('blockchainTimestamp').value).toISOString(),
+                    verificationUrl: document.getElementById('verificationUrl').value
+                };
+                
+                return {
+                    routeInfo,
+                    roundTableInfo,
+                    discussionSummary,
+                    relatedResources,
+                    mediaInfo,
+                    blockchainRecord
+                };
+            }
+            
+            // Save round table
+            function saveRoundTable() {
+                const data = collectFormData();
+                const roundTableNumber = data.roundTableInfo.roundTableNumber;
+                const transcript = document.getElementById('transcript').value;
+                
+                // Create a downloadable JSON file
+                const jsonBlob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const jsonUrl = URL.createObjectURL(jsonBlob);
+                
+                // Create a downloadable transcript file
+                const textBlob = new Blob([transcript], { type: 'text/plain' });
+                const textUrl = URL.createObjectURL(textBlob);
+                
+                // Create download links
+                const jsonLink = document.createElement('a');
+                jsonLink.href = jsonUrl;
+                jsonLink.download = `TEMP/roundtable${roundTableNumber}.json`;
+                
+                const textLink = document.createElement('a');
+                textLink.href = textUrl;
+                textLink.download = `TEMP/roundtable${roundTableNumber}.txt`;
+                
+                // Click the links to trigger downloads
+                jsonLink.click();
+                textLink.click();
+                
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+            }
+            
+            // Helper function to create slugs
+            function slugify(text) {
+                return text.toLowerCase()
+                    .replace(/[^\w ]+/g, '')
+                    .replace(/ +/g, '-');
+            }
+        });
+    </script>
+</body>
+</html>
