@@ -1,0 +1,98 @@
+{
+  "routeInfo": {
+    "routeId": "democracy-innovators",
+    "routeTitle": "Democracy Innovators",
+    "totalRoundTables": 10,
+    "description": "Exploring innovative approaches to strengthen democracy in the digital age."
+  },
+  "roundTableInfo": {
+    "id": "rt1-open-source-politics",
+    "roundTableNumber": 1,
+    "roundTableTitle": "Open Source Politics",
+    "date": "2025-05-05",
+    "duration": "35:42",
+    "guests": [
+      {
+        "name": "Alessandro Oppo",
+        "walletId": "0x7a58c0d3e5F8af12eB234cBbC4",
+        "role": "Host",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+      },
+      {
+        "name": "Valentin Chaput",
+        "walletId": "0x5c47d2a9e1F6b8a3C4d5E6f7",
+        "role": "Co-founder of Open Source Politics",
+        "avatar": "https://randomuser.me/api/portraits/men/41.jpg"
+      }
+    ],
+    "previousRoundTable": {
+      "id": "rt0-introduction",
+      "number": 0,
+      "title": "Introduction to Democracy Innovators",
+      "dataFile": "roundtable0.json"
+    },
+    "nextRoundTable": {
+      "id": "rt2-civic-tech-innovation",
+      "number": 2,
+      "title": "Civic Tech Innovation",
+      "dataFile": "roundtable2.json"
+    }
+  },
+  "discussionSummary": {
+    "previousSummary": "In the introductory Round Table, Alessandro and Carlo laid the foundation for the Democracy Innovators podcast, discussing their vision to explore how technology can enhance democratic processes while acknowledging potential challenges.",
+    "keySummary": "Valentin Chaput shares insights from nearly a decade of experience with Open Source Politics, discussing the evolution of civic tech from grassroots enthusiasm to institutional adoption. He highlights key platforms like Decidim and emphasizes the importance of collaboration and adaptation in the face of misinformation challenges and changing user preferences.",
+    "highlights": [
+      {
+        "topic": "Open Source Politics",
+        "content": "Valentin explains that Open Source Politics is a Paris-based company that has been bringing open-source solutions to the political sphere for almost nine years, with a focus on tools like Decidim to enhance democratic processes through transparent and accessible technology."
+      },
+      {
+        "topic": "Evolution of Civic Tech",
+        "content": "The civic tech landscape has evolved from a grassroots movement with high enthusiasm a decade ago to a more institutionalized field, and now to a critical phase of evaluating what works and focusing on making processes more meaningful rather than just introducing new tools."
+      },
+      {
+        "topic": "Institutional Adoption",
+        "content": "While some politicians recognize the importance of open-source technologies for transparency and digital sovereignty, many institutions struggle to keep up with technological advancements or have stepped back due to budget constraints and political shifts."
+      },
+      {
+        "topic": "AI and Accessibility",
+        "content": "AI could play a significant role in making political discussions more inclusive by summarizing complex policy documents or helping citizens formulate ideas more clearly, lowering barriers to participation, especially as younger generations prefer audio and video-based communication."
+      },
+      {
+        "topic": "Collaboration Over Competition",
+        "content": "Valentin emphasizes the importance of collaboration in the civic tech community, advocating for interoperability between platforms and contributing to existing projects rather than building new tools from scratch."
+      }
+    ]
+  },
+  "relatedResources": [
+    {
+      "title": "Open Source Politics",
+      "url": "https://opensourcepolitics.eu/",
+      "type": "organization"
+    },
+    {
+      "title": "Decidim",
+      "url": "https://decidim.org/",
+      "type": "platform"
+    },
+    {
+      "title": "Polis",
+      "url": "https://pol.is/home",
+      "type": "platform"
+    },
+    {
+      "title": "Make.org",
+      "url": "https://make.org/",
+      "type": "platform"
+    }
+  ],
+  "mediaInfo": {
+    "videoUrl": "https://www.youtube.com/embed/sATTFGileiw",
+    "transcriptFile": "transcripts/Valentin.Chaput.full.transcription.txt"
+  },
+  "blockchainRecord": {
+    "hash": "0x6a3e4d5c7b8a9012abcdef1234567890abcdef78",
+    "timestamp": "2025-05-05T13:20:00Z",
+    "verificationUrl": "https://etherscan.io/tx/0x6a3e4d5c7b8a9012abcdef1234567890abcdef78"
+  }
+}

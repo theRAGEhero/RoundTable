@@ -1,0 +1,45 @@
+Transcript of the Conversation Between Alessandro Oppo and Carlo Michaelis on the Democracy Innovators Podcast
+
+Introduction
+
+Alessandro Oppo welcomes listeners to what might be the first episode of the Democracy Innovators Podcast. Carlo Michaelis is introduced as the guest, though he is more of a collaborator. Alessandro and Carlo discuss how they have been talking about this podcast for over a year before making it a reality.
+
+Carlo recalls that they met about a year ago and that discussions about the podcast became more concrete around November or December of the previous year. Alessandro shares his interest in civic and political technology and how discussing governance and technology often makes people look at him as if he is crazy.
+
+Carlo recounts a formative moment from his school years when a teacher explained democracy as a system where representatives are necessary due to the impracticality of having an entire population make decisions collectively. However, he later realized the limitations of this system, particularly regarding psychological biases and the growing complexity of the world. He argues that the internet and technological advancements present an opportunity to rethink democracy rather than accepting it as a finished system.
+
+Democracy and Technology
+
+Alessandro agrees, reflecting on how elections and representation are flawed because politicians are just individuals drawn from the population. He sees a cultural problem, not just a political one. He discusses how past conflicts, such as religious wars in Europe, now appear clearer because people are detached from them, whereas present conflicts evoke emotional responses that hinder rational decision-making. He suggests that technology could help people make more informed and rational decisions, drawing parallels with historical methods of communication such as letter-writing compared to modern tools.
+
+They discuss the potential of technology to improve decision-making, including experimental economic models like money that expires or alternative currency systems. Alessandro envisions the podcast as a space to explore new governance, monetary systems, decision-making processes, and even future living arrangements. The pandemic, for example, accelerated the adoption of remote work, which could fundamentally reshape cities and lifestyles.
+
+The Role of Conflict in Decision-Making
+
+Carlo emphasizes that conflict resolution, whether at the personal or societal level, hinges on communication and access to information. He envisions the podcast covering everything from small-scale psychological mechanisms to large-scale governance models, integrating technologies like AI, blockchain, and collective intelligence research. Alessandro points out that civic technology connects to nearly every aspect of life, including education and economic structures.
+
+They discuss how people engaged in democratic innovation often feel isolated because few others prioritize reinventing democracy. However, by hearing from experts in the field, they hope to make these discussions feel less lonely and highlight the global network of individuals working on similar ideas.
+
+Personal Backgrounds
+
+Carlo shares his academic and professional journey. He started with a strong interest in human behavior and worked in addiction therapy before studying psychology. However, he wanted more quantitative skills, so he also pursued physics. He later studied statistics and machine learning, eventually moving into computational neuroscience. After completing his PhD, he moved to Sweden with his family and is now focusing on projects related to democracy and technology, balancing freelancing with academic research.
+
+Alessandro describes his unconventional path, having initially studied computer science before leaving school to work in IT. Feeling unfulfilled, he later returned to high school and completed his diploma. He then pursued history at university while maintaining an interest in technology. His thesis focused on blockchain, and he is currently working on a master’s in global history. He sees parallels between history and computer science, particularly in the control and dissemination of information.
+
+Technology and Power in Governance
+
+They discuss how technology could both improve and endanger democracy. AI-driven decision-making, for example, could shift power to those controlling the training data, reinforcing biases. Carlo stresses the need to develop democratic systems that enhance collective intelligence while maintaining public participation. He notes that traditional democratic structures struggle to handle the modern information landscape.
+
+Alessandro highlights how economic decisions often appear obscure to the general public due to technical complexity, making it difficult to challenge expert opinions. He fears that an AI-driven government could create an unaccountable, opaque system, further distancing people from decision-making.
+
+Carlo suggests that instead of replacing democracy with AI, technology should be used as an assistant to enhance decision-making. He warns against allowing AI to make autonomous political decisions, as this would shift power to those programming the AI. Alessandro agrees, pointing out that technocratic decision-making already exists in fields like economics and that this trend could expand if AI is not carefully integrated.
+
+The Podcast’s Goals and Future Direction
+
+The podcast aims to bring together experts from various fields—researchers, journalists, politicians, and independent scholars—to discuss democratic innovation. They hope to create a network that fosters collaboration rather than competition.
+
+Carlo mentions concerns raised by scholars like Primavera De Filippi and others regarding the power structures in blockchain governance. They discuss how blockchain-based governance models could become exclusive if coding knowledge remains a prerequisite for participation. Ensuring inclusive governance in the digital age is crucial.
+
+As they conclude, Alessandro reflects on how the fast-paced, collaborative nature of software development could serve as a model for political innovation. They express optimism that a more inclusive and technologically augmented democracy can emerge through open collaboration and diverse perspectives.
+
+Carlo suggests they should continue these discussions in future episodes, reflecting on insights from podcast guests. They encourage listeners to subscribe and participate in discussions about democratic innovation.

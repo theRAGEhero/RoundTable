@@ -1,28 +1,129 @@
-// Simplified script for round table loading
-document.addEventListener('DOMContentLoaded', function() {
+// Cache for roundtable data to avoid repeated fetches
+const roundTableCache = {};
+
+// Function to load JSON data
+async function loadJSON(path) {
+    try {
+        if (roundTableCache[path]) {
+            return roundTableCache[path];
+        }
+        
+        const response = await fetch(path);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        roundTableCache[path] = data;
+        return data;
+    } catch (error) {
+        console.error(`Could not load JSON data from ${path}:`, error);
+        return null;
+    }
+}
+
+// Function to find all available round tables
+async function findAllRoundTables() {
+    const roundTables = [];
+    
+    // Try to load data for possible round tables (0-10)
+    for (let i = 0; i <= 10; i++) {
+        const data = await loadJSON(`data/roundtable${i}.json`);
+        if (data) {
+            roundTables.push({
+                number: data.roundTableInfo.roundTableNumber,
+                id: data.roundTableInfo.id,
+                title: data.roundTableInfo.roundTableTitle,
+                dataFile: `roundtable${i}.json`
+            });
+        }
+    }
+    
+    // Sort round tables by number
+    return roundTables.sort((a, b) => a.number - b.number);
+}
+
+// Document ready
+document.addEventListener('DOMContentLoaded', async function() {
     // Get round table from URL
     const urlParams = new URLSearchParams(window.location.search);
-    const roundTable = urlParams.get('roundTable') || '6';
+    const roundTableParam = urlParams.get('roundTable');
     
-    console.log('Loading round table:', roundTable);
-    
-    // Load the data
-    fetch(`data/roundtable${roundTable}.json`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+    try {
+        // Get all available round tables first
+        const allRoundTables = await findAllRoundTables();
+        
+        if (allRoundTables.length === 0) {
+            throw new Error('No round tables found. Please check the data folder.');
+        }
+        
+        // Determine which round table to display
+        let roundTableToLoad;
+        if (roundTableParam) {
+            // Find the requested round table
+            const requestedRoundTable = allRoundTables.find(rt => rt.number.toString() === roundTableParam);
+            if (requestedRoundTable) {
+                roundTableToLoad = requestedRoundTable;
+            } else {
+                console.warn(`Round table ${roundTableParam} not found. Loading first available.`);
+                roundTableToLoad = allRoundTables[0];
             }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Data loaded successfully');
-            displayRoundTable(data);
-        })
-        .catch(error => {
-            console.error('Error loading data:', error);
-            showErrorMessage('Failed to load round table data. Check the console for details.');
-        });
+        } else {
+            // No specific round table requested, load the first one
+            roundTableToLoad = allRoundTables[0];
+        }
+        
+        console.log('Loading round table:', roundTableToLoad.number);
+        
+        // Load the data
+        const data = await loadJSON(`data/roundtable${roundTableToLoad.number}.json`);
+        if (!data) {
+            throw new Error(`Failed to load data for round table ${roundTableToLoad.number}`);
+        }
+        
+        // Enhance data with proper navigation based on all available round tables
+        enhanceDataWithNavigation(data, allRoundTables, roundTableToLoad);
+        
+        // Display the round table
+        displayRoundTable(data);
+    } catch (error) {
+        console.error('Error:', error);
+        showErrorMessage(error.message);
+    }
 });
+
+// Enhance data with proper navigation
+function enhanceDataWithNavigation(data, allRoundTables, currentRoundTable) {
+    const currentIndex = allRoundTables.findIndex(rt => rt.number === currentRoundTable.number);
+    
+    // Determine previous round table
+    if (currentIndex > 0) {
+        const prevRoundTable = allRoundTables[currentIndex - 1];
+        data.roundTableInfo.previousRoundTable = {
+            id: prevRoundTable.id,
+            number: prevRoundTable.number,
+            title: prevRoundTable.title,
+            dataFile: prevRoundTable.dataFile
+        };
+    } else {
+        data.roundTableInfo.previousRoundTable = null;
+    }
+    
+    // Determine next round table
+    if (currentIndex < allRoundTables.length - 1) {
+        const nextRoundTable = allRoundTables[currentIndex + 1];
+        data.roundTableInfo.nextRoundTable = {
+            id: nextRoundTable.id,
+            number: nextRoundTable.number,
+            title: nextRoundTable.title,
+            dataFile: nextRoundTable.dataFile
+        };
+    } else {
+        data.roundTableInfo.nextRoundTable = null;
+    }
+    
+    return data;
+}
 
 // Display the round table data
 function displayRoundTable(data) {
@@ -42,6 +143,9 @@ function displayRoundTable(data) {
     if (document.getElementById('mainTitle')) {
         document.getElementById('mainTitle').textContent = data.routeInfo.routeTitle;
     }
+    if (document.getElementById('footerTitle')) {
+        document.getElementById('footerTitle').textContent = data.routeInfo.routeTitle;
+    }
     if (document.getElementById('roundTableNumber')) {
         document.getElementById('roundTableNumber').textContent = data.roundTableInfo.roundTableNumber;
     }
@@ -51,7 +155,7 @@ function displayRoundTable(data) {
     
     // Update summary section
     if (document.getElementById('previousSummary')) {
-        document.getElementById('previousSummary').textContent = data.discussionSummary.previousSummary;
+        document.getElementById('previousSummary').textContent = data.discussionSummary.previousSummary || 'This is the first round table in this series.';
     }
     if (document.getElementById('keySummary')) {
         document.getElementById('keySummary').textContent = data.discussionSummary.keySummary;
@@ -73,7 +177,7 @@ function displayRoundTable(data) {
     setupNavigation(data.roundTableInfo.previousRoundTable, data.roundTableInfo.nextRoundTable);
     
     // Set up transcript button
-    setupTranscript(data.mediaInfo.transcriptFile);
+    setupTranscript(data.mediaInfo.transcriptFile, data.roundTableInfo.roundTableTitle);
     
     // Set up blockchain info
     if (document.getElementById('blockchainHash')) {
@@ -88,11 +192,14 @@ function displayRoundTable(data) {
     
     // Set up chat functionality
     setupChat(data);
+    
+    // Update timeline (if present)
+    updateTimeline(data.routeInfo.totalRoundTables, data.roundTableInfo.roundTableNumber);
 }
 
 // Update video embed
 function updateVideo(videoUrl) {
-    const videoContainer = document.querySelector('.responsive-video');
+    const videoContainer = document.getElementById('videoContainer');
     if (videoContainer) {
         videoContainer.innerHTML = `
             <iframe 
@@ -178,6 +285,8 @@ function displayResources(resources) {
             if (resource.type === 'platform') icon = 'fas fa-desktop';
             if (resource.type === 'event') icon = 'fas fa-calendar-alt';
             if (resource.type === 'book') icon = 'fas fa-book';
+            if (resource.type === 'resource') icon = 'fas fa-book-open';
+            if (resource.type === 'education') icon = 'fas fa-graduation-cap';
             
             const element = document.createElement('li');
             element.innerHTML = `
@@ -199,48 +308,65 @@ function setupNavigation(prevRoundTable, nextRoundTable) {
     
     if (prevButton) {
         if (prevRoundTable) {
-            prevButton.textContent = `← Round Table ${prevRoundTable.number}: ${prevRoundTable.title}`;
+            prevButton.innerHTML = `<i class="fas fa-arrow-left"></i> Round Table ${prevRoundTable.number}: ${prevRoundTable.title}`;
             prevButton.onclick = function() {
                 window.location.href = `roundtable.html?roundTable=${prevRoundTable.number}`;
             };
             prevButton.disabled = false;
+            prevButton.classList.remove('disabled');
         } else {
-            prevButton.textContent = '← Previous Round Table';
+            prevButton.innerHTML = `<i class="fas fa-arrow-left"></i> Previous Round Table`;
             prevButton.disabled = true;
+            prevButton.classList.add('disabled');
+            prevButton.onclick = null;
         }
     }
     
     if (nextButton) {
         if (nextRoundTable) {
-            nextButton.textContent = `Round Table ${nextRoundTable.number}: ${nextRoundTable.title} →`;
+            nextButton.innerHTML = `Round Table ${nextRoundTable.number}: ${nextRoundTable.title} <i class="fas fa-arrow-right"></i>`;
             nextButton.onclick = function() {
                 window.location.href = `roundtable.html?roundTable=${nextRoundTable.number}`;
             };
             nextButton.disabled = false;
+            nextButton.classList.remove('disabled');
         } else {
-            nextButton.textContent = 'Next Round Table →';
+            nextButton.innerHTML = `Next Round Table <i class="fas fa-arrow-right"></i>`;
             nextButton.disabled = true;
+            nextButton.classList.add('disabled');
+            nextButton.onclick = null;
         }
     }
 }
 
 // Set up transcript modal
-function setupTranscript(transcriptFile) {
+function setupTranscript(transcriptFile, roundTableTitle) {
     const transcriptBtn = document.getElementById('transcriptBtn');
     const transcriptModal = document.getElementById('transcriptModal');
+    const transcriptModalTitle = document.getElementById('transcriptModalTitle');
     
     if (transcriptBtn && transcriptModal) {
+        if (transcriptModalTitle) {
+            transcriptModalTitle.textContent = `Transcript: ${roundTableTitle}`;
+        }
+        
         transcriptBtn.onclick = function() {
             const container = transcriptModal.querySelector('.transcript-container');
             if (container) {
                 container.innerHTML = '<p class="loading-text">Loading transcript...</p>';
                 
                 fetch(transcriptFile)
-                    .then(response => response.text())
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to load transcript. Status: ${response.status}`);
+                        }
+                        return response.text();
+                    })
                     .then(text => {
                         container.innerHTML = formatTranscript(text);
                     })
                     .catch(error => {
+                        console.error('Error loading transcript:', error);
                         container.innerHTML = '<p class="error-text">Error loading transcript. Please try again later.</p>';
                     });
             }
@@ -255,6 +381,13 @@ function setupTranscript(transcriptFile) {
                 transcriptModal.classList.remove('show');
             };
         }
+        
+        // Close on outside click
+        transcriptModal.onclick = function(event) {
+            if (event.target === transcriptModal) {
+                transcriptModal.classList.remove('show');
+            }
+        };
     }
     
     // Set up blockchain modal
@@ -272,6 +405,61 @@ function setupTranscript(transcriptFile) {
             closeBtn.onclick = function() {
                 blockchainModal.classList.remove('show');
             };
+        }
+        
+        // Close on outside click
+        blockchainModal.onclick = function(event) {
+            if (event.target === blockchainModal) {
+                blockchainModal.classList.remove('show');
+            }
+        };
+    }
+}
+
+// Update timeline display
+function updateTimeline(totalRoundTables, currentRoundTable) {
+    const timeline = document.getElementById('timeline');
+    const timelineTitle = document.getElementById('timelineTitle');
+    
+    if (timeline) {
+        timeline.innerHTML = '';
+        
+        // Update title
+        if (timelineTitle) {
+            timelineTitle.textContent = `Route Progress (${currentRoundTable} of ${totalRoundTables})`;
+        }
+        
+        // Create timeline items
+        for (let i = 0; i <= totalRoundTables; i++) {
+            if (i === 0 && currentRoundTable > 0) {
+                // Skip 0 if not the current round table
+                continue;
+            }
+            
+            const element = document.createElement('div');
+            element.className = 'timeline-item';
+            
+            if (i < currentRoundTable) {
+                element.classList.add('completed');
+            } else if (i === parseInt(currentRoundTable)) {
+                element.classList.add('current');
+            } else {
+                element.classList.add('future');
+            }
+            
+            element.innerHTML = `
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <span>${i}</span>
+                </div>
+            `;
+            
+            // Add click handler to navigate to that round table
+            element.onclick = function() {
+                window.location.href = `roundtable.html?roundTable=${i}`;
+            };
+            
+            timeline.appendChild(element);
         }
     }
 }
@@ -376,7 +564,7 @@ function formatTranscript(text) {
     let formattedText = text;
     
     // Format transcription title
-    if (text.startsWith('Interview with')) {
+    if (text.startsWith('Interview with') || text.startsWith('Transcript of')) {
         const firstNewline = text.indexOf('\n');
         if (firstNewline > 0) {
             const title = text.substring(0, firstNewline);
@@ -391,7 +579,7 @@ function formatTranscript(text) {
     formattedText = formattedText.replace(/^([A-Za-z]+ [A-Za-z]+):/gm, '<strong>$1:</strong>');
     
     // Format sections
-    formattedText = formattedText.replace(/^(PARTICIPANTS:|--- TRANSCRIPT BEGINS ---|--- TRANSCRIPT ENDS ---)/gm, '<h4 class="transcript-section">$1</h4>');
+    formattedText = formattedText.replace(/^(PARTICIPANTS:|Introduction|Conclusion|--- TRANSCRIPT BEGINS ---|--- TRANSCRIPT ENDS ---)/gm, '<h4 class="transcript-section">$1</h4>');
     
     // Format notes
     formattedText = formattedText.replace(/(Note: This is an automatic transcription and may contain errors\.)/g, '<em class="transcript-note">$1</em>');

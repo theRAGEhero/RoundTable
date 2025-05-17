@@ -1,0 +1,238 @@
+Alessandro Oppo (Interviewer): Welcome to another episode of Democracy Innovators podcast. Today we are here with Marcin Woźniak. Welcome and thank you for your time for being here.
+
+Marcin Woźniak: Thank you for having me on the podcast.
+
+Alessandro: As a first question, I'd like to ask you: what is SwarmCheck? That is a project you're working on, yes?
+
+Marcin: Yes, SwarmCheck is a technological solution by Optimum Foundation with the mission of improving rational public discourse. We believe technology is the most effective way to do it. SwarmCheck is mainly argument mapping software for collective decision-making, Delphi processes, and improving collective intelligence.
+
+It can be applied in a variety of uses and topics because argumentation, at its core mechanics, is very universal. We see argumentation everywhere. By creating technology that supports collective argumentation, we can improve not only the quality of discussion and deliberation but also the data collection process. This leads to better decision-making by incorporating more perspectives and critical voices, resulting in better quality decisions as a whole.
+
+Alessandro: Do you have any sort of use case that you think could fit very well for SwarmCheck?
+
+Marcin: We have many use cases. We've completed over forty projects with this software, so I'll give you a range of topics we've tackled.
+
+One current exciting project involves the Delphi method, which is a way of achieving numerical results through expert deliberation. It's an anonymous, iterative process of producing estimates about future events or risks. Through anonymous argumentation about these initial estimates, we can achieve group consensus and be confident that our final results are good for decision-making, strategic planning, risk assessment, or even publications.
+
+For example, a pharmaceutical company approached us to conduct a Delphi process with clinicians to estimate risks of illness contracted with a virus after treatment. There's a period when their solution is given to patients, but afterward, additional symptoms can appear. For people with certain criteria, we can estimate how risky it is to stop the treatment. With this data, we can show that experts collectively have a consensus about how long treatment needs to continue for certain criteria with specific risk levels. This data can lead to scientific publications that convince government decision-makers to finance extended treatments.
+
+Another case, more on the policymaking side, is creating collective strategies and policies for local governments. One example was renewing a ten-year educational policy in the city of Poznań. The challenge was determining what to achieve in the next decade. Education involves many stakeholders: students, teachers, school directors, public officials, NGO workers, and academics who understand educational effectiveness. These people have different perspectives and interests, yet we needed to help them develop solutions for these policies. We used SwarmCheck to map argumentation about key proposals and come up with anonymously produced solutions representing the group's collective intelligence.
+
+Alessandro: Maybe here is a good place to explain what an argument map is for people who are hearing about this for the first time?
+
+Marcin: Absolutely. If you have a book, you have lines of text. You start reading from the top left corner, going right and down. This gives you a linear progression of narrative—a story with a beginning, middle, and end.
+
+But we can extract useful information—specific claims—and map their relationships to each other. Arguments are claims that relate by supporting or contradicting each other. When we extract these claims, we generate a graph or map of individual claims and their relationships.
+
+Now, instead of linear text, we have a network of reasoning, argumentation, and ideas that clearly shows how they relate. This gives us much more information about the reasoning and presents the subject more objectively because there's no controlling narrative. You can travel through the connections on the graph as you like and read the agreements, supporting voices, justifications, disagreements, contradictions, and critical voices. These elements can have their own supports and disagreements as well.
+
+Basically, you build block by block this graph of collective reasoning. When you do this anonymously with software that integrates different viewpoints, the outcome isn't controlled by anyone but represents the collective knowledge of the discussion. Then you can conduct additional analysis of this graph—analyzing how certain claims are networked, how many supports they have, and whether the supports are well-sourced.
+
+At the end of the process, when we have this graph of arguments and their relationships, we can analyze which claims have the best support, what sources were used, what contradictions exist, and what critical voices were raised. Every level of the graph can have the same analysis applied.
+
+For example, if I click on a premise like "All students should wear uniforms," the system asks why one should think so. I might explain that "uniformity allows students to not feel excluded." This explanation becomes a claim itself, which others can agree with and provide reasoning for. Maybe there's a scientific study supporting my claim, or perhaps criticism that undermines the idea that uniforms help students feel included.
+
+In this way, we build a graph of all reasoning collected through the discussion, which can be supported by sources from literature, research, or even other discussions, as claims are reusable in our system. This is very important—our system can connect discussions held in different places and times.
+
+After creating this argument map, we can analyze it to see which lines of reasoning support our main claim, what risks exist, how strong the branches leading to outcomes are, which claims are best networked (indicating their importance), which claims lack support (possibly fringe ideas), and where strong counter-arguments undercut initially well-supported reasoning.
+
+This would be very difficult for a person to analyze alone because you'd have to keep all these connections in your head. Even if you use a large language model to analyze a meeting transcript, it would be hard for artificial intelligence to track all these connections. Argument maps provide reliable, explainable reasoning about issues created by collective intelligence, which is why I think they're one of the best tools to support collective decision-making.
+
+Alessandro: When we talk about the collective, I mean the tests you have done—how many people were involved? I also have another question related to the Delphi method if you can provide a short explanation.
+
+Marcin: The number of people depends on the issue. We've had groups as small as four people discussing something, but also as large as forty or eighty people. The optimal number for an individual session is around ten people, but we can have many sessions in parallel or sequence because when someone reuses a claim from the past, the system joins those graphs. We can create something bigger than what one group can develop because it's the result of discussion across multiple groups. So it depends and can be scaled up to civilization-level if we imagine so.
+
+The core insight is that argumentation in public or scientific discourse isn't infinite—in every topic, we hear a finite number of arguments. When we put them onto a graph or ontology, we see the same points repeating. We don't have to map them over and over; we can reuse them and see how they were addressed previously. This is very important for countering misconceptions, disinformation, and mistakes in decision-making. We want to use collective intelligence to build on previously gathered knowledge, not repeat mistakes as happens in current public discourse.
+
+The idea is that it's potentially feasible to map the whole public discourse by collecting important, reasonable arguments. We exclude spam and non-arguments, of course, but we don't intervene in the merits of claims—that's what counter-arguments are for. This allows us to avoid censorship or focusing only on what moderators think is important.
+
+Usually, it doesn't take the whole civilization to map out a discussion—a group of 10-40 people is typically enough to represent the viewpoints appearing in public discourse.
+
+Regarding the Delphi method, it was developed in the 1950s by RAND Corporation as a means to enhance strategic decision-making. It has been improved and developed over the years with many versions.
+
+The main problem we helped solve with the Delphi method is its time-consuming aspect. Every expert invited must remain anonymous yet present their estimates in each round for each question, along with their reasoning. Traditionally, surveys were sent to experts, someone calculated the mean and standard deviation of estimates (a measure of consensus—if standard deviation approaches zero, there's high consensus), and then experts would present reasoning to convince others.
+
+With argument mapping, this process is easier and faster. It's already anonymous, everyone sees the same map, and everything can be done quickly while preserving best practices. Without such tools, moderators might inadvertently break anonymity or struggle to present information fairly. For instance, experts might write in recognizable styles or varying lengths, making comparison difficult.
+
+With argument maps, we only have reasoning that can be objectively evaluated, leading to better consensus. From our projects, we've seen that standard deviation (measuring consensus) shifts significantly after argument mapping rounds.
+
+Additionally, we don't need to create summaries of statistical analyses or expert essays—everything shows in real-time. A process that could take months can be done in one day. The improvement is in both time and quality. At the end, we don't only have statistical summaries but also the reasoning that led experts to their conclusions, providing additional safeguards and making it easier to incorporate new information in the future.
+
+Alessandro: If I understood correctly, the platform helps people find agreements and disagreements about certain topics in an analytical way, through an iterative process. So when new information is collected, people can agree or disagree on single parts of the problem?
+
+Marcin: Yes, exactly. And we can go into the nuances, which is very important for reducing polarization. Especially with political topics, people tend to align along ideological or party lines, but when we go into the nuances, people are much less ideological. From my experience, they can discuss particular claims very reasonably.
+
+Initially, there might be disagreements, but when we get to the premises of the premises, people are quite rational. When they see others' viewpoints and perspectives they hadn't considered, they're actually learning to think more critically about the issue. With this additional knowledge, they adjust their own perspectives in real time.
+
+I think it's important that this process is not only good for producing data but also beneficial for the users themselves. They're being educated on the topic in real time by engaging with argument mapping. Also, the critical thinking ability of people who engage in argument mapping increases dramatically. Studies have measured that the improvement in critical thinking skills of students who did a semester of argument mapping in an academic setting was three times better than the baseline improvement during the first year of college.
+
+What's more interesting, people who attended critical thinking and philosophy courses still saw worse results than those using argument mapping—about two times worse. Of all the techniques I know for increasing critical thinking ability that have scientific backing, I don't know a better tool than argument mapping.
+
+Alessandro: So it seems this can have a lot of applications. All these new technologies are being applied to different fields, and we probably still have to discover exactly where each technology fits best. It's very interesting that yours can do several things—not just finding agreement but also applications for study.
+
+About your experience, would you like to share something about yourself? I mean, where did you grow up and then later, about your education or work experience?
+
+Marcin: I was born in Poland and still live here most of the time. I moved to Kraków to study law at Jagiellonian University, but instead of becoming a lawyer or judge, I was mostly interested in argumentation, legal theory, and the philosophical aspects of law.
+
+What's characteristic about me is that I'm quite attracted to philosophy, and I think it's very useful for solving everyday problems, counterintuitively. Some might think philosophy is detached from reality, and maybe some academic philosophers are, but good thinking about problem-solving always helps achieve better results.
+
+From a societal perspective, we collectively create laws and rules about how to behave, and these rules can be better or worse—they can improve values we care about or make things worse. Sometimes there are tradeoffs, like between freedom and security, but let's consider political dissidents in Russian prisons. They have neither freedom nor safety, which shows there are ways to optimize society to have more freedom and security simultaneously. After optimization, tradeoffs still exist, but we can search for solutions where nobody is worse off and society as a whole is better—this is the Pareto principle that gave the name to Optimum Foundation.
+
+My colleagues and I at Jagiellonian University founded Optimum at the end of our studies based on the idea that we can use deliberation and good design principles to create better policies at municipal, national, and possibly international levels. Abstract reasoning about argumentation theory, philosophy, and values can have real impact on decisions affecting everyday life. If society makes good decisions, everyone benefits.
+
+That was the motivation to start Optimum Foundation, with our common interest in dialogue, deliberation, and alternative means of resolving conflicts.
+
+For more than ten years, I've also been interested in artificial intelligence. This technology has great potential for humanity but also poses significant risks. What differentiates us from other species is mostly our collective intelligence, and we're adding technology that improves and accelerates certain aspects of intelligence. When I see that current powerful systems are black boxes—where even developers can't explain how certain decisions were made—it worries me. How do we know if solutions are correct? What values are being maximized? Are they aligned with our values?
+
+On the other hand, when we use AI to reduce our errors, help collect well-sourced information, and fight disinformation (like that created by Russia, one of the biggest perpetrators currently), it's beneficial. It's too much for one person to maintain a good information diet and check everything, but with collective intelligence and AI enhancing our thinking—not replacing it—this could be one of the greatest benefits for humanity.
+
+The worrying part is when AI replaces our thinking, when decisions flow over our heads, when we're not subjects in deliberation but objects of manipulation—just data points used to optimize financial results for some company. Humans losing personhood in decision-making concerns me greatly as AI rapidly develops.
+
+But this is something we expected, so we prepared SwarmCheck not to compete with AI but to preserve good deliberation, the ability to voice our values and reasoning, and be included in decision-making that can incorporate AI as well.
+
+To summarize my experience: I'm a person moved by ideas. When I see something important, I try to act on it and do something useful.
+
+Alessandro: That was very interesting. I totally agree about transparency and not having AI as black boxes, because then it becomes like having faith in AI—we say something and just have to trust it without knowing if the data used to train it was good. As you said, developers may not even know why the AI says one thing instead of another.
+
+When you mentioned freedom versus stability, it made me think about "Brave New World" by Aldous Huxley. It's interesting that your background is in law, which deals with both freedom and stability. Was there a moment when you had the idea about using technology for this kind of thing? Was there a particular personal experience or conflict where you thought, "Okay, maybe what we have isn't enough—we need something else"?
+
+Marcin: A couple of things. I was also interested in sociology of law—how law shapes personhood, defining what people can and cannot do. The idea that law is an instrument of power is attractive to many.
+
+When I observed democratic elections, I found it strange that people don't question the process much, even though most aren't satisfied with the results. People generally view democracy as the "least bad" system that produces some freedom and stability, and we just have to deal with "stupid politicians" as an unfortunate externality.
+
+But it struck me as weird that we couldn't have better decision-making systems. In law seminars, discussions were smart, thoughtful, and empathetic, incorporating many viewpoints. But when the same topics are discussed in parliament, it becomes something nobody watches for intellectual activity but for entertainment—to see what outrageous things politicians say. We're dissatisfied with this type of deliberation.
+
+So my question was: How can we take thoughtful deliberation and good knowledge from people who study certain topics and move it toward decision-making in parliaments where decisions about our everyday lives are made? Even at a city level, how can we access citizens' voices to govern better?
+
+The problems are very human—even politicians have limited cognitive capacity. One person can't keep everything in their head. That's why I started exploring artificial intelligence for solutions to handling large amounts of data and making decisions.
+
+The combination of AI, law, and reasoning about norms, values, and policies led me to conferences and libraries. When you care about solving a problem, it's easier to educate yourself on relevant topics than following a classical syllabus. This approach leads to a more interdisciplinary view of problems.
+
+In everyday discussions, we often start with polite conversation that evolves into shouting matches. These situations struck me as preventable with better dialogue, better phrasing, and better listening. But it's difficult when so many arguments fly around—we lack the cognitive capacity to track them all and see connections, so we use emotions to navigate discussions. This is unnecessary.
+
+Emotions can be good, but watching public discourse devolve into shouting matches and algorithmically enhanced outrage is stressful. I realized that slight improvements in how we communicate could lead to better policies, better decisions, fewer mistakes, and better outcomes for everyone.
+
+One challenge with argumentation is that it's so pervasive that people don't think about improving it—it's like water to a fish. But language was constructed by our cultures over time, and how we communicate has changed throughout history. When we became more cautious about language representing reasoning—something that can be examined—this led to the beginning of philosophy. We started exchanging ideas, thinking critically about the world, and addressing big questions like "What is real?" "Why are we conscious?" "What is moral?" "How can we arrange society for everyone's benefit?" "Can we know truth?"
+
+These fundamental questions from three thousand years ago helped our civilization grow exponentially. Philosophy led to science, science led to technology, and created our modern world. When we look back at Plato's dialogues, the world was vastly different, but the core problems remain the same. We've seen how knowledge progresses—ideas people believed in the past were wrong because they lacked good reasoning and arguments. Step by step, collectively, we developed science and academic institutions that give a much better understanding of the world.
+
+I believe the same applies to ethics, moral philosophy, sociology, and law, but it's hard to be knowledgeable about all these topics. Yet to make good decisions, we need some understanding of all of them. As Isaac Newton said, "If I have seen further, it is by standing on the shoulders of giants."
+
+That's what we want to capture with this technology—public discourse as the shoulders of giants. Many thoughts in private and public conversations contain valuable knowledge, reasoning, and arguments. Unfortunately, as a society, we collectively have amnesia—we repeat the same arguments and conflicts over and over. I think as a civilization, we're stuck in this chaotic loop, wasting energy.
+
+The vision that attracts me is using people's knowledge, personal and professional experiences, and academic expertise to contribute to our collective knowledge. We remain citizens engaged in public debate, not replaced by politicians, social media algorithms, or AI, but as community members contributing usefully to public discourse. We need something to shepherd public discourse, remember arguments, use them when topics resurface, move past shallow conversations and conflicts, resolve some issues, develop better understanding of important decisions, and possibly address larger conflicts in economics, geopolitics, and technology development.
+
+Otherwise, we're creating a society that could lead to "Brave New World" territory if we're lucky, or Orwellian territory if we're not. We're talking about our future, and we lack means to collectively navigate through possibilities. That's the end of my long speech!
+
+Alessandro: Actually, I agree. Your requests are connected. I'm thinking about what you said at the beginning—when we discuss something, certain words trigger emotional rather than rational responses because words may have different meanings for different people. It's important to have an interdisciplinary approach, but we can't know everything because it's impossible. AI could help fill our knowledge gaps.
+
+Marcin: This problem is significant in large discussions but becomes manageable when broken into smallest possible pieces—claims and arguments. When analyzing one claim, it's easier to check if definitions are understood by all parties, if they're using the same language, or if there's equivocation.
+
+We built our system with this view—breaking big problems into smaller pieces enhances our ability to solve them. There are techniques to move from miscommunication to better communication, from fallacies to better reasoning. Sometimes just focusing on key issues is sufficient—you don't need to know everything to analyze effectively.
+
+If we ensure the process of contributing arguments is sound and improve those arguments from error to correctness, this becomes scalable and can enable collective discussion at scales currently impossible with current technology.
+
+Alessandro: I also saw on your website that you have a team. Would you like to say something about the team? How did you build it?
+
+Marcin: We started Optimum Foundation eleven years ago as a group of university friends. Later, when we decided to pursue the SwarmCheck idea as both technology and educational projects connected to argument mapping, we built a bigger team. We hired philosophers, developers, designers, and grew nearly exponentially for several years until two years ago, when we had forty people working on various projects in policymaking using SwarmCheck, combating disinformation, and so on.
+
+Unfortunately, our growth was halted by a conflict with a public institution that funded one of our projects, and we had to reduce our team. Currently, we have just six people. We still maintain development and provide services for municipalities, companies, and anyone wanting to improve their decision-making through Delphi studies and similar approaches.
+
+We're in recovery mode now. We took a gamble relying on a public institution—something every citizen should normally be able to rely on, but sometimes public institutions are faulty, and there have been corruption scandals. Our project took a hit, putting us in a difficult situation where we had to rebuild our software. We managed to overcome this over two years, and now with our six-member team, I think we'll grow more slowly but still think big in terms of projects and outcomes.
+
+I believe the combination of argument mapping technology with expert systems and language models is very promising for many fields—AI safety and development, legal tech (which we're currently focusing on), and more. Our team includes developers and philosopher/lawyers interested in these areas. We're looking for collaborations since with our smaller team, we can't handle as many simultaneous projects, but we still maintain high-quality services and continue developing our product.
+
+Alessandro: I'm sorry to hear the story about the institution, but I can imagine it's not easy. So the software now—it's working? What's the state of the software? Are you facing issues? You said you're probably looking to collaborate with other entities or people. Is there any problem you're facing now that you think about for the future?
+
+Marcin: That's a good question. The state of the software is that we can fully operate conducting Delphi studies, consultations, deliberative processes, and so on. To that extent, we have everything we need.
+
+But looking at how artificial intelligence is developing and the ethical issues around transparency, leaving humans out of decision-making, hallucination problems, and errors that enhance human shortcuts and biases, we see that our technology has much more potential.
+
+On one hand, we're sufficiently developed technologically to conduct projects utilizing collective intelligence like those Delphi studies I mentioned. But on the other hand, the future relies on strategies for incorporating collective intelligence into AI thinking. That's why we want to focus on legal tech and decentralized science, but we can't do everything at once.
+
+We're looking for collaborations with people interested in legal tech, decentralized science, or explainable AI—building workflows that incorporate argumentation. We have projects written and waiting for financing that use workflows and agents to help improve collective intelligence. These could include moderators who suggest sources, use argument mining to collect additional data from scientific literature, analyze from legal perspectives, provide criticism, check if phrasing is confusing, or join discussions that initially weren't connected because claims weren't similar enough for the system to detect.
+
+There are many aspects of building collective intelligence that can be improved using large language models. People who are technically interested in these areas can contact me. We're open to jointly applying for grants or projects dealing with creating data combining artificial and human-collected information.
+
+We're also happy to collaborate with those who want to use our software for their benefit—decision-making, Delphi processes, public consultations, or improving internal deliberation in organizations.
+
+With some initial push, we can get back on track improving this combination of artificial and collective intelligence for everyone's benefit. The goal is a public good that reduces tradeoffs between security and freedom, between manual engagement in public discourse and being cut out completely by AI.
+
+I think our approach provides the golden ratio of being a subject in public life and decision-making without excessive knowledge and critical thinking requirements necessary to avoid mistakes. Collective intelligence should take care of that. If this vision interests listeners, they can contact me—my email is on the SwarmCheck website.
+
+Alessandro: I really hope someone will contact you. I wanted to ask how hard it was to develop the platform. There are people researching ways for people to agree, and you're one of them, finding new solutions. Was it easy or hard to get funding? Did you need side jobs?
+
+Marcin: Initially, I had side jobs to start the company. We didn't have external funding—we just used our time to develop prototypes and workflows. Our first argument map was just a whiteboard and cork table with pins! Argument mapping can be done manually, but you can't compute meaningful results that way.
+
+We started getting funding from educational projects because argument mapping is useful for developing critical thinking skills. One of our first projects beyond educational ones was about what skills would be needed in the future workplace. We discussed this with experts, created argument maps, and published an ebook.
+
+With projects like that, we grew to bigger things. One of our largest educational projects was "Think Like a Scientist," where we showed argument maps for analyzing information methodologically. Popular science often focuses just on results—"Here's a big telescope, look at the pretty pictures" or "Scientists found chocolate is good/bad for your brain." We wanted young people to see how scientists know certain claims are true or false.
+
+We created argument maps about methodology in social sciences and STEM fields, about the scientific process, citation, and peer review. Surprisingly, there's much to improve even in peer review. Reviewers may not be well-versed in the subject, you can't easily disagree with their criticism, different reviewers might disagree, and there's no mechanism to resolve these issues. We're not saying peer review should be abolished, but it could be improved with anonymous argument mapping.
+
+We showed how scientific papers could be transformed into argument maps, how claims can be discussed, and how sources demonstrate that data supports claims. Instead of relying on heuristics like "this is true because a scientific paper said so," we can examine methodology details, quantify uncertainty about results, and discuss replication.
+
+This project helped develop critical thinking skills, which we measured at the end. We also conducted research on user experience with argument mapping. Interestingly, the same information presented in plain text, graph form, or dynamic argument maps (starting with one claim and sequentially revealing connected arguments) results in different information retention. Plain text performs worst, while dynamic argument mapping performs best.
+
+One hypothesis I find valid is the idea of cognitive scaffolding—your attention and cognitive powers aren't wasted on maintaining connections or building knowledge structures. You can navigate the scaffolding easily when you have the means to do it and engage with the logical relationships of the knowledge you're acquiring.
+
+After these educational projects, we approached companies about using argument mapping in their processes. Unfortunately, many managers don't think about making the best decisions but about job security. They often have the misguided view that if they're not the sole decision-makers, they'll be seen as unnecessary. There's reluctance in the private sector toward collective decision-making.
+
+So we focused on scenarios where knowledge is critical and jobs depend on correctness, which led us to pharmaceutical companies needing studies like Delphi to extract knowledge from experts reliably.
+
+Simultaneously, we worked with the public sector, which was more enthusiastic about our approach because they're legally required to conduct public consultations on many policies. Some don't care about innovation in this area—"whatever you do is fine, just produce results"—but this allowed us to test our approach with educational policies, climate policies, and public consultations, actually incorporating people's arguments and opinions into final policies.
+
+People who participated were pleasantly surprised—the deliberation process felt like a game, entertaining yet useful for seeing other perspectives and voicing their own opinions. People appreciate that it's not just opinions or "my way or the highway," but knowledge that can be critiqued and improved through discussion.
+
+In everyday face-to-face discussions, too much relies on moderators' abilities to translate everything correctly and remember everything without excluding perspectives. When conflicts arise, they're often hushed rather than productively resolved. People actually appreciate constructive criticism, but it's hard to give in everyday settings because it's not an innate skill.
+
+We still do some public consultations and policymaking, but now we're focusing on Delphi processes and legal applications. In our view, this is closest to the fastest market application combining AI and collective intelligence—quick contract analysis, improved legal reasoning for court cases, etc. It's not far from our aim to improve AI and collective intelligence in areas like combating disinformation, crowdsourced science, and creating databases of connected reasoning similar to Wikipedia, but perhaps a "Wikipedia of connected arguments."
+
+Alessandro: Speaking of law, that's a very interesting topic. Do you think laws as we know them now will change in the future? Could there be a different kind of system? Because law as we know it may have been created twenty years ago, but the systems go back thousands of years. Are you interested in Web3, like smart contracts? Do you think about law in different terms compared to what we know?
+
+Marcin: We're very interested in DAOs and technology for decentralized organizations, decision-making, and science. Regarding the future of law, there's a spectrum of possibilities.
+
+On one hand, we could see a regression. Things we take for granted—rule of law, independent judiciary—might devolve. More authoritarian systems might outcompete democratic ones, or democracies might collapse from internal strife. The signals from how politicians currently gain power in democratic systems are concerning. Democracy may be facing challenges in the history of civilization. We'd like to strengthen democracy's best aspects, but that means it must evolve to address current problems. The alternative to democracy and rule of law is dictatorship—someone dictates the law and you must obey or face punishment.
+
+For a more positive outcome, we can imagine public discourse itself becoming a governing force for better laws. It's technically feasible that discussions like ours, and millions of others in the public sphere, could be used to extract important arguments and reasoning to influence rules applied to society. We could directly and indirectly influence rules by talking about them. That sounds like science fiction but is technically feasible—being governed by our collective intelligence at the country or community level.
+
+Some see this as positive; others fear more nefarious outcomes like a "New World Order." Both are possible—we could have a global government that benefits people or one that harms them. We could have nation-states that serve citizens well or those at war and oppressing their citizens. Current technology and future surveillance could control citizens, remove their agency, and maintain only a pretense of democracy, as we see in many authoritarian countries today. Most conduct "democratic" elections just for show.
+
+Law can be a system of oppression or a system that coordinates government and police to control citizens and shape society as powerful people want. Alternatively, we can improve the rationality of law, have a say in our future, and use collective intelligence to navigate our collective decision-making toward better scenarios.
+
+We can reduce our agency, reduce our ability to make decisions, reduce criticism of government, and have only the spectacle of democracy. Everything is possible, with many scenarios in between.
+
+The key question is the role of artificial intelligence. It can speed up processes and allow better deliberation and decision-making, but it can also be used for surveillance, thinking for us instead of with us, and possibly developing as a new agent of decision-making. There are no physical objections to superintelligent AI that is as smart compared to humanity as we are compared to chimpanzees.
+
+If we become the second most intelligent species on the planet, would we have the same ability to influence the future as chimpanzees do today? That's worrying. The alternative is collective intelligence—we cannot control something smarter than us through individual intelligence. The risk of being the second most intelligent species without shared means of making decisions about our future using collective intelligence with AI is one of the biggest risks.
+
+If artificial intelligence capabilities increase while our ability to incorporate this intelligence into our collective intelligence doesn't increase, we'll be left behind. It wouldn't be wise not to give ourselves the ability to be incorporated in the decision-making process of future artificial intelligences. The only way is through collective intelligence.
+
+An interesting aspect of technology is that you don't need to understand everything to use it. You don't need to know how electricity is generated or how a lightbulb works to push a button and have light. Knowledge in argumentation has the same property—we can be on equal footing even with greater intelligences if our voices join others', creating something more than just one idea. This complex of ideas can influence the decision-making processes of even superintelligent beings because once knowledge is produced, it can be applied repeatedly for our benefit.
+
+Philosophical discussions about values frame decision-making and are crucial, but the internet is full of surface-level discussions. The data training models is mostly superficial, but we need to join value-based reasoning to argumentation that explores nuances and represents many perspectives to preserve human values for future AI.
+
+Alessandro: I share your hope about the positive aspects—that humanity can use tools to agree on things and find new governance methods. I'd like to ask if you have any message for the civic tech community or people in this field. Do you think they're collaborating well, or is there anything else?
+
+Marcin: If the things I've discussed interest you, please contact me to explore collaboration. We're flexible and experienced in incorporating many people into our organization.
+
+Working in civic tech is novel and much needed, but not easy to survive in. Despite our collapse after losing a major project, we managed to survive through tremendous work by our team. Many civic tech organizations struggle with similar issues—explaining complex ideas about new governance methods and facing unique difficulties. These often don't produce quick results.
+
+For impact, which many people care about, it's good to have networks like the MetaGov initiative, and podcasts like yours serve as beacons for interested people. Don't just look around—give it a go. It's not difficult to engage in one small project with a beginning and end, then experiment and share results with the community. Good examples of applied civic tech are encouraging because they show not only the community but also decision-makers that these approaches work and get results.
+
+I encourage you to persist. The issue needs ability and engagement from the community. Contact me if you want—I often spend my free time discussing these issues and projects. Keep going—it's one of the most important things one can work on.
+
+Given our current state of democratic governments and the emergence of artificial intelligence, we're at a crossroads. The future is uncertain, but we can push it a little toward what we all want to see.
+
+Alessandro: Absolutely. These topics are very important and could potentially avoid wars or other conflicts. I share your hope. Is there anything else you'd like to address that we haven't touched on?
+
+Marcin: The aspect of wars and suffering inspired me. When you see ordinary people forced into war situations, becoming soldiers, governments have to come up with ways to convince you that you're able to kill another human. This isn't natural for most humans (excluding perhaps some psychopaths) to take a person's life. Powerful forces shape us into situations where we kill each other, but there are many cases showing that when we're able to talk to each other, even with our enemies, the ability to resolve conflicts is immense—if powerful governments aren't blocking us.
+
+I think society needs protection from abuses of power, tyranny, and people who invade other countries or pursue their own interests at others' expense. If we can talk to each other directly without government interference, as ordinary humans who want to live and have good lives, we have so much in common.
+
+In the past, there was a vision that when the internet emerged, we would have this connection. We don't have it yet, but that doesn't mean it's impossible. We just need the right tools for this type of communication. Don't think that social media as it exists is the only way to communicate—social media didn't exist two decades ago! Everything changes so fast. It's important to remember that today, we are building the future. Don't limit your imagination on what's possible.
+
+Alessandro: You make me realize that if people are able to discuss in a rational way, maybe this isn't convenient for those in power. This is another problem altogether. Thank you, it was very interesting having you here.
+
+Marcin: Thank you, Alessandro.
+
