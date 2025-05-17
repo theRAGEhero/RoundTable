@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Democracy Innovators</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #212529;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #3a86ff;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 2rem;
+            color: #495057;
+        }
+        
+        .route-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .route-button {
+            display: flex;
+            align-items: center;
+            background-color: #e9ecef;
+            border: none;
+            border-radius: 4px;
+            padding: 1rem;
+            text-decoration: none;
+            color: #343a40;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .route-button:hover {
+            background-color: #3a86ff;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .route-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            flex-grow: 1;
+        }
+        
+        .route-name {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .route-subtitle {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        
+        .route-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #3a86ff;
+            color: white;
+            border-radius: 50%;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+        
+        .route-arrow {
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Democracy Innovators</h1>
+        <p>Select a round table to explore innovative approaches to strengthen democracy in the digital age.</p>
+        
+        <div class="route-list">
+            <a href="?roundTable=5" class="route-button">
+                <div class="route-number">5</div>
+                <div class="route-info">
+                    <div class="route-name">Digital Democracy Tools</div>
+                    <div class="route-subtitle">Featuring Lukas Salecker, Co-founder of deliberAIde</div>
+                </div>
+                <div class="route-arrow">→</div>
+            </a>
+            
+            <a href="?roundTable=6" class="route-button">
+                <div class="route-number">6</div>
+                <div class="route-info">
+                    <div class="route-name">Civic Engagement in Digital Societies</div>
+                    <div class="route-subtitle">Featuring Josef Lentsch, Political Tech Summit Founder</div>
+                </div>
+                <div class="route-arrow">→</div>
+            </a>
+            
+            <a href="?roundTable=7" class="route-button">
+                <div class="route-number">7</div>
+                <div class="route-info">
+                    <div class="route-name">Participatory Governance Models</div>
+                    <div class="route-subtitle">Coming Soon</div>
+                </div>
+                <div class="route-arrow">→</div>
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-redirect to Round Table 6 after 3 seconds if no selection is made
+        setTimeout(function() {
+            // Check if we're already on a round table page
+            const urlParams = new URLSearchParams(window.location.search);
+            if (!urlParams.has('roundTable')) {
+                window.location.href = '?roundTable=6';
+            }
+        }, 0); // Immediate redirect - set to 3000 for a 3-second delay
+    </script>
+</body>
+</html>

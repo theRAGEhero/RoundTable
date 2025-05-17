@@ -1,0 +1,72 @@
+{
+  "routeInfo": {
+    "routeId": "democracy-innovators",
+    "routeTitle": "Democracy Innovators",
+    "totalRoundTables": 10,
+    "description": "Exploring innovative approaches to strengthen democracy in the digital age."
+  },
+  "roundTableInfo": {
+    "id": "rt7-participatory-governance",
+    "roundTableNumber": 7,
+    "roundTableTitle": "Participatory Governance Models",
+    "date": "2025-06-15",
+    "duration": "48:20",
+    "guests": [
+      {
+        "name": "Alessandro Oppo",
+        "walletId": "0x7a58c0d3e5F8af12eB234cBbC4",
+        "role": "Host",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+      },
+      {
+        "name": "Future Guest",
+        "walletId": "0x1a2b3c4d5e6F7g8h9i0J1k2L3",
+        "role": "Participatory Governance Expert",
+        "avatar": "https://randomuser.me/api/portraits/women/42.jpg"
+      }
+    ],
+    "previousRoundTable": {
+      "id": "rt6-civic-engagement",
+      "number": 6,
+      "title": "Civic Engagement in Digital Societies",
+      "dataFile": "roundtable6.json"
+    },
+    "nextRoundTable": {
+      "id": "rt8-implementation",
+      "number": 8,
+      "title": "Implementation Strategies",
+      "dataFile": "roundtable8.json"
+    }
+  },
+  "discussionSummary": {
+    "previousSummary": "In Round Table 6 with Josef Lentsch, we explored how political tech can enhance democratic processes while maintaining the essential human elements of political engagement.",
+    "keySummary": "This upcoming discussion will focus on concrete participatory governance models that have been implemented successfully around the world, exploring their strengths, weaknesses, and potential for scaling.",
+    "highlights": [
+      {
+        "topic": "Coming Soon",
+        "content": "This round table is scheduled for future release."
+      }
+    ]
+  },
+  "relatedResources": [
+    {
+      "title": "Participedia",
+      "url": "https://participedia.net/",
+      "type": "platform"
+    },
+    {
+      "title": "International Association for Public Participation",
+      "url": "https://www.iap2.org/",
+      "type": "organization"
+    }
+  ],
+  "mediaInfo": {
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "transcriptFile": "transcripts/placeholder.txt"
+  },
+  "blockchainRecord": {
+    "hash": "0xcoming-soon-placeholder-hash",
+    "timestamp": "2025-06-15T14:30:00Z",
+    "verificationUrl": "#"
+  }
+}

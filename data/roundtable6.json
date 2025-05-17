@@ -1,0 +1,98 @@
+{
+  "routeInfo": {
+    "routeId": "democracy-innovators",
+    "routeTitle": "Democracy Innovators",
+    "totalRoundTables": 10,
+    "description": "Exploring innovative approaches to strengthen democracy in the digital age."
+  },
+  "roundTableInfo": {
+    "id": "rt6-civic-engagement",
+    "roundTableNumber": 6,
+    "roundTableTitle": "Civic Engagement in Digital Societies",
+    "date": "2025-05-10",
+    "duration": "46:53",
+    "guests": [
+      {
+        "name": "Alessandro Oppo",
+        "walletId": "0x7a58c0d3e5F8af12eB234cBbC4",
+        "role": "Host",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+      },
+      {
+        "name": "Josef Lentsch",
+        "walletId": "0x9b23f5a7e1D4c8b5A2e6B3f9",
+        "role": "Political Entrepreneur & Founder of Political Tech Summit",
+        "avatar": "https://randomuser.me/api/portraits/men/65.jpg"
+      }
+    ],
+    "previousRoundTable": {
+      "id": "rt5-digital-democracy-tools",
+      "number": 5,
+      "title": "Digital Democracy Tools",
+      "dataFile": "roundtable5.json"
+    },
+    "nextRoundTable": {
+      "id": "rt7-participatory-governance",
+      "number": 7,
+      "title": "Participatory Governance Models",
+      "dataFile": "roundtable7.json"
+    }
+  },
+  "discussionSummary": {
+    "previousSummary": "In the previous Round Table with Lukas Salecker, we explored how AI tools can enhance deliberative democracy processes by making them more accessible and scalable.",
+    "keySummary": "This conversation with Josef Lentsch reveals the emerging field of political tech and its potential to create more effective democratic systems. While technology alone cannot solve democratic deficits, properly implemented tools can enhance transparency, accessibility, and meaningful participation in political processes.",
+    "highlights": [
+      {
+        "topic": "Political Tech Summit",
+        "content": "Josef Lentsch founded Europe's first Political Tech Summit, bringing together stakeholders from center-left to center-right to explore how technology can enhance political processes, communication, and campaigning."
+      },
+      {
+        "topic": "Meaningful Participation",
+        "content": "The key issue in democratic innovation is creating structures that enable meaningful participation while maintaining necessary efficiency and effectiveness. Digital tools can help, but the core design principles remain the same."
+      },
+      {
+        "topic": "Techno-utopianism to Dystopia",
+        "content": "The early optimism about technology improving democracy has shifted toward concerns about technology undermining democratic processes. Josef suggests a balanced approach that acknowledges both possibilities."
+      },
+      {
+        "topic": "Innovation Gap in Politics",
+        "content": "There's a significant innovation gap in politics, with organizations often investing in the wrong tech solutions or developing custom tools that quickly become outdated. Better awareness of available tools and implementation strategies is needed."
+      },
+      {
+        "topic": "Digitally Assisted Democracy",
+        "content": "Rather than a complete digital transition, Josef envisions a 'digitally assisted democracy' where technology enhances but doesn't replace human interaction, which remains essential to democratic processes."
+      }
+    ]
+  },
+  "relatedResources": [
+    {
+      "title": "Political Tech Summit",
+      "url": "https://politicaltech.eu/",
+      "type": "event"
+    },
+    {
+      "title": "Political Entrepreneurship (Book)",
+      "url": "https://www.amazon.com/Political-Entrepreneurship-Josef-Lentsch/dp/1788319761",
+      "type": "book"
+    },
+    {
+      "title": "NEOS Political Party",
+      "url": "https://neos.eu/",
+      "type": "organization"
+    },
+    {
+      "title": "Civic Tech Field Guide",
+      "url": "https://civictech.guide/",
+      "type": "website"
+    }
+  ],
+  "mediaInfo": {
+    "videoUrl": "https://www.youtube.com/embed/Fw0PgTtwJPA",
+    "transcriptFile": "transcripts/Josef.Lentsch.full.transcription.txt"
+  },
+  "blockchainRecord": {
+    "hash": "0x7f2e3d4c5b6a7890abcdef1234567890abcdef12",
+    "timestamp": "2025-05-10T14:30:00Z",
+    "verificationUrl": "https://etherscan.io/tx/0x7f2e3d4c5b6a7890abcdef1234567890abcdef12"
+  }
+}

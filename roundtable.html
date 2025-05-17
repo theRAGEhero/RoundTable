@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Loading overlay -->
+        <div class="loading-overlay show" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+        </div>
+        
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo" id="logoText">DI</div>
+                    <h1 id="mainTitle">Loading...</h1>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-outline"><i class="fas fa-share-alt"></i> Share</button>
+                    <button class="btn btn-primary"><i class="fas fa-user-circle"></i> Account</button>
+                </div>
+            </div>
+            <nav>
+                <ul id="navMenu">
+                    <!-- Navigation will be loaded from JSON -->
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" class="active">Round Tables</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="route-info">
+                <div class="route-header">
+                    <h2 id="routeTitle">Loading...</h2>
+                    <h3>Round Table <span id="roundTableNumber">...</span>: <span id="roundTableTitle">Loading...</span></h3>
+                </div>
+                <div class="sponsor" id="sponsorContainer">
+                    <!-- Sponsor info will be loaded from JSON -->
+                    <img src="https://via.placeholder.com/150?text=Sponsor" alt="Sponsor logo">
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="content-main">
+                    <section class="summary-section card">
+                        <div class="card-content">
+                            <h4><i class="fas fa-history"></i> Previous Discussion</h4>
+                            <p id="previousSummary">Loading summary...</p>
+                            <div class="key-insights">
+                                <h4><i class="fas fa-lightbulb"></i> Key Insights</h4>
+                                <p id="keySummary">Loading insights...</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="video-section card">
+                        <div class="card-content">
+                            <div class="responsive-video" id="videoContainer">
+                                <!-- Video will be loaded from JSON -->
+                                <div class="video-placeholder">Loading video...</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="participants" id="participants">
+                                    <!-- Participants will be loaded from JSON -->
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="highlights-section card">
+                        <div class="card-content">
+                            <h4><i class="fas fa-star"></i> Discussion Highlights</h4>
+                            <div class="highlights-container" id="transcriptHighlights">
+                                <!-- Transcript highlights will be loaded from JSON -->
+                                <div class="highlight-placeholder">Loading highlights...</div>
+                            </div>
+                            <div class="view-full">
+                                <button class="btn btn-outline" id="transcriptBtn">
+                                    <i class="fas fa-file-alt"></i> View Full Transcript
+                                </button>
+                                <button class="btn btn-outline" id="blockchainBtn">
+                                    <i class="fas fa-cube"></i> View Blockchain Record
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="chat-section card">
+                        <div class="card-content">
+                            <h4><i class="fas fa-comments"></i> Discuss with AI</h4>
+                            <p id="chatDescription">Chat with the LLM for this Route to explore themes, ask questions, or connect with related content.</p>
+                            <div class="chat-container" id="chatContainer">
+                                <div class="chat-messages" id="chatMessages">
+                                    <div class="message system">
+                                        <div class="message-content">
+                                            <p id="welcomeMessage">Welcome to the Democracy Innovators AI assistant. How can I help you explore this Round Table?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-input">
+                                    <input type="text" id="messageInput" placeholder="Ask about themes, concepts, or details...">
+                                    <button id="sendMessage" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="card">
+                        <div class="card-content">
+                            <h4><i class="fas fa-compass"></i> Navigation</h4>
+                            <div class="navigation-buttons">
+                                <button class="btn btn-outline" id="prevRoundTable">
+                                    <i class="fas fa-arrow-left"></i> Previous Round Table
+                                </button>
+                                <button class="btn btn-outline" id="nextRoundTable">
+                                    <i class="fas fa-arrow-right"></i> Next Round Table
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-content">
+                            <h4><i class="fas fa-users"></i> Participants</h4>
+                            <div class="participants-list" id="participantsList">
+                                <!-- Participants will be loaded from JSON -->
+                                <div class="participant-placeholder">Loading participants...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-content">
+                            <h4><i class="fas fa-book"></i> Related Resources</h4>
+                            <ul class="resources-list" id="resourcesList">
+                                <!-- Resources will be loaded from JSON -->
+                                <div class="resource-placeholder">Loading resources...</div>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <section class="timeline-section">
+                <h4 id="timelineTitle">Route Progress</h4>
+                <div class="timeline" id="timeline">
+                    <!-- Timeline will be loaded from JSON -->
+                    <div class="timeline-placeholder">Loading timeline...</div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">DI</div>
+                    <p id="footerTitle">Democracy Innovators</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h5>Platform</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Round Tables</a></li>
+                            <li><a href="#">Resources</a></li>
+                            <li><a href="#">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Legal</h5>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Connect</h5>
+                        <ul>
+                            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#"><i class="fab fa-discord"></i> Discord</a></li>
+                            <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p id="copyright">&copy; 2025 Democracy Innovators. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Modal for transcript -->
+        <div class="modal" id="transcriptModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="transcriptModalTitle">Loading Transcript...</h3>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="transcript-container">
+                        <p class="loading-text">Loading transcript...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for blockchain record -->
+        <div class="modal" id="blockchainModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Blockchain Verification Record</h3>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="blockchain-info">
+                        <div class="info-row">
+                            <span class="label">Transaction Hash:</span>
+                            <span class="value" id="blockchainHash">Loading...</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Timestamp:</span>
+                            <span class="value" id="blockchainTimestamp">Loading...</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Status:</span>
+                            <span class="value"><span class="status-badge confirmed">Confirmed</span></span>
+                        </div>
+                        <div class="qr-code" id="qrCodeContainer">
+                            <!-- QR code will be loaded dynamically -->
+                        </div>
+                        <div class="verification-link">
+                            <a href="#" id="verificationLink" target="_blank" class="btn btn-outline">
+                                <i class="fas fa-external-link-alt"></i> Verify on Blockchain Explorer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

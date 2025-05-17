@@ -1,0 +1,98 @@
+{
+  "routeInfo": {
+    "routeId": "democracy-innovators",
+    "routeTitle": "Democracy Innovators",
+    "totalRoundTables": 10,
+    "description": "Exploring innovative approaches to strengthen democracy in the digital age."
+  },
+  "roundTableInfo": {
+    "id": "rt5-digital-democracy-tools",
+    "roundTableNumber": 5,
+    "roundTableTitle": "Digital Democracy Tools",
+    "date": "2025-04-15",
+    "duration": "52:38",
+    "guests": [
+      {
+        "name": "Alessandro Oppo",
+        "walletId": "0x7a58c0d3e5F8af12eB234cBbC4",
+        "role": "Host",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+      },
+      {
+        "name": "Lukas Salecker",
+        "walletId": "0x8b45f2a7d1C9b6a5E2e3D4f5",
+        "role": "Co-founder and CEO of deliberAIde",
+        "avatar": "https://randomuser.me/api/portraits/men/22.jpg"
+      }
+    ],
+    "previousRoundTable": {
+      "id": "rt4-democratic-frameworks",
+      "number": 4,
+      "title": "Democratic Frameworks",
+      "dataFile": "roundtable4.json"
+    },
+    "nextRoundTable": {
+      "id": "rt6-civic-engagement",
+      "number": 6,
+      "title": "Civic Engagement in Digital Societies",
+      "dataFile": "roundtable6.json"
+    }
+  },
+  "discussionSummary": {
+    "previousSummary": "In the previous Round Table, we explored the frameworks that can strengthen democratic processes through technology and innovative design.",
+    "keySummary": "Digital tools can enhance democratic processes and civic participation, but must be designed with inclusivity and structural change in mind. AI technologies offer promising opportunities to scale deliberative processes and make them more accessible.",
+    "highlights": [
+      {
+        "topic": "AI for Deliberative Democracy",
+        "content": "Lukas Salecker's company deliberAIde uses generative AI to enhance citizens' assemblies by automating transcription, summarization, and analysis of discussions, making participation processes more accessible and scalable."
+      },
+      {
+        "topic": "Beyond Technical Solutions",
+        "content": "Structural barriers to participation often can't be solved by technology alone. They require process-level solutions such as compensation for participants and protected time for civic engagement."
+      },
+      {
+        "topic": "Creating New Democratic Spaces",
+        "content": "Digital tools can help create new democratic spaces that extend beyond traditional political arenas, allowing for more inclusive participation and better representation."
+      },
+      {
+        "topic": "Distributed Deliberation",
+        "content": "Peer parliaments and small distributed discussion groups preserve the essential human element of face-to-face conversation while expanding participation to thousands of people."
+      },
+      {
+        "topic": "Collaboration Over Competition",
+        "content": "The civic tech space thrives on collaboration rather than competition, with different tools and platforms working together to strengthen democracy rather than competing for market share."
+      }
+    ]
+  },
+  "relatedResources": [
+    {
+      "title": "deliberAIde",
+      "url": "https://deliberaide.com",
+      "type": "platform"
+    },
+    {
+      "title": "Decidim",
+      "url": "https://decidim.org/",
+      "type": "platform"
+    },
+    {
+      "title": "CONSUL Democracy",
+      "url": "https://consuldemocracy.org/",
+      "type": "platform"
+    },
+    {
+      "title": "OECD Innovative Citizen Participation",
+      "url": "https://www.oecd.org/gov/innovative-citizen-participation.htm",
+      "type": "research"
+    }
+  ],
+  "mediaInfo": {
+    "videoUrl": "https://www.youtube.com/embed/GEDDhvlgMvc",
+    "transcriptFile": "transcripts/Lukas.Salecker.full.transcription.txt"
+  },
+  "blockchainRecord": {
+    "hash": "0x8f3e5d4c7b6a9081abcdef1234567890abcdef34",
+    "timestamp": "2025-04-15T13:45:00Z",
+    "verificationUrl": "https://etherscan.io/tx/0x8f3e5d4c7b6a9081abcdef1234567890abcdef34"
+  }
+}

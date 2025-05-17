@@ -1,0 +1,225 @@
+Interview with Josef Lentsch by Alessandro Oppo
+
+Note: This is an automatic transcription and may contain errors.
+
+Alessandro Oppo: So welcome to another episode of Democracy Innovator. I'm Alessandro Oppo, and our guest today is Josef Lentsch. You are a political entrepreneur, author, you have written books, and you're founder and CEO of the Political Tech Summit. So as the first thing, thank you for your time. I'm excited to meet you and would like you to tell us something about the Political Tech Summit. I mean, because it was last month, yeah?
+
+Josef Lentsch: Yeah, thanks so much. So the Political Tech Summit was a premier event. It was Europe's first event of that kind. We've been preparing it for about a year now. The idea was to close a gap in the landscape, in the political landscape, in the market. Because politics is a very fragmented landscape still in Europe, and politics is very much nationally based. And of course, it's organized alongside political families. So there is not enough learning, particularly within the democratic center from center-left to center-right.
+
+So we thought it would be great to create a space where peers can learn from each other very practically with future technology, but also where vendors and providers could meet with potential clients, where people could meet new partners. And I'm very happy to say that it has been very successful with more than 600 people from more than 40 nations. We have had great feedback with lots of learning, and people are really positive about it. So we already announced that there will be a second edition in January 2026 in Berlin once again.
+
+But for now, I think we are, I've been very delighted how this has actually worked and actually the impact it already has had from people that already took stuff and applied it within their organizations, within their political parties, unions, associations. And that's great, that's exactly what we wanted to happen.
+
+Alessandro Oppo: And I was thinking about... I mean, the summit is about political tech, and there is the distinction between civic tech and govtech. Could you tell us something more about how you have this tempted to...?
+
+Josef Lentsch: So, civic tech is about empowering citizens digitally. So for example, with transparency apps about, you know, parliaments and mandates or stuff like "Fix My Street" where people can put in complaints or can suggest ideas for improving city life. This would be civic tech. Also civic participation, when it comes to deliberative formats or consulting citizens. There are also quite a lot of platforms for that and it's quite an established field.
+
+On the other hand, govtech is about digitizing the public sector. So it looks at the administrations and how we can improve, how we can make administration and government more efficient with digital means.
+
+And in between govtech and civic tech, there's a space where organizations like political parties live, but also unions, associations, some nonprofits, businesses - anyone who's involved in the political arena who's doing politics, communication, campaigning, electioneering. Those organizations have quite distinct and special needs.
+
+There are of course touchpoints and intersections with govtech as well as civic tech. Absolutely. And some organizations could be, I think, called for example govtech as well as political tech and so on. But we really saw at the summit that it's quite a special community that has not had the chance to get together so far. And the Political Tech Summit brought this political tech community together for the first time.
+
+Alessandro Oppo: I see the difference between civic tech and govtech. I mean, sometimes they overlap each other also because it's a very new field. And before going back and talking about political tech, I wanted to ask you if you'd like to share something about your background, personal background, also eventually starting from when you were a child?
+
+Josef Lentsch: I'm Austrian by birth and live in Berlin with my family, but I grew up close to Vienna, close to the Hungarian border. To me, I remember two very important moments in my life politically speaking. One of course was the fall of the Berlin Wall, and the other one was when the Iron Curtain came down close to our home. We always had to go to Hungary to visit friends and wait for two-three hours at the border, and suddenly the border was gone.
+
+Both of these things happened in close proximity and around the time when I was 13 or so, in my youth really. And they left a big impression on me. This is why I think me, and also many of my generation, are really quite optimistic about progress and about the future, which is of course very much challenged now.
+
+But not too long later, Facebook emerged, and back in the day Twitter, and there was the Arab Spring. So all this optimism then was projected onto technology. I was among the first to use those things and really loved them because it helped me stay in touch with friends and learn about new things.
+
+Of course Facebook, Twitter, many other platforms are very much critiqued right now for many things. I still think they have value to a certain degree. But anyway, I think back in the day, this techno-utopianism when I grew up of tech going to improve democracy and helping to fix some problems within the political system has now almost turned into the opposite, where people now almost have a dystopian view of technology, that it destroys and undermines democracy.
+
+I, of course, am not a believer in extremes. I think we can make fair arguments for both of those things. What's interesting to me is how can we use technology and what's out there to improve political communication, management, campaigning? Because we know that democracy is under attack, also partially by and through technology. We know that politics needs to change. We know why, we know even what needs to change. I think the hardest bit is how.
+
+So what I've always been interested in, back in the day in 2012, I was involved in finding a new political party in Austria which now entered government. It's called NEOS. My interest was always in - we have all those ideas, and ideas of course are cheap and anyone can have ideas, but not everyone can or is willing to put in the hours to actually make stuff happen.
+
+So I've always tried to help make stuff happen, not always successfully. But what gets me excited is doing stuff, creating stuff, co-creating stuff, getting others to use the stuff, and then, like with Political Tech Summit, finding from their feedback their responses and direction. This is actually useful in a very practical sense. I think this is what we need much, much more of.
+
+I'm glad to say that there are more and more what I would call political entrepreneurs around doing, establishing new initiatives. There's still not enough funding, but that is also changing. There's more interest from investors, also philanthropists, in helping to do those kinds of things. So I think we see a positive development. The only question really is: are we fast enough? I don't think so. We have to become faster and bolder and more courageous because, as I said in the beginning, democracy is under threat. It's a battle against time, I'm afraid.
+
+Alessandro Oppo: Very interesting thoughts about the one about the speed. I have another question more related about your professional background or academic background. You partially also talked about it, I mean about your professional background, but if you'd like to say something?
+
+Josef Lentsch: I'm a psychologist by training. I did my first masters at the University of Vienna in psychology. I'm very interested in the individual perspective. Psychology is about individual behavior and impressions and decisions. Of course, over the last years, a lot of stuff has happened in combination with neuropsychology, really understanding how the brain works and how people make decisions, how also our intellectual thoughts, how ratio relates to emotion, and that actually emotion is very much what drives us as human beings even though we like to believe otherwise.
+
+So to this day, I'm still taking often a very individualistic perspective also of politics, understanding why individual actors act as they do, why they take decisions - sometimes of course disastrous decisions and sometimes for the better, what are the motives that drive them, what they're looking for, and what role emotion plays. So that's one part of my scientific and academic perspective.
+
+The other part is that my second masters has been in public administration. So I, if you will, have a more abstract, more systemic perspective of politics, of government, of the state. So really swimming out and trying to understand those structures and processes of politics that produce a certain policy.
+
+I think as we have seen over the last years, really, the policies often are not so much the problem as the politics. Because the politics is, in many cases these days, the bottleneck. You cannot get stuff done, you cannot get stuff decided upon, there are a lot of blockages. And then of course, you know, it's very hard even if you can get something done to communicate it, which is still of course part of the politics, and the implementation.
+
+So this is what I've always been interested in. I've been more of a politics nerd, if you will, than perhaps a policy nerd. I'm still very interested in policy, of course, and it's essential to politics. But this is always the part about how the people extend it, which is again more the second psychological question.
+
+And so I've written a book which is called "Political Entrepreneurship" where I looked at NEOS, the party I helped co-found in Austria, but back then in 2019 also other new political parties in Slovakia, in Spain, in France, and asked: how have they managed to be successful? How have they managed to enter parliament? What have they done and who are those people behind them? What has driven them? How have they extended? What methods have they used?
+
+So again, very much a practical and pragmatic book on how you can actually do something that complex as founding a new political party and then get it to enter parliament and even perhaps government. And that's the combination of many, many things that I am interested in - public administration, psychology, politics as a whole. That's what gets me excited.
+
+Alessandro Oppo: The question about why some people participate in public life and some not is something that I ask myself many times. And in a way, it's also why I am interested in this world that is the civic tech but also govtech and everything related. I think about what you were saying, so I think the reason is like a sort of cultural problem. Because this is something I wanted to ask you about - if policymakers have enough knowledge about these political tech platforms, movements. Because I mean, there are policymakers, then there are citizens, and it seems simple. I mean, technology evolves very fast and it seems that we, I mean most of the people, are not aware of the potential use of technology.
+
+Josef Lentsch: Absolutely. I think you're spot on that there is of course an awareness of technology and an increasing awareness that technology is political and that it can - right now, you know how it can harm the body politic and democracy. I think in general people are aware of that.
+
+What they are not aware of are: what tools do I have available? What tech stack can I build to do my job, which is campaigning, communicating, winning elections, and so on? There's a gap.
+
+I just talked to somebody from a political organization yesterday, and they told me political parties - but also I think that applies as much to unions, associations and other political organizations - they burn an awful lot of money on useless tech. And that means it might not be a bad tool, but it might not be the right tool. Sometimes it may also be that tools aren't... You know, in political tech there are many, many custom developments because every organization thinks they're unique and they have unique needs. And of course there are big tech platforms that you can buy off the shelf that are very expensive and sometimes too big and too powerful, so that's also a problem.
+
+But then the conclusion that you have to build stuff yourself because you know best what you need is not necessarily the right one. Because often those platforms and tools that get developed for a specific organization get developed once, are not necessarily programmed very well, and then they don't get developed further because it costs money and effort. People don't use it, and then you have these legacy tech landscapes of tech stacks that are years old, out of date, and are not used because they're clunky.
+
+So yes, there is a big innovation gap in politics. What we saw at the Political Tech Summit is that people, once they see what they can actually have, what they could use, and how they could potentially stick tools together - there's a CRM, there's a social media management tool, there's data analysis tools, there's mobilization platforms, and you can put those together - then you suddenly realize what potential is in there.
+
+Of course, it's not done by just buying it or subscribing to something and paying for it. Of course it needs to be implemented. This is the next problem, right? Because then - and you talked about culture - you need a certain organizational culture. You need structures, you need responsibilities, accountability to actually then make the organization use that tool and learn that tool and knit it into the muscle, so to say, of the organization.
+
+So that's all quite complex. It's doable, right? It has been done before. And of course, as always, some organizations do better than others.
+
+What we're also trying to do is make case studies available and speakers available who have achieved something or done something in the field of political tech, and really get people to learn how they can actually do something like that. You never can copy-paste from one organization to the other, but of course you can learn about success factors, about fails, which is also important.
+
+So I think there's an increasing awareness, people look for solutions and for tools, and this is what we want to provide.
+
+Alessandro Oppo: I saw this fragmentation in political tech like where every organization builds their own custom platform or maybe they buy the platform from someone else. And several times I thought that the people that are working in civic tech or govtech can also collaborate on building a platform that can be like modular. I'm thinking about the CRM, but also about other kinds of platforms. So you don't have to build a platform from zero every time, but you just modify something. And I'm curious - for a political party that wants to use some new technologies, how can they be successful? If that is the question.
+
+Josef Lentsch: Of course, how to be successful? Well, I think it's not just one factor, right? It's about realizing first of all what is out there. We have 250 or more organizations already on our radar in Europe and beyond who provide different tools and platforms and apps for political organizations. And I would bet that most political parties and other organizations can probably name two or three. So there is this big untapped potential of tools.
+
+I'm not saying all that - you don't perhaps have the best tools, and then, you know, congratulations. Chances are you don't. And then, what are the alternatives? But it starts with realizing, of course, one's needs. And conversations with potential partners can help because people often don't realize what they could have until they see what they can have. So this is where it all starts.
+
+And then as I said, it's really about the implementation. It's about not just buying the tool but getting the organization to use the tool, to understand why this makes sense, and to show them how this helps drive continuous improvement across the organization. So it's really a complex and challenging process.
+
+But once you get a lot of people to adopt a particular tool in your organization, then the magic happens. Because suddenly you get data. Suddenly you get data that you can learn from - from conversations with citizens, from mobilizing of volunteers, from social media. And then you can make better data-driven decisions.
+
+And of course then this becomes, ideally, a virtuous circle where you can show and demonstrate to people that their work has helped you to make better decisions, which has helped them to be more efficient and better at their job and more effective, which helps everyone to be better at winning elections, communicating, and campaigning.
+
+I think that's where the magic lies. Of course this doesn't happen overnight. This is hard work. This also needs people to own this and drive this.
+
+We know from talking to so many political organizations and parties, unions, associations, that most of them don't have a head of tech, for example - somebody who owns the technology within the organization. And if they have someone, it's often a person that is not necessarily on the executive level but often more an operative person. Well, this is not ideal. You need someone to really own the portfolio.
+
+What we see in many organizations instead - and there's fragmentation within the organization of tools. So this department uses this tool, the other uses not at all, those don't talk to each other. So you create different data pools and then of course you lose the big picture. You lose the 360° view of your voters, your activists, whoever it might be that you're looking at. And that's a big, big problem because then you can't learn what you could learn from the information that you can create.
+
+So those are some factors. It's not necessarily rocket science or new, but it still is hard to get them right. And if you get them right, I think political tech can really make a difference.
+
+Alessandro Oppo: And I'm thinking that right now there is a sort of transition like from the physical world to the digital one related to governance and participation. And I know that it is not possible to know when and if or a complete transition will happen. Like, yeah, everything is changing so fast. Two years ago we didn't have ChatGPT and other kinds of LLMs. So I'm wondering if you, I mean I know it's impossible to say when, but if you think, I don't know, in ten years or twenty years there will be a transition toward technology. Because I mean, nowadays politicians and policymakers have their public social accounts where they write things, citizens can reply, or I'm thinking that some political parties can have private WhatsApp groups or something else, but this is quite informal in a way. And I'm thinking if we can estimate when might we land?
+
+Josef Lentsch: Yeah, I think there's of course huge potential in technology in making it useful for democracy, for pro-democratic politics. There's no question about that. Then again, at the moment we see, I'm afraid, more of the deleterious effects. But that doesn't make it any less so that there's a lot of positive potential, and I really believe in that.
+
+So when will we get there? Well, I mean, we are, I think, making progress in the sense that there are, for example, technologies that help assist and facilitate deliberative processes. And then there's also of course now, if you think about AI and others, tools for discussion, listening and summarizing of conversations. I think there's so much in this.
+
+But to your question, I am not sure that we will, or that we should, leave the physical space. Because I think politics will and should always be to a certain degree physical. So what I believe in is rather, let's say, digitally assisted democracy.
+
+And of course we can also talk about stuff like e-voting and other things that might lower the hurdle for participation, that allow for participation in the political process independent of location or time. I think those are great things.
+
+But I think there's still a necessity in politics for people to get together in-person, sit down and talk. I would even argue that this hasn't happened as much perhaps as it could and should have, that people are more engaging in the digital sphere. This has helped or has accelerated a certain estrangement from citizens from each other, but also from the political classes. So there is this kind of undermining of cohesion politically speaking that I'm worried about.
+
+So I absolutely believe that digital tools, that political tech, can help us complement that and improve that experience. You know, why should a human take notes if a bot can do it? And if they can help us facilitate and organize and a discussion better perhaps, or just as good as a person can? Very good, right? But it still needs persons to sit together and talk and exchange views and debate. I think that is at the core of democracy. And so I think that will still be necessary, but it can be done much more smartly than it has been done in the past, absolutely.
+
+Alessandro Oppo: That's the point I would like to touch on later. And I'm thinking about all the different approaches inside the European Union. Have you seen some differences between the understanding of political tech and implementation of it in different countries?
+
+Josef Lentsch: Yeah, I think if you look at France, well, I mean, Macron has tried a lot of things, particularly in the beginning. I wrote about it in my book. They used apps early on for canvassing, and basically they took a lot of insights and learnings of course from the Obama campaign. Some of the people that were involved helping Macron were also involved with the Obama campaign. So there has been a cross-pollination transatlantic-wise.
+
+I think Macron was a big believer and probably still is a big believer in technology and its potential. So I think in that sense, France has been at the forefront. I'm not sure that Macron has really kept pushing this as hard as he could have. But of course he recently also had the AI action summit in Paris that was organized by Make.org that also showed very impressively what you can do with politics. And of course political tech was also part of that.
+
+I know that the European Commission is also trying out things and helping, assisting deliberation, deliberative processes with digital tools.
+
+I think if you look at Germany, I would say there is potential to improve and to catch up. And the UK - Labor, over the last year in the campaign, has tried out stuff. So there is stuff happening. It's not that there's nothing going on.
+
+Also in Germany there are startups and tools that have been tried out in the recent election campaign, where you can use AI to assist in informing citizens and helping them inform themselves about the programs, manifestos of the parties. Great stuff.
+
+I think the question is always in Europe about scaling. So once you have reached that level and you have found your certain client base that perhaps even pays you, I think the question is how to go to the next stage. And this is where we get to the question of funding.
+
+In Europe there is no export for political tech. Now in the aftermath of the Political Tech Summit, there have been ideas to push something like that, to establish a kind of an investment fund. And of course if this happens, this would be great because this will then be a prototype that could be hopefully replicated and grown. That would be fantastic because money is of course of the essence. You need to pay people to do stuff. You can only get so much from people volunteering their time.
+
+And I'm also not sure that you should and could do everything from either philanthropic or public money. I think they have a role to play, but then again, those tools also need to find clients to be sustainable.
+
+So I think the potential is huge. I think the market is not there yet. And again, what we're trying to do with Political Tech Summit and other things that we do in this field is trying to organize this community also digitally with a new platform that will be launching soon. I think this is really about getting people together, exchanging ideas, and then really kind of getting down to business and getting stuff done.
+
+Alessandro Oppo: I'm thinking about what you were saying before. I mean, debating should be like the corner of democracy. And I'm thinking about the importance of data. Not, though, once before the digital era it was very important, but nowadays it is absolutely very important because it can allow policymakers to know which kind of things citizens would like to see happen. But also now data is useful to train AI systems.
+
+And I'm thinking about - do you think it will be possible in the future for people that participate in public life with some mass civic tech software to compensate them? Because I see this convergence between "I participate in public life, so I use my time, my free time, and also I'm producing data that is most useful for technology and public life."
+
+Josef Lentsch: Yeah, when I grew up, and I think this is still true for many platforms, there was a saying: "If you don't pay for the product, you are the product." So this was of course about selling your data, and of course we know many negative examples of that. And of course nowadays it's also about not selling but also training models on your data.
+
+And as you said, if there is a value in this, if you add value by adding your data, you should basically own your data. And then of course the question is, what's the model in monetizing that?
+
+So I think absolutely this is an interesting discussion. And of course it's also about democracy - who owns your data? But in the end it's also to some degree about business. I mean, if again if you create value, you should be able to capture some of the value, i.e., yourself, in some way.
+
+So yeah, I think the discussion is ongoing. I think it's a very interesting one. Data protection has undergone significant change. I mean, when I grew up 25-30 years ago, people didn't really care much about data protection. And this has of course changed dramatically these days. These days we need to see if we haven't already regulated too much sometimes, where data protection is concerned, certainly in some countries.
+
+So I think we should look at that. I think we should experiment. I think it could be to the benefit of everyone if we find creative models and solutions that benefit the data providers, which are in that case that you mentioned also of course the citizens.
+
+Alessandro Oppo: But I'm wondering if right now there is some, I don't know, institution, political party, or some town that is trying to use a civic tech platform and at the same time compensating people that participate?
+
+Josef Lentsch: I don't know to be honest. I wouldn't know of an example. Do you?
+
+Alessandro Oppo: No, actually not. But I was wondering if someone was exploring in this direction because I see that everyone is very busy like studying, working, and everything. And so sometimes we forget about public life that is quite important. And so I thought, okay, that could be a way to motivate people to participate more. And is also related to the question why some people participate in public life and some not.
+
+Josef Lentsch: What I know of are some parties that use platforms that incentivize you through credits. So it's not the same as money, but some parties use platforms where when you volunteer for an hour or for a set amount of hours, when you show up, when you help with something, then you get credits on an app or a platform, and you could use those credits for different things.
+
+So that's a step in that direction. If you will, you help, you actively participate, you contribute, and then you get something out of it. So I think there are interesting experiments. And of course there are also arguments against that because some say it should be an internal motivation, and if you engage yourself in politics, you shouldn't be so much externally incentivized.
+
+I don't think there's a right or wrong. But I think it can be a part. And of course gamification, which that is, is something absolutely that we should experiment with and try out. Because of course people are less engaged compared to what they used to be. And so I think those kinds of approaches can help us with turning things around.
+
+Alessandro Oppo: Yeah, I feel the same. And I was wondering because before you were saying that some parties are using some kinds of technologies. And if you think that we will see some new kind of political party specializing in technology that really wants to push this, to use a lot of technology? Or do you think that all parties will adopt some formula?
+
+Josef Lentsch: Yeah, we already had the Pirate parties 15 years ago. So when I got started in politics, there was one in Iceland. There's still the Pirate Party in the Czech Republic, which is quite successful. In Germany there was a Pirate Party, and they have been very innovative technology-wise.
+
+Of course you could argue they've been so innovative that they couldn't handle concepts like liquid democracy, which are quite complex. But perhaps, you know, you could argue some of the ideas were just a bit too early when AI wasn't around, and nowadays those things could be helped with by AI.
+
+So to your question, yes, I think we'll see more tech-driven parties. Of course that's also a risk. I mean, the extreme case of course is now Musk driving the Republican party, which is of course a very negative case of tech overtaking politics.
+
+But yes, I think looking at the potential of tech and the potential of data and the potential of learning from the data, there's lots of stuff happening. And as always, there are some parties who are more open and more innovative - the innovation leaders - and then there's some early adopters, and then there are laggards.
+
+But absolutely we will see a step change in the coming years because people and organizations will realize what they can actually do with those tools, using that kind of data, and of course using AI. So I think we've only really scratched the surface so far.
+
+And if you look at the US election, if you look at the general election, I think what you see is that they haven't been the AI elections that people expected them to be. But I've heard people say, "These would be the last elections where we talk about AI, because at the next cycle in 2-3-4 years, everybody will expect there to be AI and nobody will be talking about it anymore."
+
+So there is a revolution ahead, it's just not yet there. And it won't be as loud and as boomy as it is now in the US. And hopefully it will be much more positive and much more productive and less destructive. I think there is a fair chance, and this is again why we do the Political Tech Summit, to make sure that tech is being used for pro-democratic purposes.
+
+Alessandro Oppo: I'm thinking about the Pirate Party and liquid democracy. And I think that right now there could be like two ways, two kinds of approaches. One is modernizing actual democratic processes using automation, AI, and other technologies. Or to experiment with new kinds of governance systems as it could be liquid democracy or some kind of direct democracy. Do you, I don't know, what are your thoughts about it? Maybe both should be done?
+
+Josef Lentsch: I think that's the answer, right? I don't think we should do one over the other. I don't think that it's realistic and desirable to switch to liquid democracy or some other concept overnight. I think democracy has been there for some time now. It has its flaws, it needs to be improved, but throwing the kid out with the bathwater, I don't think is advisable.
+
+So yes, we have to assist democratic processes with technology. I think that's clear. I think absolutely we should challenge some processes because if you digitize a process that is dysfunctional, you get a dysfunctional digital process and not a functional one. So that's always the problem. Just because you digitize it doesn't make it necessarily better.
+
+So yes, of course we have to take a step back and take a good look at the democratic processes and whether they are still up for purpose in the 21st century.
+
+And then yes, I think we should also experiment, but we should experiment within defined limits and with defined areas. In a regulatory sandbox, these are a great idea to allow for some stuff, to loosen rules, to try out some things and to experiment, but not with, I don't know, a country of 80 million or whatever it might be from one month to the next. I think that's a risk that we shouldn't be taking.
+
+So yeah, of course it's exciting, and then of course if it works, it works, and some of the stuff will work. And then we should look at how we could scale it, not over 10 or 20 years but quite fast. Because again, it's a battle against time that we're in, so we need to move swiftly.
+
+Alessandro Oppo: And talking about the risks and the battle against time, is there anything that worries you about the use of technologies or other kinds of things related to politics?
+
+Josef Lentsch: I think, I like to think about this in positive versus negative disruption. And I think what we're seeing in the US is quite clearly negative disruption at the moment - the way Musk and others go about the government and how they disrupt processes and impact thousands of people. And the impact of course on labor will become clear in the coming months and years ahead.
+
+I think that's not desirable. But I think what we do need is a positive disruption of some of the processes where citizens don't feel empowered, not involved enough, not informed enough. I think here technology can help.
+
+And of course, if that's ChatGPT, if that's agents... I mean, there are so many tools coming out now that can help with this estrangement of politics and citizens. I think that's where we need to go, and this is where we need to take a hard look at our processes and not just tinkering.
+
+I think democracy can tend to tinkering and slow change, and that is also of course a protection mechanism - democracy protects itself. But I think when there's a disconnect between the speed of change in society and in culture and in technology, and then on the other hand politics that fights battles to catch up and loses the momentum, I think that's where we develop a problem. And this is where we are at the moment.
+
+So this positive disruption - I think there's lots of positive potential that needs to be realized, and we need to work together to do that and fast.
+
+Alessandro Oppo: How to reach this positive disruption? I'm very curious when you say that we have to be faster, how much faster?
+
+Josef Lentsch: That's a good question. How much faster? Well, I think if you look at many countries right now, I think we're talking about one or two electoral cycles, which is something between five and ten years. And this is what we're looking at. I don't believe that the next election might be the last one, even though I'm not sure with the United States right now. But never bet against the United States, so I hope that they will still find a way.
+
+Looking quite critically also in Europe to look at Germany, to look at France, where the far-right has been gaining. And of course other countries where the far-right is already in the leadership in government. I think it's five to twelve perhaps. We still can change things, we still can impact and empower democracy and change in a positive way. But we don't have time forever. And as some people and organizations, I think, act as if there would be endless time. There is not.
+
+So I'm neither believing that we're doomed, nor do I believe that everything will be fine after all. I think that narrative of progress has been broken. And so I think we have it in our hands, but within the next, let's say, ten years is what we're looking at in achieving this positive disruption of democracy. And this is what I'm trying to help with.
+
+Alessandro Oppo: Over another couple of questions if you have time. I have five more minutes, then I unfortunately need to go.
+
+Josef Lentsch: Perfect.
+
+Alessandro Oppo: Then I'll try to be very quick. Have you seen any kind of different approaches to political tech related to, I don't know, left-right in Europe? Because before we were talking about the different approaches from different countries, so I'm wondering about...
+
+Josef Lentsch: Well, I think the left has traditionally more looked at grassroots mobilization, grassroots fundraising. And so therefore, I think overall there would be more apps and tools that would also align themselves with the progressive spectrum of politics and who do those kinds of things.
+
+Then, for example on the right, now I think over the last years we've seen some changes. I think we've seen that the right has taken up some aspects of the left, including becoming much better at mobilizing and organizing grassroots activists, voters, and influencers. And so therefore it's not that clear cut anymore.
+
+And then of course there are also some providers and vendors who do not align themselves with any political spectrum but just sell their product. So there's... I mean, I couldn't say that there is nowadays a clear distinction. I think if you look at the US, I think there it is the case that probably the left has more money available for technology out of the reasons that I highlighted. But that might be changing as well.
+
+Alessandro Oppo: Last question - if you have a message for all the people that are working in the political tech field?
+
+Josef Lentsch: I think it's an exciting time to be involved in political tech, whether you are in a political organization or you are a vendor, an adviser, a software developer. I think there's so much happening right now that can help democracy, that can help improve politics.
+
+So I think it's a super interesting community. We're very glad to have gotten to know some really exciting people, some really interesting organizations from across Europe and beyond. So my message would be, let's get in touch if you haven't been in touch with us and with me already. You can go to politicaltech.eu, and you can subscribe. And of course you can attend the Political Tech Summit, which will again happen in Berlin in January 2026. Would be great to see you there because there's so much to learn and so much to do. And if not now, when?
+
+Alessandro Oppo: Thank you a lot, Josef.
+
+Josef Lentsch: Thank you very much in turn, Alessandro.

@@ -1,0 +1,209 @@
+Interview with Lukas Salecker, Co-founder and CEO of deliberAIde
+
+Alessandro Oppo: Welcome to another episode of Democracy Innovators Podcast. Our guest today is Lukas Salecker, co-founder and CEO of deliberAIde. Thank you for your time and for being here.
+
+Lukas Salecker: Hey Alessandro, glad to be here.
+
+Alessandro: I see that you have co-founded deliberAIde. How would you describe it - is it a platform, software, or idea?
+
+Lukas: Before I get into the nitty-gritty of what we're building with our platform, let me give a little bit of background on where the idea comes from. It started around two years ago when I woke up in the middle of the night - Sunday to Monday morning at 4 AM - and I had this idea to use the power of these recently publicized new AI technologies, generative AI (for a lot of people known through ChatGPT), and connect that to democratic innovations like citizens' assemblies to help make them better, more accessible, and more scalable.
+
+That's exactly what we're doing at deliberAIde - using generative AI technology to build applications that are made for processes like citizens' assemblies or other deliberative processes for different purposes.
+
+The main purpose we're starting with in our platform - for the first version that we're launching in May - is sensemaking. How can we help organizers or commissioners of these participation processes more easily get insights and summaries from the discussions and get better insights from them?
+
+On a more technical level, we start with recording and transcribing discussions with built-in anonymization to protect people's privacy. Then we take that transcription data and, in the future, also other kinds of data around the discussions like manual notes or pictures of whiteboards and sticky notes. We use that data to extract contributions that participants made and then make sense of these contributions - what things did they propose, what opinions did they defend, what similarities exist across different contributions, and in the future also where agreements and disagreements are.
+
+Once the organizers have done the sensemaking, they can then take their analyses and summaries and also use AI assistance to turn the insights into meaningful reports that can be passed on to the decision-makers or the public. That's the set of functions we focus on in the first platform version.
+
+Alessandro: In the past I was thinking about software for civic participation, and I thought a lot about the automation of summaries and AI integration. It's very cool that tools like this now exist. I wanted to ask if you've done any experiments with groups of people and if there's anything relevant to share?
+
+Lukas: Indeed, since we're about to launch our platform, we've been going through quite a bit of testing in real-life processes over the past weeks and months. We have worked with cities and municipalities in Germany, and next week we're going to assist at a conference by the European Committee of Regions.
+
+What we can say is that there's really a lot of excitement about what these tools can offer to people who organize these kinds of participation processes. To give you an example, we're working with what's called "social planners" in the municipality of Siegen-Wittgenstein, a relatively small town in the state of North Rhine-Westphalia in Germany. What these social planners do is organize a series of conferences where they involve citizens to decide on future social planning and social policy making.
+
+They have tested our software on various occasions now, and they were already excited simply about the possibility to record and transcribe the discussions. But when they saw how they can go beyond transcriptions and use AI to extract the ideas that participants shared, to cluster different ideas together, and to use our tagging functionality to extract even more specific insights - all of that on a digital whiteboard (we've developed a whiteboard like Miro or Mural where they can work with the insights and summaries visually and interactively) - the feedback we got from them was that this is exactly what they need, or what they didn't know they needed. They really believe this could help them tremendously in the future, especially to speed up their documentation and reporting processes.
+
+Alessandro: I'm thinking about the last thing you just said - that they didn't know that they needed the platform because maybe they were not aware that such a platform exists or that technology could help so much in these political processes. I was reading the description of deliberAIde and it's very interesting: "Our mission is to ensure that every voice is heard." I think this is what's very cool about civic tech - that it could allow literally every voice to be heard. Do you think that this platform, or similar platforms in the future, could be not just related to some experiment in a town but really something that people use every day, and that the political system eventually will change?
+
+Lukas: I certainly believe so. That's the vision that drives us. We really believe that by leveraging this new information technology, generative AI, we can create spaces that extend way beyond the current political arenas.
+
+Right now, political decision-making and discussions are very confined to people who have been elected, who are members of political parties, the media, or social media. But all of these current political arenas and spaces have a lot of shortcomings, especially when it comes to who they include and who they exclude. For example, to be elected takes quite a bit of time, and you need to meet other conditions to be accepted as a representative and thus partake in the political conversation.
+
+We believe that democratic innovations like citizens' assemblies, where often the selection of participants is mini-publics through random selection or lottery, can help overcome some of these shortcomings of exclusion. But there are still challenges to overcome even within these new democratic innovation processes like citizens' assemblies. That's exactly where we believe technology, this new information technology of generative AI especially, can come in to tackle issues ranging from inclusivity to the depth of conversation and quality of dialogue, to scalability and costs of these processes.
+
+Just to give some examples:
+
+In terms of inclusivity, oftentimes language is still a barrier to participate in citizens' assemblies. We already know that generative AIs are really good at translating, and there are actually startups popping up that help with real-time translation. So that can help bring down the barriers to inclusion in conversations and citizens' assemblies.
+
+Then regarding depth of dialogue, currently in citizens' assemblies that are well facilitated, you oftentimes only scratch the surface of underlying conflicts. When people have disagreements or conflicting opinions, you don't really have the time or the insights to actually dig deeper and truly understand why certain conflicts exist in society. We believe generative AI and the analyses it can enable can help us understand conflicts better and thus mediate better between conflicting views.
+
+The third example related to scale would be: if you can use our platform for summarization, sensemaking, and reporting very quickly - in minutes rather than days - you save a lot of costs for organizers, analysts, and notetakers. That allows you to organize a lot more assemblies, or organize such assemblies in the first place if you have a very small budget.
+
+A second point related to scale would also be that right now, to organize something like a citizens' assembly with meaningful deliberative dialogue, you need professional moderators most of the time to do it well. But there's a scarcity of professional moderators. We believe in the future, with AI, we could empower participants to self-moderate. For example, there are already some experiments in that direction underway at Stanford and with the Polis deliberation platform, but we believe we can do better. We can use AI to create AI moderation assistants that can truly understand the conversation and nudge it in the right direction to make it constructive. That will allow for scaling or multiplying these kinds of processes by the thousands and thus help to include many more people than is currently the case in an average citizens' assembly, which normally only includes around 100 to 150 people.
+
+Alessandro: I share your excitement about the AI agents that moderate because I agree with you that there are not a lot of good moderators, and agents could help a lot. Thinking about scalability and participation, is there anything you're thinking about that could stimulate users to participate? I'm thinking about some gamification system, or when you did the experiments in towns with institutions, did people just participate or did they receive some kind of reward?
+
+Lukas: I'm actually a bit cautious with attempts to incentivize participation that are more on the technical side, like gamification for example. I'm not sure if they're really the solution. I think there need to be other incentives that are more on the process side for people to want to participate.
+
+I think a lot of times what actually prevents people from participating is not that participation is boring and therefore you need to gamify it to make it more exciting, but there are more structural barriers in place. Like people just need to do a job, or sometimes more than one job, just not having the time to go to an event like that in the evening on a work day, or they're too exhausted to participate in a process like the social planning process I just talked about on the weekend. They may also have other responsibilities like caretaking that they simply can't afford to put aside to participate.
+
+In order to tackle those issues, we also need to put structural solutions in place. For example, in big citizens' assemblies like the Citizens' Assembly on Nutrition by the German Parliament in 2023-2024, and it's also the case in other assemblies, people get paid a small amount - at least they get some form of compensation so that they can participate.
+
+In the future, we need to go beyond that so that they don't just need to get paid like 100 euros per day or something, but they actually need to be able to get free from their jobs for the time they participate in such processes. If you think longer term, why should someone who participates in a citizens' assembly be compensated so much less than an elected representative? They are representatives after all, who take time to deliberate, to inform themselves - it's hard work. So why should they only get like 100 euros per day if they do almost the same work as elected representatives?
+
+I believe these are structural solutions to structural problems that prevent participation nowadays that are more on the process side rather than the technical side.
+
+Alessandro: I agree with your analysis. I would like to ask if you want to share some of your personal background, even starting from when you were a child, or anything else before starting deliberAIde.
+
+Lukas: Starting all the way back from when I was a child might be a bit boring and long, but I can start at a quite pivotal moment or time in my life, which was almost half my life ago - around 15 years ago, when I was 16.
+
+Before I was 16, I grew up in a small town in Germany. I'd actually never left Germany until then, so you could say I grew up in quite a bubble. But when I was 16, I had the privilege to go on an exchange year abroad in Mexico, to go to high school there for a year, learn the language, get to know the culture, meet new people, and extend my horizons.
+
+And extending my horizons it truly was, because it literally burst this bubble of privilege that I grew up in. That was the first time when I got this outside view of where I grew up in Germany, Europe, and the Global North, and made me realize how unequal the world actually is and also how unfair the world is, which makes the world so unequal.
+
+Since then, looking back retrospectively, I call it the moment or the time when I found my purpose in life, because it really motivated me since then to keep trying to learn, study, educate myself, and finally find work so that I could do something against these inequalities and against these injustices that I had first seen when I was in Mexico for that year.
+
+This kind of purpose only got reinforced over the past 15 years while I was studying why inequalities exist. I had other chances to live abroad in other countries of the so-called Global South, where I saw more stark inequalities and injustices at work.
+
+For a long time, I thought I might want to help tackle these problems as a development worker - working for the United Nations, working for the World Bank, the German development agency, and those kinds of institutions. But eventually I realized that hasn't been working for 70-80 years now since development cooperation started, and it's probably not going to work because there are other bigger structural issues in place - power inequality especially.
+
+So actually, we need to look at ourselves in the Global North, in Europe, in the West, and think about how we are actually preventing other countries around the world, especially in the so-called Global South, from pursuing their own visions and ideas of a better future. We have been kind of imposing our idea of how societies ought to look, which we call "development," and we've been trying to promote that through development cooperation, but I think that's the wrong approach.
+
+That's what I realized eventually around the time I was finishing my masters - we need to look at our own systems, our own economic systems, and our own political systems in Europe, in the West, in the Global North, and think about how they systematically suppress and take away space for others to truly flourish and pursue their own visions.
+
+So I started to study things like degrowth ideas, post-growth, and how we can transform our economic systems to make them more ecological and social. Eventually then I realized we probably also need to change our political systems to achieve this kind of deep economic transformation. So then I became interested in deliberative democracy because essentially deliberative democracy is about redistributing political power to ordinary people, and I truly believe that this is what's needed to achieve that profound transformation we need to make our economic and political systems, our societies, more ecological, more just, more social.
+
+And yeah, that's what led me to my passion for deliberative democracy and then eventually, two years ago, connecting that passion to how we can use technology to enhance these new forms of democracy.
+
+Alessandro: Would you like to share some of your academic or professional background?
+
+Lukas: So I studied broadly speaking political science or political economy. I did a bachelor's in Liberal Arts and Sciences: Global Challenges, as it was called, in the Netherlands at Leiden University College. It was a very open, interdisciplinary bachelor's where I could really choose my own focus from a lot of options. I decided to focus broadly on economics, international development, and governance.
+
+For my master's, I decided to do Development Studies, partly because I was still thinking about becoming a development worker but also because I really wanted to understand this idea of development and wanted to critically engage with it. I did that in the UK at the University of Oxford. What was really special about that master's was that it takes a step back and critically questions this whole concept of development. I was very glad that I did this master's because, as I just explained, it really led me to question the whole idea of development and then start to focus more on what we can actually do in Europe, in the West, in the Global North.
+
+Alessandro: I also had the impression that sometimes cooperation, I mean not as a word but like the relief to NGOs, sometimes can seem like a sort of colonialization in some way. So you share some of the doubts about whether that's the solution. Also you used the term "structural" many times, and I totally agree - there are some structural problems, there is some violence inherent in our society, and yeah, we can try to change it in some way with these new tools.
+
+I see also, talking with other guests, that there are basically two ways: one is to take democracy as we have it right now and just put in some AI, some automation, some transcriptions to make it more efficient; the other way is to find completely new solutions different from the past. And I think that deliberAIde is on this second path - you're trying to find new solutions for people to be able to decide and to talk. I was reading about peer parliaments - is that connected to your work or not?
+
+Lukas: Yes, actually. I just realized that I forgot to answer the second part of the previous question on my professional background. It's not a very long professional experience that I have - only around four years now, and that has been deliberAIde.
+
+But right after my master's, I actually started working in organizing citizen participation at a company called ifok, which is a German company that's now among the European market leaders in organizing citizens' assemblies and other participation processes. I worked there for half a year, and during those six months, I actually helped organize what's called "peer parliaments" that you just mentioned.
+
+It was a process that ifok organized on behalf of the European Commission to involve European citizens in EU climate policy making. What I think was special about this is that this was one of the first times (not the first time) that a high-level political institution organized a distributed deliberative participation process.
+
+What does that mean? Basically, European citizens were asked to organize small-scale discussion groups, called peer parliaments or house parliaments, where they invite their friends, neighbors, or colleagues and gather at home, at a bar, or a community center to discuss different topics related to EU climate politics. At the end of their discussions, they were asked to take a decision on what recommendations they want to make to the European Commission - what to change about certain aspects of EU climate politics. They submitted those recommendations back to us who organized this process. In total, there were around 500 or 600 parliaments organized throughout Europe, so around 5,000 participants.
+
+I thought that was really new because instead of saying "go on and have a like or dislike, comment on others' ideas on an online participation platform," they really localized this process and decentralized it by asking people to organize discussions at home - real-time, face-to-face discussions. I think that's really crucial because what's missing in mass online participation is this very essential human element, human interaction, and the ability to look each other in the face, see each other's emotions, gestures, and hear each other's stories. All of that is missing in online participation platforms and also missing on social media. I believe that's part of the reason why social media is so polarizing - because people are not looking into each other's eyes when they discuss.
+
+But in these peer parliaments, they preserved this essential element by focusing on small-scale, interpersonal discussions. But then they scaled that by multiplying these small-scale deliberative discussions, which eventually allowed several thousands of people to participate.
+
+So where's the connection to what I'm doing right now? In a way, that's part of the vision that inspired and drove me to start deliberAIde. Back when I organized the peer parliaments, I had to manually sort through, summarize, and analyze all the submissions that we got back from participants, and I can tell you it was a mess. It was not good, it was hard work, a real pain, and did not do justice to the nuance and multi-dimensionality that their discussions probably contained.
+
+But I think with generative AI, we can really use that information technology to, first of all, do more justice to the complexity of discussions that people are having in such distributed processes. Second of all, I think there's also a possibility to interconnect the different discussions. The peer parliaments or house parliaments were isolated - they took place in isolation from each other with no exchange of information between them. But I think we can use generative AI to cross-pollinate between them.
+
+That's actually what Lynn Lavallée and one of her articles calls "multiple, rotating mini-publics," and that's really an idea that's been quite inspiring for me and kept me going because I believe we can really scale small-scale conversations to thousands or even hundreds of thousands of people, and thus get back to the essence of what makes good political conversations, but at the same time allowing masses to participate in the conversation.
+
+Alessandro: This will be awesome. I think about the polarization - talking with someone who has different ideas from us is what is needed to not be polarized, but sometimes we are used to thinking in a sort of binary way, so if you think differently from me, I do not talk to you. So I see this kind of software as very useful.
+
+I was wondering about the platform - can it be used by different users like institutions, political parties, NGOs, and is there any difference related to how they would use the software, or would it work in the same way for every kind of entity?
+
+Lukas: So right now, in this first version, it's really mainly targeting what we call "organizers" as opposed to every participant or an ordinary participant in the process. But for organizers, no matter if they're part of a political institution, political party, municipality, or even within a company, it's all the same. There is one interface - sure there are different roles, different access rights, like maybe opponents, facilitators, and project managers, but essentially it's the same and everybody has access to the transcription, the sensemaking, and the reporting.
+
+But participants at this point, unless they are self-organizers, will not interact much with the platform itself. They will mostly see interim results like clustered ideas, or final reports that have been created with the platform.
+
+Alessandro: Have you thought about the collectivization of problems? Because it's something that I mean, there was no time to think about this question when I was preparing the interview, but it's something I thought about just now. Sometimes, for example, I always fight with my brother, and I can think that's an individual problem - it's my fault or my brother's fault. But then I don't know, maybe in the town, everyone fights with their brother or sister - it's a sort of structural problem. I think nowadays it's very hard to be aware of this kind of problem, but using this kind of tool, as you said, we could have small discussion groups and then we could have all the problems compiled in a summary made by AI. So then people can be aware of certain problems that they were not aware of before.
+
+Lukas: Indeed, I think that has real potential to move the conversations back from private spaces like "I fight with my family at home and everybody fights with their family at home" or "neighbors are fighting with each other." These discussions happen in more private spaces, and also from what has become the main public square these days - social media and more traditional media. We can take those conversations back from these two spaces because they have their issues, and really try to create a new public square - actually not a new one but get back the old ones, in a way "back to the future." We used to be able to have these conversations before social media, before mass media, and I think we just need to get back to that. We really believe that generative AI and other emerging technologies can help with that.
+
+Alessandro: I want to ask what is the actual state of the platform? I know that it's working in some way because you have done tests with municipalities and other institutions, but what are you working on right now? Is there any problem that you're stuck on, or any skill that you're searching for? Maybe someone listening to the podcast can say "Okay, maybe I can help with that."
+
+Lukas: We are still working on developing the first version. There are some features that are already quite advanced and that we have tested, especially around sensemaking. But there are other features that we still have to fully flesh out, like the final reporting for example. We also need to make our platform more stable and scalable.
+
+So far, sensemaking only allows for summarizing individual discussion sessions, but one thing that we're actually tackling as we speak is to also make sense of discussions across sessions - to compare different sessions with each other and find similarities and differences.
+
+What are we struggling with? I think a lot of the challenges are in the details. It's very easy to produce something that works 80% well, but to actually make something reliable and accurate - like summaries that are 95% accurate, and to make that fast and secure and protect data privacy in the process - that's the real challenge.
+
+To anyone who knows how to make LLM systems reliable and evaluate them systematically, anyone working on prompt optimization, and anyone interested in data protection and anonymization before using LLMs - that would be very helpful. Please get in touch!
+
+Alessandro: Was it expensive to build such a platform? I mean, I think about the transcription, the use of AI, the analysis of the transcription... Was it challenging to find funding to build the platform? Also, I don't know if you're working full-time on this project or if you have a side job, and how many people are involved in the team?
+
+Lukas: Definitely challenging. So actually, the technical side of building it was not expensive at all. I think our technical costs - all the LLM costs, hosting costs, and so on - are below $1,000, so really not expensive.
+
+But that doesn't factor in all the human labor costs, because my seven co-founders and I have been working completely for free for two years now - some of us full-time, most of us alongside our PhDs or studies or full-time jobs. Had we factored in all the labor costs, then it probably would have been much more expensive.
+
+You named the key challenge, which is to find funding for this kind of project. We're in a little bit of an in-between situation where we are a startup and purposely decided to become a business and not an NGO because we wanted to be independent. We want to be independent from public or philanthropic funding - we want to generate our own revenues that we could reinvest in furthering our mission.
+
+But we are a nonprofit startup, and that does not really attract big funders because we structurally make it impossible to privatize profits from what we do. We want to reinvest all our revenues, all profits, into the mission. And that puts us in a very difficult place because it makes it hard to apply for public funding and grants - we've been rejected from a lot of them, I can tell you. At the same time, it also makes it hard to attract more conventional investors, like VC capital, because they are looking for returns on their investment that we just can't give them and don't want to give them.
+
+However, we've been lucky to have had quite a few supporters throughout. After all, despite all the rejections, you only need a few handful of people or organizations to believe in you. From very early on, we got the support of Oxford University Innovation, a startup incubator, which actually gave us a bit of funding as a loan that allowed us to cover some costs.
+
+Recently, we got a German government startup scholarship called EXIST, starting from April, that will actually allow three of us to start working full-time with a monthly scholarship and also quite a bit of additional funding to cover other costs like development. That will really be a game-changer for us because it's been a long and rough two years.
+
+Alessandro: It doesn't seem easy. It's quite crazy because this kind of solution could eventually avoid wars or civil wars. We forget that it was very common for people in the past to sometimes kill each other. I think this is one of the most important things - politics and understanding why people participate and making the process easier for all people to participate.
+
+I wonder about collaboration in civic tech - do you think or have you had collaboration with other platforms? Do you think this will be important?
+
+Lukas: 100%, for sure. Very important, and we have had only good experiences so far. It's probably like, from the perspective of established organizations like Decidim, CONSUL, and others, more often than we think, new people with new ideas come along and try to do something in the space.
+
+To some extent, if you think about it conventionally in economic competition terms, then the bigger established players probably wouldn't welcome you with open arms. They might be skeptical like "What are these people doing? Are they a threat to us?" That's what you would think eventually.
+
+But in this space, the civic tech space, I've only experienced the opposite. Really all the ones I mentioned and more have been welcoming us with open arms and being interested and curious about what we do - not just interested but actually also supportive. They realize we're really covering a new niche and not exactly doing the same thing, so they think "this can enrich the ecosystem, so let's help them."
+
+That has led to invitations and people at established organizations telling their clients and partners about us, which then led to important partnerships for us, and just generally multiplication - talking about us, helping us gain more visibility. That has been very helpful for us.
+
+Generally, we could even join a civic tech association, for example, even though we don't have the resources right now to become a member, but still they welcomed us. Very recently, two weeks ago at the OECD Co-Creation Bootcamp in Lisbon on using emergent technologies for civic participation, we also cooperated with other startups like ourselves - Decidim, BrainHarmony - to create a new solution for consultation analysis.
+
+That was only a positive experience too. You might think startups doing very similar things would be competitors, and admittedly these are thoughts that had previously crossed my mind because what they're doing is really similar to what we're doing. But experiencing that cooperation can actually lead to new solutions and to broadening the market, so to speak, was a really great experience. I think for me that was a reinforcement that collaboration always wins over competition.
+
+Because at the end of the day, everybody benefits if the field grows, if the industry grows, if the market grows. Ultimately what's most important is that democracy benefits. Yes, we all need to make our revenues to sustain ourselves, but at the end of the day, we all want to strengthen democracy. I think that only works through cooperation and not competing with each other.
+
+Alessandro: I also had the impression that, as you said, in some other fields, someone who does something similar to you is a competitor, while in this specific field, they become a collaborator. This is awesome.
+
+So deliberAIde is a sort of standalone platform, and I think the same about Democracy or CONSUL, while Decidim is more modular. Have you had any thoughts about this? Because I see that everyone is building new platforms with physically different approaches, so I wonder if you've thought about integration with Decidim or something like this?
+
+Lukas: Definitely. First of all, we are thinking mid-term to long-term of deliberAIde also as a more modular platform. We're getting started with one module right now, but we want to make it multi-modular in the future. That means being open to other tools integrating with ours or our tools integrating with others, especially when they're complementary.
+
+I think that's really the case for Decidim, for CONSUL, for Democracy. All participation processes are very complex and multi-step, and I think we're covering different steps in the process than, for example, Decidim or Democracy. So we would really love to have conversations with Decidim but also with other providers of online participation platforms because I think they can be, for example, a great step before us - citizen assembly for agenda setting, for instance - or afterwards for disseminating results.
+
+Similar to Democracy, they could serve a function like getting a first impression of what are the most contentious issues that could then be deepened in an assembly.
+
+What does that mean concretely for us? We're thinking of the design of our platform long-term as modular, and we're also thinking about open source. We still have to make up our minds about the exact open source strategy we want to pursue - these are discussions we're having now.
+
+But we're also thinking about interoperability - our output formats integrating with other platforms' input formats, and the other way around - other platforms' output formats integrating with our input formats. So that different modules from different platforms can be connected and tailored to the exact uses and needs of processes.
+
+Alessandro: About interoperability, do you know if right now there is any kind of protocol or API related to civic tech? Because it's something I was thinking recently - maybe there should be some kind of protocol so if I want to build a new platform, I already know how to build it.
+
+Lukas: To be honest, I haven't done a lot of research on this, so I can imagine that there are some attempts to do it, but I haven't come across them. What I know though is that Metacafe, for example, which I believe has also funded Democracy and some recent CONSUL projects, in their recent funding calls were also talking about interoperability. I'm not familiar with the outcomes and haven't looked into that, but I see people starting to talk about it. I've also had conversations about it with the civic tech association - there are attempts to get to that point.
+
+Alessandro: I've also seen that there's some movement inside Metacafe about interoperability, because right now there are many tools and it would be very cool to integrate all of them.
+
+I have a couple more questions. If someone has an idea related to civic tech or participation, how would you recommend that person start the project? How was it for you, how did you start?
+
+Lukas: I know it's a bit of a cliché, but it's true - I didn't believe it before I did it myself, as I was more of a planner - but the main recommendation is to just get started. Start talking about it and start doing, stop endlessly planning and then not implementing, just get started somewhere.
+
+The great news is that nowadays, because of AI, it's become 100 or 1,000 times easier to get started. There are tools out there - we're also using them internally at deliberAIde - that can help you prototype in like a minute. So you have an idea - go to V0.dev, for example, and within a minute you have a functional prototype of your idea. It might need a few alterations to make it nice, but an hour later you actually have something that you can show to people, and that will help you explain your ideas better.
+
+If you want to take it further, there are even tools nowadays for actual software development and web development. I myself knew literally zero about AI before I started this. The first time I ever started engaging with AI was ChatGPT. Before that, I was completely ignorant of it. Then ChatGPT really showed me the potential of it, and I realized "this is powerful." Then I started learning more about it, playing around with it. I did a bootcamp in machine learning and data science for three months just to get the basics, to understand the basic concepts of how AI works, how neural networks work, and so on.
+
+But to be honest, if you don't have access to a bootcamp like in my case (paid by the employment agency in Germany), you can find a wealth of resources and materials online. There are websites where you can do courses - one great example is DeepLearning.AI - excellent courses, very beginner-friendly, to just start familiarizing yourself with the more technical side of your idea.
+
+But then you can get started in no time. I am not a developer - I still don't know how to code - but I can use AI right now to actually code or develop. I think that has lowered the entry barrier tremendously for anyone who has a great idea.
+
+So "start doing" would be the first part of the recommendation, and "start talking about it" might actually be more important than the first one, because if you don't talk about your idea, nobody will ever know about it. Most importantly, nobody will ever come and help you with it.
+
+No matter how basic, unrefined, and flawed your first initial idea is, start talking about it. I know it's not easy, it requires a little bit of courage, but if you don't believe in your idea enough to talk about it, then maybe you might not want to start it in the first place. But if you do believe in your idea enough to talk about it, then go on talking about it, because then others will get inspired, and inspired so much that they will actually want to join you and help you create this.
+
+I can tell you, for me over the past two years, it has been one long, beautiful, and very humbling and honoring experience of talking about it and then people joining and giving support and making it their own idea. That's at the end of the day what I can recommend to you - start doing and start talking about it.
+
+Alessandro: As you said, people here really want to collaborate, so talking about your idea and networking with people, I think, is essential - especially in this field maybe more than in other fields because of this specific collaborative atmosphere. Do you have any message for the people that are working on this kind of tools, that are experimenting in the civic tech field, the democracy field - something that you would like to share?
+
+Lukas: For fellow civic-techers or deliberative-techers, let's continue collaborating and expanding our collaboration. I think all of us can only benefit from it.
+
+And for people working more on the process side of democratic innovation - people organizing citizens' assemblies, people organizing dialogue forums, town halls and so on - be skeptical of the dangers of these technologies for sure, but also don't let the skepticism dominate the conversation. There's so much potential in using these technologies for good, especially in this context, that it would be a shame if all we ever kept talking about was just the dangers of it. Let's not forget about the dangers, but let's shift the conversation to what we can really use these technologies for, because every technology can be used for good and bad, and that's especially the case with democratic innovation.
+
+Alessandro: Thank you, thank you a lot for your insights and for the conversation. Is there anything else that you would like to add that maybe I didn't ask, or other questions?
+
+Lukas: Well, thank you very much Alessandro. Our website is www.deliberaide.com, or if you want to stay in the loop on what's going on, follow us on LinkedIn, connect also with me on LinkedIn. If you'd like to collaborate, on the website you'll also find (or will find in the next few days) a waitlist. So if you are an organizer interested in using our tools as a pilot partner right now, or as a user from May onwards, sign up to the waitlist and you will receive info about our launch and any other updates firsthand.
+
+Alessandro: Thank you!

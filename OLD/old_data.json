@@ -1,0 +1,98 @@
+{
+  "routeInfo": {
+    "routeId": "democracy-innovators",
+    "routeTitle": "Democracy Innovators",
+    "totalRoundTables": 10,
+    "description": "Exploring innovative approaches to strengthen democracy in the digital age."
+  },
+  "roundTableInfo": {
+    "id": "rt6-civic-engagement",
+    "roundTableNumber": 6,
+    "roundTableTitle": "Civic Engagement in Digital Societies",
+    "date": "2025-05-10",
+    "duration": "46:53",
+    "guests": [
+      {
+        "name": "Alessandro Oppo",
+        "walletId": "0x7a58c0d3e5F8af12eB234cBbC4",
+        "role": "Host",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+      },
+      {
+        "name": "Josef Lentsch",
+        "walletId": "0x9b23f5a7e1D4c8b5A2e6B3f9",
+        "role": "Innovation Expert",
+        "avatar": "https://randomuser.me/api/portraits/men/65.jpg"
+      }
+    ],
+    "previousRoundTable": {
+      "id": "rt5-digital-democracy",
+      "number": 5,
+      "title": "Digital Democracy Tools",
+      "dataFile": "roundtable5.json"
+    },
+    "nextRoundTable": {
+      "id": "rt7-participatory-governance",
+      "number": 7,
+      "title": "Participatory Governance Models",
+      "dataFile": "roundtable7.json"
+    }
+  },
+  "discussionSummary": {
+    "previousSummary": "In the previous Round Table, our guests discussed the challenges of civic participation in the digital age, the erosion of trust in democratic institutions, and potential technological solutions to increase citizen engagement.",
+    "keySummary": "What they have discovered is that digital tools alone cannot solve democratic deficits without addressing underlying issues of access, digital literacy, and institutional reform. What can be done is developing more inclusive platforms where citizens can meaningfully contribute to decision-making processes while ensuring transparency and accountability.",
+    "highlights": [
+      {
+        "topic": "Meaningful Participation",
+        "content": "Josef Lentsch emphasized that the key issue in democratic innovation is creating structures that enable meaningful participation while maintaining necessary efficiency and effectiveness. Digital tools can help, but the core design principles remain the same."
+      },
+      {
+        "topic": "Balancing Expertise and Inclusion",
+        "content": "Alessandro and Josef explored the central tension between the need for expertise in governance and the principle of democratic inclusion. This balance is crucial for effective democratic systems."
+      },
+      {
+        "topic": "Feedback Loops",
+        "content": "The discussion highlighted that when people can see the direct impact of their participation, engagement increases dramatically. Creating transparent feedback loops is crucial for sustained civic involvement."
+      },
+      {
+        "topic": "Technology as an Enabler",
+        "content": "Josef noted that digital tools can enhance transparency and accessibility, but the fundamental principles of good governance still apply regardless of the technology used. Technology should amplify human capabilities, not replace them."
+      },
+      {
+        "topic": "Positive Disruption",
+        "content": "The conversation concluded with a call for 'positive disruption' - using technology to empower citizens while avoiding the negative disruptions seen in some political contexts. This requires intentional design and implementation."
+      }
+    ]
+  },
+  "relatedResources": [
+    {
+      "title": "Political Tech Summit",
+      "url": "https://politicaltech.eu/",
+      "type": "event"
+    },
+    {
+      "title": "Civic Tech Field Guide",
+      "url": "https://civictech.guide/",
+      "type": "website"
+    },
+    {
+      "title": "Democracy Earth Foundation",
+      "url": "https://democracy.earth/",
+      "type": "organization"
+    },
+    {
+      "title": "Collective Intelligence Project",
+      "url": "https://www.collectiveintelligenceproject.org/",
+      "type": "research"
+    }
+  ],
+  "mediaInfo": {
+    "videoUrl": "https://www.youtube.com/embed/Fw0PgTtwJPA",
+    "transcriptFile": "Josef.Lentsch.full.transcription.txt"
+  },
+  "blockchainRecord": {
+    "hash": "0x7f2e3d4c5b6a7890abcdef1234567890abcdef12",
+    "timestamp": "2025-05-10T14:30:00Z",
+    "verificationUrl": "https://etherscan.io/tx/0x7f2e3d4c5b6a7890abcdef1234567890abcdef12"
+  }
+}

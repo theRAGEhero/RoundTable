@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Democracy Innovators</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #212529;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #3a86ff;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 2rem;
+            color: #495057;
+        }
+        
+        .route-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .route-button {
+            display: flex;
+            align-items: center;
+            background-color: #e9ecef;
+            border: none;
+            border-radius: 4px;
+            padding: 1rem;
+            text-decoration: none;
+            color: #343a40;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .route-button:hover {
+            background-color: #3a86ff;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .route-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            flex-grow: 1;
+        }
+        
+        .route-name {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .route-subtitle {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        
+        .route-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #3a86ff;
+            color: white;
+            border-radius: 50%;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+        
+        .route-arrow {
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #6c757d;
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(58, 134, 255, 0.2);
+            border-radius: 50%;
+            border-top-color: #3a86ff;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="loading" id="loadingIndicator">
+            <div class="loading-spinner"></div>
+            <p>Loading available round tables...</p>
+        </div>
+    </div>
+    
+    <script>
+        // Load all available round tables
+        document.addEventListener('DOMContentLoaded', function() {
+            loadRoundTables();
+        });
+        
+        // Function to load round tables
+        function loadRoundTables() {
+            // In a real application, you would fetch this data from a server
+            // For now, we'll use the round tables we know about
+            const roundTables = [
+                {
+                    number: 5,
+                    title: "Digital Democracy Tools",
+                    subtitle: "Featuring Lukas Salecker, Co-founder of deliberAIde",
+                    dataFile: "roundtable5.json"
+                },
+                {
+                    number: 6,
+                    title: "Civic Engagement in Digital Societies",
+                    subtitle: "Featuring Josef Lentsch, Political Tech Summit Founder",
+                    dataFile: "roundtable6.json"
+                },
+                {
+                    number: 7,
+                    title: "Participatory Governance Models",
+                    subtitle: "Coming Soon",
+                    dataFile: "roundtable7.json"
+                }
+            ];
+            
+            // Create the HTML for the container
+            const container = document.getElementById('container');
+            const route = "Democracy Innovators";
+            
+            // Create the content
+            let html = `
+                <h1>${route}</h1>
+                <p>Select a round table to explore innovative approaches to strengthen democracy in the digital age.</p>
+                <div class="route-list">
+            `;
+            
+            // Add each round table
+            roundTables.forEach(rt => {
+                html += `
+                    <a href="index.html?roundTable=${rt.number}" class="route-button">
+                        <div class="route-number">${rt.number}</div>
+                        <div class="route-info">
+                            <div class="route-name">${rt.title}</div>
+                            <div class="route-subtitle">${rt.subtitle}</div>
+                        </div>
+                        <div class="route-arrow">→</div>
+                    </a>
+                `;
+            });
+            
+            html += `</div>`;
+            
+            // Update the container
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
