@@ -1,0 +1,103 @@
+{
+  "routeInfo": {
+    "routeId": "democracy-innovators",
+    "routeTitle": "Democracy Innovators",
+    "totalRoundTables": 10,
+    "description": "Exploring innovative approaches to strengthen democracy in the digital age."
+  },
+  "roundTableInfo": {
+    "id": "rt2-civic-tech-innovation",
+    "roundTableNumber": 2,
+    "roundTableTitle": "Civic Tech Innovation: Harmonica",
+    "date": "2025-05-12",
+    "duration": "42:15",
+    "guests": [
+      {
+        "name": "Alessandro Oppo",
+        "walletId": "0x7a58c0d3e5F8af12eB234cBbC4",
+        "role": "Host",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+      },
+      {
+        "name": "Artem Zhiganov",
+        "walletId": "0x4d36e8c7b9a1F5d2E3c4B5a6",
+        "role": "Founder of Harmonica",
+        "avatar": "https://randomuser.me/api/portraits/men/28.jpg"
+      }
+    ],
+    "previousRoundTable": {
+      "id": "rt1-open-source-politics",
+      "number": 1,
+      "title": "Open Source Politics",
+      "dataFile": "roundtable1.json"
+    },
+    "nextRoundTable": {
+      "id": "rt3-collective-intelligence",
+      "number": 3,
+      "title": "Collective Intelligence",
+      "dataFile": "roundtable3.json"
+    }
+  },
+  "discussionSummary": {
+    "previousSummary": "In the previous Round Table with Valentin Chaput, we explored the evolution of civic tech from grassroots enthusiasm to institutional adoption, highlighting the importance of collaboration and adaptation in the field.",
+    "keySummary": "Artem Zhiganov introduces Harmonica, an AI-powered tool designed to facilitate structured community discussions and sensemaking. Inspired by Elinor Ostrom's work on commons governance, Harmonica aims to make collective governance more accessible and engaging by using AI to mediate conversations, identify themes, and amplify valuable perspectives.",
+    "highlights": [
+      {
+        "topic": "Harmonica's Core Function",
+        "content": "Harmonica facilitates structured, asynchronous conversations with AI serving as a mediator. Unlike one-on-one AI interactions, it creates a multiplayer experience where the AI cross-references participant responses, identifies common themes, and facilitates indirect dialogue among community members."
+      },
+      {
+        "topic": "AI as Governance Facilitator",
+        "content": "The tool helps solve engagement and sensemaking issues in community governance by making participation more accessible. It can surface insights, detect outlier ideas, and generate summaries that go beyond simple consensus-finding to amplify valuable perspectives."
+      },
+      {
+        "topic": "AI Avatars for Collective Representation",
+        "content": "A promising innovation is the development of AI-powered agents that can represent the collective knowledge and perspectives of a group. These avatars could participate in broader discussions on behalf of communities, potentially scaling deliberative democracy in significant ways."
+      },
+      {
+        "topic": "Open-Source Governance Philosophy",
+        "content": "Harmonica has intentionally avoided venture capital funding to remain true to its open-source values, relying instead on grants, donations, and crypto-based funding through platforms like Gitcoin and Giveth to keep the tool free and accessible."
+      },
+      {
+        "topic": "Open Facilitation Library",
+        "content": "Artem is collaborating with other projects to build an Open Facilitation Library, an open-source collection of facilitation techniques that AI tools can use to improve community governance and decision-making processes."
+      }
+    ]
+  },
+  "relatedResources": [
+    {
+      "title": "Harmonica",
+      "url": "https://harmonica.ai/",
+      "type": "platform"
+    },
+    {
+      "title": "Metagov",
+      "url": "https://metagov.org/",
+      "type": "organization"
+    },
+    {
+      "title": "AI Objectives Institute",
+      "url": "https://aiobjectives.org/",
+      "type": "organization"
+    },
+    {
+      "title": "Gitcoin",
+      "url": "https://gitcoin.co/",
+      "type": "platform"
+    },
+    {
+      "title": "Elinor Ostrom's Work on Commons Governance",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/lecture/",
+      "type": "research"
+    }
+  ],
+  "mediaInfo": {
+    "videoUrl": "https://www.youtube.com/embed/ixELBApak4U",
+    "transcriptFile": "transcripts/Artem.Zhiganov.full.transcription.txt"
+  },
+  "blockchainRecord": {
+    "hash": "0x8b4f2e6d1c7a5908abcdef1234567890abcdef34",
+    "timestamp": "2025-05-12T11:30:00Z",
+    "verificationUrl": "https://etherscan.io/tx/0x8b4f2e6d1c7a5908abcdef1234567890abcdef34"
+  }
+}

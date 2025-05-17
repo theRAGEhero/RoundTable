@@ -3,214 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debug Round Table</title>
+    <title>RoundTable Debug</title>
     <style>
         body {
-            font-family: 'Segoe UI', 'Roboto', sans-serif;
-            margin: 20px;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
             line-height: 1.6;
         }
-        .card {
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
+        h1 {
+            color: #3a86ff;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
         }
         h2 {
-            margin-top: 0;
-            color: #3a86ff;
+            color: #495057;
+            margin-top: 30px;
         }
         pre {
-            background-color: #f5f5f5;
-            padding: 10px;
+            background-color: #f8f9fa;
+            padding: 15px;
             border-radius: 5px;
             overflow-x: auto;
+            border: 1px solid #e9ecef;
         }
-        .btn {
-            padding: 10px 15px;
-            background-color: #3a86ff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
-        .btn:hover {
-            background-color: #2667cc;
-        }
-        .error {
-            color: red;
-            font-weight: bold;
-        }
-        .success {
-            color: green;
-            font-weight: bold;
-        }
-        #loader {
-            display: none;
+        table {
+            width: 100%;
+            border-collapse: collapse;
             margin: 20px 0;
-            text-align: center;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e9ecef;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px 0;
         }
         .spinner {
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #3a86ff;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
+            border-left-color: #3a86ff;
             animation: spin 1s linear infinite;
-            display: inline-block;
+            margin-right: 10px;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .error {
+            color: #dc3545;
+            background-color: #f8d7da;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #f5c6cb;
+        }
+        .success {
+            color: #28a745;
+            background-color: #d4edda;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #c3e6cb;
+        }
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            background-color: #3a86ff;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: none;
+            margin: 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #2970d6;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h2>Round Table Debugger</h2>
-        <p>This tool helps test and debug the Round Table application.</p>
+    <h1>RoundTable Project Debug</h1>
+    
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <span>Loading round table data...</span>
+    </div>
+    
+    <div id="content" style="display: none;">
+        <h2>Found Round Tables</h2>
+        <div id="roundTables"></div>
         
-        <div>
-            <button class="btn" onclick="testDataFiles()">Check Data Files</button>
-            <button class="btn" onclick="testTranscriptFiles()">Check Transcript Files</button>
-            <button class="btn" onclick="testRoundtableHtml()">Check Roundtable HTML</button>
-        </div>
+        <h2>Navigation Test</h2>
+        <div id="navigation"></div>
         
-        <div id="loader">
-            <div class="spinner"></div>
-            <p>Loading...</p>
-        </div>
-        
-        <div id="results">
-            <p>Click a button above to start testing.</p>
-        </div>
+        <h2>Transcript Files</h2>
+        <div id="transcripts"></div>
     </div>
     
     <script>
-        async function testDataFiles() {
-            showLoader();
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = '<h3>Checking Data Files</h3>';
-            
-            const files = ['roundtable5.json', 'roundtable6.json', 'roundtable7.json'];
-            
-            for (const file of files) {
-                try {
-                    const response = await fetch(`data/${file}`);
-                    
-                    if (response.ok) {
-                        const data = await response.json();
-                        resultsDiv.innerHTML += `<p class="success">✓ ${file} - Found and valid JSON</p>`;
-                        
-                        // Display some key info
-                        resultsDiv.innerHTML += `<pre>${JSON.stringify({
-                            route: data.routeInfo.routeTitle,
-                            roundTableNumber: data.roundTableInfo.roundTableNumber,
-                            roundTableTitle: data.roundTableInfo.roundTableTitle,
-                            guests: data.roundTableInfo.guests.map(g => g.name)
-                        }, null, 2)}</pre>`;
-                    } else {
-                        resultsDiv.innerHTML += `<p class="error">✗ ${file} - HTTP error: ${response.status}</p>`;
-                    }
-                } catch (error) {
-                    resultsDiv.innerHTML += `<p class="error">✗ ${file} - Error: ${error.message}</p>`;
-                }
-            }
-            
-            hideLoader();
-        }
-        
-        async function testTranscriptFiles() {
-            showLoader();
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = '<h3>Checking Transcript Files</h3>';
-            
-            const files = [
-                'transcripts/Josef.Lentsch.full.transcription.txt',
-                'transcripts/Lukas.Salecker.full.transcription.txt',
-                'transcripts/placeholder.txt'
-            ];
-            
-            for (const file of files) {
-                try {
-                    const response = await fetch(file);
-                    
-                    if (response.ok) {
-                        const text = await response.text();
-                        const preview = text.substring(0, 100) + '...';
-                        resultsDiv.innerHTML += `<p class="success">✓ ${file} - Found</p>`;
-                        resultsDiv.innerHTML += `<pre>${preview}</pre>`;
-                    } else {
-                        resultsDiv.innerHTML += `<p class="error">✗ ${file} - HTTP error: ${response.status}</p>`;
-                    }
-                } catch (error) {
-                    resultsDiv.innerHTML += `<p class="error">✗ ${file} - Error: ${error.message}</p>`;
-                }
-            }
-            
-            hideLoader();
-        }
-        
-        async function testRoundtableHtml() {
-            showLoader();
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = '<h3>Checking Roundtable HTML</h3>';
-            
+        document.addEventListener('DOMContentLoaded', async function() {
             try {
-                const response = await fetch('roundtable.html');
+                // Find all round tables
+                const roundTables = await findAllRoundTables();
                 
-                if (response.ok) {
-                    const html = await response.text();
-                    resultsDiv.innerHTML += `<p class="success">✓ roundtable.html found</p>`;
-                    
-                    // Check for key elements
-                    const checks = [
-                        {
-                            name: 'Loading Overlay',
-                            regex: /id=['"]loadingOverlay['"]/
-                        },
-                        {
-                            name: 'Script Reference',
-                            regex: /src=['"]assets\/script.js['"]/
-                        },
-                        {
-                            name: 'CSS Reference',
-                            regex: /href=['"]assets\/styles.css['"]/
-                        }
-                    ];
-                    
-                    for (const check of checks) {
-                        if (check.regex.test(html)) {
-                            resultsDiv.innerHTML += `<p class="success">✓ ${check.name} found</p>`;
-                        } else {
-                            resultsDiv.innerHTML += `<p class="error">✗ ${check.name} not found</p>`;
-                        }
-                    }
-                    
-                    // Add direct link to test
-                    resultsDiv.innerHTML += `<p>Test links:</p>`;
-                    resultsDiv.innerHTML += `<a href="roundtable.html?roundTable=5" target="_blank" class="btn">Test Round Table 5</a>`;
-                    resultsDiv.innerHTML += `<a href="roundtable.html?roundTable=6" target="_blank" class="btn">Test Round Table 6</a>`;
-                    resultsDiv.innerHTML += `<a href="roundtable.html?roundTable=7" target="_blank" class="btn">Test Round Table 7</a>`;
-                } else {
-                    resultsDiv.innerHTML += `<p class="error">✗ roundtable.html - HTTP error: ${response.status}</p>`;
-                }
+                // Display round tables
+                displayRoundTables(roundTables);
+                
+                // Test navigation
+                testNavigation(roundTables);
+                
+                // Check transcript files
+                await checkTranscriptFiles(roundTables);
+                
+                // Hide loading and show content
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
             } catch (error) {
-                resultsDiv.innerHTML += `<p class="error">✗ roundtable.html - Error: ${error.message}</p>`;
+                document.getElementById('loading').style.display = 'none';
+                document.body.innerHTML += `
+                    <div class="error">
+                        <strong>Error:</strong> ${error.message}
+                    </div>
+                `;
+            }
+        });
+        
+        // Function to load JSON data
+        async function loadJSON(path) {
+            try {
+                const response = await fetch(path);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error(`Could not load JSON data from ${path}:`, error);
+                return null;
+            }
+        }
+        
+        // Find all available round tables
+        async function findAllRoundTables() {
+            const roundTables = [];
+            
+            // Try to load data for possible round tables (0-10)
+            for (let i = 0; i <= 10; i++) {
+                const data = await loadJSON(`data/roundtable${i}.json`);
+                if (data) {
+                    console.log(`Found round table ${i}`);
+                    roundTables.push({
+                        fileNumber: i,
+                        number: data.roundTableInfo.roundTableNumber,
+                        id: data.roundTableInfo.id,
+                        title: data.roundTableInfo.roundTableTitle,
+                        previousRoundTable: data.roundTableInfo.previousRoundTable,
+                        nextRoundTable: data.roundTableInfo.nextRoundTable,
+                        transcriptFile: data.mediaInfo.transcriptFile,
+                        guests: data.roundTableInfo.guests.map(g => g.name).join(", ")
+                    });
+                }
             }
             
-            hideLoader();
+            // Sort round tables by number
+            return roundTables.sort((a, b) => a.number - b.number);
         }
         
-        function showLoader() {
-            document.getElementById('loader').style.display = 'block';
+        // Display round tables
+        function displayRoundTables(roundTables) {
+            const container = document.getElementById('roundTables');
+            
+            if (roundTables.length === 0) {
+                container.innerHTML = '<div class="error">No round tables found.</div>';
+                return;
+            }
+            
+            // Create table
+            let html = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>File</th>
+                            <th>RT #</th>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Guests</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            // Add rows
+            roundTables.forEach(rt => {
+                html += `
+                    <tr>
+                        <td>roundtable${rt.fileNumber}.json</td>
+                        <td>${rt.number}</td>
+                        <td>${rt.id}</td>
+                        <td>${rt.title}</td>
+                        <td>${rt.guests}</td>
+                        <td>
+                            <a href="roundtable.html?roundTable=${rt.number}" class="btn" target="_blank">View</a>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            html += `
+                    </tbody>
+                </table>
+                <div class="success">Found ${roundTables.length} round tables.</div>
+            `;
+            
+            container.innerHTML = html;
         }
         
-        function hideLoader() {
-            document.getElementById('loader').style.display = 'none';
+        // Test navigation
+        function testNavigation(roundTables) {
+            const container = document.getElementById('navigation');
+            
+            if (roundTables.length === 0) {
+                container.innerHTML = '<div class="error">No round tables found to test navigation.</div>';
+                return;
+            }
+            
+            // Create table
+            let html = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>RT #</th>
+                            <th>Previous in JSON</th>
+                            <th>Expected Previous</th>
+                            <th>Status</th>
+                            <th>Next in JSON</th>
+                            <th>Expected Next</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            // Add rows
+            roundTables.forEach((rt, index) => {
+                // Determine expected previous and next
+                const expectedPrev = index > 0 ? roundTables[index - 1] : null;
+                const expectedNext = index < roundTables.length - 1 ? roundTables[index + 1] : null;
+                
+                // Check if JSON matches expected
+                const prevMatch = (!rt.previousRoundTable && !expectedPrev) || 
+                                 (rt.previousRoundTable && expectedPrev && 
+                                  rt.previousRoundTable.number == expectedPrev.number);
+                
+                const nextMatch = (!rt.nextRoundTable && !expectedNext) || 
+                                 (rt.nextRoundTable && expectedNext && 
+                                  rt.nextRoundTable.number == expectedNext.number);
+                
+                html += `
+                    <tr>
+                        <td>${rt.number}</td>
+                        <td>${rt.previousRoundTable ? `#${rt.previousRoundTable.number}: ${rt.previousRoundTable.title}` : 'null'}</td>
+                        <td>${expectedPrev ? `#${expectedPrev.number}: ${expectedPrev.title}` : 'null'}</td>
+                        <td class="${prevMatch ? 'success' : 'error'}">${prevMatch ? '✓' : '✗'}</td>
+                        <td>${rt.nextRoundTable ? `#${rt.nextRoundTable.number}: ${rt.nextRoundTable.title}` : 'null'}</td>
+                        <td>${expectedNext ? `#${expectedNext.number}: ${expectedNext.title}` : 'null'}</td>
+                        <td class="${nextMatch ? 'success' : 'error'}">${nextMatch ? '✓' : '✗'}</td>
+                    </tr>
+                `;
+            });
+            
+            html += `
+                    </tbody>
+                </table>
+            `;
+            
+            container.innerHTML = html;
+        }
+        
+        // Check transcript files
+        async function checkTranscriptFiles(roundTables) {
+            const container = document.getElementById('transcripts');
+            
+            if (roundTables.length === 0) {
+                container.innerHTML = '<div class="error">No round tables found to check transcripts.</div>';
+                return;
+            }
+            
+            // Create table
+            let html = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>RT #</th>
+                            <th>Transcript File</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            // Check each transcript file
+            for (const rt of roundTables) {
+                let status = '';
+                let statusClass = '';
+                
+                try {
+                    const response = await fetch(rt.transcriptFile);
+                    if (response.ok) {
+                        status = '✓ Available';
+                        statusClass = 'success';
+                    } else {
+                        status = `✗ HTTP ${response.status}`;
+                        statusClass = 'error';
+                    }
+                } catch (error) {
+                    status = `✗ ${error.message}`;
+                    statusClass = 'error';
+                }
+                
+                html += `
+                    <tr>
+                        <td>${rt.number}</td>
+                        <td>${rt.transcriptFile}</td>
+                        <td class="${statusClass}">${status}</td>
+                    </tr>
+                `;
+            }
+            
+            html += `
+                    </tbody>
+                </table>
+            `;
+            
+            container.innerHTML = html;
         }
     </script>
 </body>

@@ -1,0 +1,57 @@
+AI made transcription:
+
+Alessandro Oppo: We are here with Artem Zhiganov from Harmonica. Today, we’ll talk about Harmonica and governance innovation in another episode of the Democracy Innovators Podcast. Thank you, Artem, for your time.
+
+Artem Zhiganov: Thank you for having me!
+
+Alessandro Oppo: I’m very curious about Harmonica. Let’s start with the basics—what is Harmonica?
+
+Artem Zhiganov: Sure! But maybe first, I should give a bit of background about myself. My career started in product marketing, working on user research, communication strategies, and eventually product innovation. Over time, I became more interested in governance and collective decision-making, which led me to study innovation management in the UK. While working on my thesis, I discovered the work of Elinor Ostrom and her research on commons governance.
+
+Ostrom’s work—spanning over 40 years—challenged the traditional market-vs-state dichotomy, arguing that communities could successfully manage shared resources through self-governance. This was a profound realization for me, and it led me into the Web3 space, where I became a governance lead for a DAO and later joined Metagov, a community researching governance innovations.
+
+Harmonica was born from my experiences struggling to engage communities in decision-making. People often don’t want to write proposals, discuss policies, or participate in governance processes. When ChatGPT came out, I started exploring how generative AI could facilitate governance and help communities make sense of collective discussions—what we now call “sensemaking.”
+
+Alessandro Oppo: So, Harmonica is a tool that helps communities make sense of discussions? How does it actually work?
+
+Artem Zhiganov: Exactly! Harmonica facilitates structured, asynchronous conversations with AI. A host sets up a session, invites participants, and they engage in a chat-based discussion with an AI. Unlike ChatGPT, Harmonica is a multiplayer experience—each participant talks to the AI, but the AI cross-references responses, identifies themes, and facilitates dialogue among participants indirectly.
+
+We’re also working on integrating different input modes, such as voice interactions, to make participation more accessible. The AI acts as a mediator, helping to surface insights, detect outlier ideas, and generate summaries. The goal is to move beyond simple consensus-finding and instead amplify valuable but overlooked perspectives within a community.
+
+Alessandro Oppo: You’ve mentioned your background in economics. Did that help in securing funding for Harmonica?
+
+Artem Zhiganov: Not really! My background is actually in management, not pure economics. I’ve worked in advertising, product management, and even experimented with startups before Harmonica. Funding has mostly come from my own savings, small grants, and crypto donations through platforms like Gitcoin and Giveth. We’ve avoided venture capital because we want Harmonica to remain open-source and not be driven by profit motives. That makes funding harder, but we’re committed to keeping the tool free and accessible.
+
+Alessandro Oppo: You talked about AI’s role in governance facilitation. Do you think AI can help with conflict resolution as well?
+
+Artem Zhiganov: That’s an interesting question. Initially, I didn’t think of Harmonica as a conflict resolution tool. It was more about solving engagement and sensemaking issues. But governance and conflict resolution are closely linked. Elinor Ostrom’s design principles for managing commons include conflict resolution mechanisms as a key factor in successful governance.
+
+That said, I’m cautious about AI handling emotionally charged conflicts. Unlike decision-making, which can be structured and rational, conflict resolution requires emotional intelligence. AI can facilitate discussions, but human-to-human interaction is still essential when emotions are involved.
+
+Alessandro Oppo: Have you encountered unexpected challenges while developing Harmonica?
+
+Artem Zhiganov: Oh, absolutely—many! Initially, we built a Discord bot but found that Discord wasn’t ideal for structured governance discussions. Then we tried Telegram, but engagement was low. Many users joined sessions but never completed them. We realized that for better adoption, the tool needs to integrate seamlessly into existing platforms rather than requiring users to switch to a separate app.
+
+We’re now exploring ways to embed Harmonica into community spaces, like a Discord bot that actively facilitates discussions within channels. We’re also looking at integrating with Zoom and transcription tools to process conversations happening in real-time meetings.
+
+Alessandro Oppo: You mentioned AI avatars that could represent collective decisions. Can you elaborate on that?
+
+Artem Zhiganov: Yes! We’re working on AI-powered agents that can represent the collective knowledge and perspectives of a group. Instead of requiring constant deliberation, a group could use Harmonica to discuss an issue and generate an AI avatar that embodies their agreed-upon values and stances. This avatar could then participate in broader discussions on behalf of the group, scaling deliberative democracy in a meaningful way.
+
+Imagine a neighborhood deliberating on local issues and creating an AI representative that presents their consensus at city council meetings. Or a company department using an AI agent to ensure their concerns are represented in executive meetings. This could make collective governance more scalable and inclusive.
+
+Alessandro Oppo: That sounds like a game-changer. What kind of support do you need right now to advance Harmonica?
+
+Artem Zhiganov: We need help in multiple areas. First, funding—since we are bootstrapped, we rely on grants and donations. Second, developers who believe in open-source governance innovation. But most importantly, we need facilitation experts. Our goal is to codify facilitation wisdom into an AI-powered system, and for that, we need input from people experienced in different facilitation methods, from nonviolent communication to agile retrospectives.
+
+We’re collaborating with projects like AI Objectives Institute and others in the Interoperable Deliberation Tools Program to build an Open Facilitation Library, an open-source collection of facilitation techniques that AI tools like Harmonica can use.
+
+Alessandro Oppo: That’s a crucial initiative. Do you think the civic tech space is collaborating effectively right now?
+
+Artem Zhiganov: There’s a lot of great work happening, but funding remains a major challenge. Many civic tech projects struggle to secure sustainable funding because they don’t fit the venture capital model. Even platforms like Gitcoin help, but the funding is still fragmented. I think we need new institutions—perhaps a system of guilds—to pool resources and provide long-term funding for open-source governance tools.
+
+Alessandro Oppo: That’s a compelling vision. Any final thoughts?
+
+Artem Zhiganov: Just that I’m grateful for this conversation. This is the first time I’ve talked about Harmonica in such depth in an interview, and it’s been a great experience. Thanks for having me!
+
+Alessandro Oppo: It’s been fascinating. Thank you for your time, Artem!

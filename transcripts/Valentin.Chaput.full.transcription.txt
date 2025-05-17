@@ -1,0 +1,66 @@
+Full Transcription of the Interview between Alessandro Oppo and Valentin Chaput
+
+Introduction
+Alessandro Oppo: Welcome to this episode of Democracy in a Way. Today, we are here with Valentin Chaput from Open Source Politics. Valentin, thank you for joining us. Let’s start with the first question: What is Open Source Politics?
+
+Valentin Chaput: Open Source Politics is a company that has been around for almost nine years. We are based in Paris, and as the name suggests, we try to bring open-source solutions into the political sphere. We focus on impacting political debates with open-source software. We provide open-source tools to enhance democratic processes, and one of the main platforms we use is Decidim. We also integrate various smaller technologies and consulting services to help these democratic processes succeed. The main idea is to use open-source tools to facilitate political discussions and decision-making.
+
+The Evolution of Open Source Politics
+Alessandro Oppo: Nine years is quite a long time, especially in this field. Have you noticed any significant changes in the landscape over this period?
+
+Valentin Chaput: Absolutely. There are several ways to answer this question. When we started nearly ten years ago, civic technology was booming in France and in many other countries. There was a lot of hope that new tools could bring real change. Spain was quite advanced in this field, and we had connections with Taiwan, Latin America, and Greece. In all these places, there was a strong desire to use new digital tools to enable a different kind of political participation.
+
+Ten years ago, the enthusiasm was very high. Many projects were bootstrapped, led by volunteers, and experimenting with new ways to engage people. However, around 2017, particularly after the French presidential elections, things started to shift. What had once been a grassroots movement became more institutionalized. Many people, including us, transitioned from advocating for civic tech to becoming service providers or even civil servants.
+
+In the last five years, we’ve entered another phase. We’ve moved beyond the early experimental phase and now focus on running large-scale projects. We’re also critically analyzing what has worked and what hasn’t. In France, and in Southern Europe more generally, there is now some skepticism about digital democratic tools. The discussion is shifting toward making processes more meaningful rather than just introducing new tools.
+Donate on PayPal
+
+Institutional Adoption of Civic Tech
+Alessandro Oppo: Over the years, have institutions become more interested in these kinds of tools?
+
+Valentin Chaput: Some politicians and decision-makers recognize the importance of using open-source technologies. They understand the need for transparency and digital sovereignty, especially in Europe. However, many institutions find it difficult to keep up with rapid technological advancements.
+
+Some governments and municipalities have even stepped back from using civic tech tools due to budget constraints or political shifts. Others see these tools as revolutionary but struggle to integrate them effectively. It’s a mixed situation. On the one hand, there’s progress in advocating for open-source civic technology, but on the other hand, there are setbacks due to political and financial reasons.
+
+Current Trends in Civic Tech
+Alessandro Oppo: You mentioned earlier that there are two main directions for the future: developing new tools, particularly AI-driven ones, and deepening the democratic processes. Can you elaborate on that?
+
+Valentin Chaput: Yes, these two trends are complementary. We need to keep improving our tools while also reflecting on how they are used. Some politicians and institutions see civic tech as a revolutionary way to engage people, but they also face difficulties in adopting these tools effectively.
+
+One key issue is that most existing tools were designed for institutions rather than grassroots movements. Another issue is that younger generations prefer audio and video-based communication over text-based interactions. Civic tech needs to adapt by integrating voice and video features to make participation more accessible.
+
+AI could play a big role in making political discussions more inclusive. For example, it could summarize complex policy documents or help citizens formulate their ideas more clearly. This would lower the barrier to participation.
+
+Key Open-Source Civic Tech Tools
+Alessandro Oppo: Let’s talk about some of the most important tools in this space.
+
+Valentin Chaput: Sure. The most well-known is Decidim, which was developed in Spain around 2011. It was created in response to the Occupy movement and similar protests that called for better citizen engagement. The platform was designed to be modular and highly configurable. It allows institutions to run participatory budgeting, petitions, deliberative processes, and even collaborative writing initiatives.
+
+Other tools include Polis, which uses AI to map controversies and facilitate discussions, and Make.org, which enables large-scale citizen voting on proposals. There are also more specialized platforms that focus on deliberation or decision-making. The key is to integrate these tools rather than viewing them as competitors.
+
+Challenges and Opportunities in Civic Tech
+Alessandro Oppo: One major challenge today is misinformation. How do you see civic tech addressing this problem?
+
+Valentin Chaput: That’s a crucial issue. AI-generated misinformation is a growing threat, and we need better tools to detect manipulation and fake news. We also need to ensure that civic tech platforms provide high-quality information and enable constructive discussions rather than spreading disinformation.
+
+Another challenge is making digital deliberation as effective as in-person discussions. AI could help summarize debates and highlight key points, making it easier for large groups to engage in meaningful discussions.
+
+Collaboration in the Civic Tech Community
+Alessandro Oppo: How do civic tech organizations collaborate? Is there room for improvement?
+
+Valentin Chaput: Collaboration is key. Many civic tech companies build their own tools and focus on improving them rather than working together. Open Source Politics takes a different approach. We believe in collaborating with other Decidim providers rather than seeing them as competitors.
+
+Decidim itself is an interesting case because it’s governed democratically. It has an open roadmap where anyone can propose new features. Funding comes from public institutions, and multiple service providers contribute to its development.
+
+In the future, I hope to see more interoperability between civic tech platforms. For example, we could have standardized data formats that allow different tools to share content. This would create a more integrated digital public sphere.
+
+Final Thoughts
+Alessandro Oppo: What advice would you give to people interested in civic tech?
+
+Valentin Chaput: The most important thing is to collaborate rather than reinvent the wheel. The core infrastructure already exists, so instead of building new tools from scratch, people should contribute to existing projects. We need more designers, developers, and political leaders involved in this space. Civic tech has come a long way, but there’s still a lot to do.
+
+Closing Remarks
+Alessandro Oppo: Thank you, Valentin, for this insightful discussion. I hope we can continue exploring ways to improve digital democracy together.
+
+Valentin Chaput: Thank you for having me. I look forward to continuing this conversation in the future.
+

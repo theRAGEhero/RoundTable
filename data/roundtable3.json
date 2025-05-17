@@ -1,0 +1,103 @@
+{
+  "routeInfo": {
+    "routeId": "democracy-innovators",
+    "routeTitle": "Democracy Innovators",
+    "totalRoundTables": 10,
+    "description": "Exploring innovative approaches to strengthen democracy in the digital age."
+  },
+  "roundTableInfo": {
+    "id": "rt3-collective-intelligence",
+    "roundTableNumber": 3,
+    "roundTableTitle": "Collective Intelligence: SwarmCheck",
+    "date": "2025-05-20",
+    "duration": "58:25",
+    "guests": [
+      {
+        "name": "Alessandro Oppo",
+        "walletId": "0x7a58c0d3e5F8af12eB234cBbC4",
+        "role": "Host",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+      },
+      {
+        "name": "Marcin Woźniak",
+        "walletId": "0x3e27d9a8b5C1f6d2E3c4B5a6",
+        "role": "Founder of SwarmCheck, Optimum Foundation",
+        "avatar": "https://randomuser.me/api/portraits/men/36.jpg"
+      }
+    ],
+    "previousRoundTable": {
+      "id": "rt2-civic-tech-innovation",
+      "number": 2,
+      "title": "Civic Tech Innovation: Harmonica",
+      "dataFile": "roundtable2.json"
+    },
+    "nextRoundTable": {
+      "id": "rt4-democratic-frameworks",
+      "number": 4,
+      "title": "Democratic Frameworks",
+      "dataFile": "roundtable4.json"
+    }
+  },
+  "discussionSummary": {
+    "previousSummary": "In the previous Round Table with Artem Zhiganov, we explored Harmonica, an AI-powered tool that facilitates structured community discussions and sensemaking by using artificial intelligence to mediate conversations.",
+    "keySummary": "Marcin Woźniak introduces SwarmCheck, an argument mapping platform by Optimum Foundation designed to improve rational public discourse and collective decision-making. The technology breaks down complex discussions into interconnected claims and their relationships, creating a network of reasoning that represents collective knowledge rather than individual narratives.",
+    "highlights": [
+      {
+        "topic": "Argument Mapping for Collective Intelligence",
+        "content": "SwarmCheck helps create structured maps of arguments by extracting claims from discussions and mapping their supporting or contradicting relationships. This transforms linear text into a network of reasoning that reveals how ideas connect, allowing people to explore different perspectives and analyze the strength of various arguments."
+      },
+      {
+        "topic": "The Delphi Method Enhanced",
+        "content": "The platform has successfully applied the Delphi method—a way of achieving numerical results through expert deliberation—to various projects, including pharmaceutical risk assessments and educational policy development. The argument mapping approach makes this process faster, more transparent, and better at achieving consensus."
+      },
+      {
+        "topic": "Critical Thinking Development",
+        "content": "Studies have shown that engagement with argument mapping dramatically improves critical thinking skills—three times better than the baseline improvement during the first year of college and twice as effective as dedicated critical thinking courses. This educational benefit extends to all participants in the process."
+      },
+      {
+        "topic": "AI and Human Collective Intelligence",
+        "content": "Marcin emphasizes the crucial balance between AI and human collective intelligence. He warns that if artificial intelligence capabilities increase while our ability to incorporate this intelligence into our collective decision-making doesn't keep pace, humanity risks becoming the 'second most intelligent species' with limited agency over its future."
+      },
+      {
+        "topic": "Conflict Resolution Through Structured Dialogue",
+        "content": "The platform helps reduce polarization by breaking discussions into nuanced claims that can be evaluated individually. When people engage with specific premises rather than ideological positions, they become more rational and open to different perspectives, creating opportunities for genuine understanding and consensus."
+      }
+    ]
+  },
+  "relatedResources": [
+    {
+      "title": "SwarmCheck",
+      "url": "https://swarmcheck.ai/",
+      "type": "platform"
+    },
+    {
+      "title": "Optimum Foundation",
+      "url": "https://optimum.org/",
+      "type": "organization"
+    },
+    {
+      "title": "Delphi Method Overview",
+      "url": "https://www.rand.org/topics/delphi-method.html",
+      "type": "research"
+    },
+    {
+      "title": "Argument Mapping Resources",
+      "url": "https://www.reasoninglab.com/resources/",
+      "type": "education"
+    },
+    {
+      "title": "Elinor Ostrom's Work on Governance",
+      "url": "https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/facts/",
+      "type": "research"
+    }
+  ],
+  "mediaInfo": {
+    "videoUrl": "https://www.youtube.com/embed/ZZxcQOfmaWs",
+    "transcriptFile": "transcripts/Marcin.Woźniak.full.transcription.txt"
+  },
+  "blockchainRecord": {
+    "hash": "0x9c3f2e6d1c7a5908abcdef1234567890abcdef56",
+    "timestamp": "2025-05-20T15:45:00Z",
+    "verificationUrl": "https://etherscan.io/tx/0x9c3f2e6d1c7a5908abcdef1234567890abcdef56"
+  }
+}
